@@ -1,0 +1,991 @@
+#N canvas -4 -4 1920 1040 10;
+#N canvas 56 217 1656 684 loadfile 0;
+#X obj 177 44 openpanel;
+#X floatatom 177 238 7 0 0 0 - - -;
+#X floatatom 205 172 15 0 0 0 - - -;
+#X obj 177 93 pack s \$0;
+#X obj 177 213 expr 44100 / $f1;
+#X obj 177 146 soundfiler;
+#X obj 207 263 comment 0 10 helvetica ? 0 0 0 0 rate in ms to play
+back entire sample @ 44.1;
+#X obj 581 256 print LOADFILE;
+#X obj 297 53 comment 0 10 helvetica ? 0 0 0 0 send in the name of
+a file;
+#X obj 208 190 s \$0sampleSize;
+#X obj 177 280 s \$0rate;
+#X obj 175 16 r \$0LoadFile;
+#X obj 289 68 r \$0-LOAD-FILENAME;
+#X obj 265 3 comment 35 10 helvetica ? 0 0 0 0 send in a bang;
+#X obj 191 67 s \$0filename;
+#X obj 581 225 spigot;
+#X obj 613 176 r \$0print;
+#X obj 614 197 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 588 131 r \$0-LOAD-FILENAME;
+#X obj 502 163 r \$0filename;
+#X obj 396 204 print READFILENAME:;
+#X obj 453 434 print SOUNDFILER bytes;
+#X obj 799 363 nbx 30 25 -1e+037 1e+037 0 0 empty empty empty 0 -8
+0 20 -262144 -1 -1 4e+007 256;
+#X msg 706 44 read -resize \$1 \$2-arrayL \$2-arrayR;
+#X msg 177 120 read -resize \$1 \$2-arrayL \$2-arrayR;
+#X msg 56 231 normalize 1;
+#X obj 100 264 s \$0-arrayL;
+#X obj 79 298 s \$0-arrayR;
+#X connect 0 0 3 0;
+#X connect 0 0 14 0;
+#X connect 1 0 10 0;
+#X connect 2 0 9 0;
+#X connect 3 0 24 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 5 0 4 0;
+#X connect 5 0 21 0;
+#X connect 5 0 22 0;
+#X connect 5 0 25 0;
+#X connect 11 0 0 0;
+#X connect 12 0 3 0;
+#X connect 15 0 7 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 1;
+#X connect 18 0 15 0;
+#X connect 19 0 15 0;
+#X connect 24 0 5 0;
+#X connect 25 0 26 0;
+#X connect 25 0 27 0;
+#X restore 465 110 pd loadfile;
+#N canvas 2269 92 526 436 InitBangStuff 0;
+#X obj 162 24 loadbang;
+#X msg 34 50 0;
+#X msg 298 61 0.5;
+#X msg 33 171 50;
+#X obj 35 76 s init0\$0;
+#X msg 221 154 1;
+#X obj 270 254 s \$0-Speed-Course-In;
+#X obj 289 230 s \$0-Speed-Fine-In;
+#X obj 9 123 s \$0-Speed-UFine-In;
+#X obj 227 190 t f f f;
+#X obj 307 108 s \$0AutoPanRangeIn;
+#X obj 285 129 s \$0-RL-Bal-KnobIn;
+#X obj 176 250 s \$0TrimIn;
+#X obj 33 196 s \$0-PanRateIn;
+#X obj 16 95 s \$0-setposfine-In;
+#X obj 298 169 s \$0-VolKnobIn;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X connect 1 0 14 0;
+#X connect 1 0 8 0;
+#X connect 2 0 10 0;
+#X connect 2 0 11 0;
+#X connect 2 0 15 0;
+#X connect 3 0 13 0;
+#X connect 5 0 9 0;
+#X connect 5 0 12 0;
+#X connect 9 0 6 0;
+#X connect 9 1 7 0;
+#X restore 464 134 pd InitBangStuff;
+#N canvas 482 132 593 428 AutoPan 0;
+#X floatatom 330 127 5 0 0 0 - - -;
+#X obj 285 99 metro;
+#X obj 275 300 pack f f;
+#X floatatom 275 349 5 0 0 0 - - -;
+#X obj 285 125 i;
+#X obj 285 149 + 1;
+#X obj 285 173 % 2;
+#X floatatom 285 197 5 0 0 0 - - -;
+#X obj 286 224 *;
+#X floatatom 312 201 5 0 0 0 - - -;
+#X floatatom 340 266 5 0 0 0 - - -;
+#X floatatom 283 253 5 0 0 0 - - -;
+#X obj 276 282 +;
+#X obj 348 47 t b f;
+#X obj 332 89 /;
+#X floatatom 401 27 5 0 0 0 - - -;
+#X msg 305 61 6000;
+#X obj 277 322 line;
+#X obj 255 33 r \$0AutoPanOn;
+#X obj 273 75 tgl 15 0 empty empty empty 17 7 0 10 -260097 -1 -1 0
+1;
+#X obj 177 144 s \$0AutoPanMetro;
+#X obj 340 232 r \$0AutoPanOffset;
+#X obj 318 173 r \$0AutoPanRange;
+#X obj 356 18 hsl 40 15 1 200 0 0 empty \$0-PanRate Pan_Rate -2 -8
+0 10 -204800 -1 -1 960 1;
+#X obj 248 127 bng 15 250 50 0 empty empty empty 17 7 0 10 -260097
+-1 -1;
+#X obj 238 376 s \$0-RL-Bal-KnobIn;
+#X obj 160 292 r \$0PanZero;
+#X obj 202 325 bng 15 250 50 0 empty empty empty 17 7 0 10 -4032 -1
+-1;
+#X msg 160 324 0.5;
+#X obj 159 263 comment 0 10 helvetica ? 0 0 0 0 Zero the Balance;
+#X obj 167 275 comment 0 10 helvetica ? 0 0 0 0 Upon Button Push;
+#X connect 0 0 2 1;
+#X connect 1 0 4 0;
+#X connect 1 0 20 0;
+#X connect 1 0 24 0;
+#X connect 2 0 17 0;
+#X connect 4 0 5 0;
+#X connect 5 0 4 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 9 0 8 1;
+#X connect 10 0 12 1;
+#X connect 11 0 12 0;
+#X connect 12 0 2 0;
+#X connect 13 0 16 0;
+#X connect 13 1 14 1;
+#X connect 14 0 1 1;
+#X connect 14 0 0 0;
+#X connect 16 0 14 0;
+#X connect 17 0 3 0;
+#X connect 17 0 25 0;
+#X connect 18 0 19 0;
+#X connect 19 0 1 0;
+#X connect 21 0 10 0;
+#X connect 22 0 9 0;
+#X connect 23 0 15 0;
+#X connect 23 0 13 0;
+#X connect 26 0 28 0;
+#X connect 26 0 27 0;
+#X connect 28 0 25 0;
+#X restore 466 159 pd AutoPan;
+#N canvas 2030 108 1084 801 AutoLoop 0;
+#X obj 285 182 metro 500;
+#X floatatom 336 154 5 0 0 0 - - -;
+#X msg 285 65 0;
+#X obj 285 204 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 159 163 r \$0AutoLoopToggle;
+#X obj 201 200 comment 0 10 helvetica ? 0 0 0 0 autoloop metro;
+#X obj 209 448 print STOP;
+#X obj 236 297 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X obj 236 323 float;
+#X floatatom 327 341 10 0 0 2 Current_Position - -;
+#X obj 296 298 r \$0-currentpos;
+#X obj 285 226 t b b;
+#X obj 69 297 comment 0 10 helvetica ? 0 0 0 0 trigger when stop button
+pressed;
+#X obj 265 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 330 222 comment 0 10 helvetica ? 0 0 0 0 also trigger on trailing
+edge of AutoLoop Metro Beat;
+#X obj 336 131 r \$0sampsiz;
+#X obj 285 272 s \$0LoopBeat;
+#X obj 632 232 snapshot~;
+#X floatatom 620 267 9 0 0 0 - - -;
+#X floatatom 628 192 10 0 0 2 Current_Position - -;
+#X obj 624 151 r \$0-currentpos;
+#X obj 564 132 r \$0-Grab;
+#X obj 703 262 s \$0-setpos;
+#X obj 703 281 comment 0 10 helvetica ? 0 0 0 0 This Stores the value
+in the slider;
+#X obj 554 116 comment 0 10 helvetica ? 0 0 0 0 Grab Button Logic (store
+the current time value for later looping);
+#X obj 141 274 r \$0-StopButton;
+#X obj 144 250 r \$0-GrabStop;
+#X obj 285 39 r \$0-StopButton;
+#X obj 680 366 s \$0-Start;
+#X obj 680 343 r \$0-setpos;
+#X msg 584 389 1-shot should restart sampler in case a PLAY message
+turned it off;
+#X obj 305 83 s \$0GranOnIn;
+#X obj 295 103 s \$0AutoLoopToggleIn;
+#X obj 193 19 comment 0 10 helvetica ? 0 0 0 0 Stop Button should turn
+off Granulator \, Metro \, and AutoLoop;
+#X obj 681 524 s \$0ArmSampleStop;
+#X obj 725 474 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X msg 727 492 0;
+#X msg 598 543 Reset ArmSampleStop if START button is pressed;
+#X obj 644 447 r \$0-StartButton;
+#X obj 644 479 s \$0-Start;
+#X obj 533 581 s \$0PassSpeedChange;
+#X msg 533 543 1;
+#X obj 554 563 tgl 15 0 empty empty empty 17 7 0 10 -257985 -1 -1 1
+1;
+#X obj 846 506 s \$0AutoLoopToggleIn;
+#X obj 845 525 comment 0 10 helvetica ? 0 0 0 0 StartButton should
+diaable auto loop;
+#X obj 499 600 comment 0 10 helvetica ? 0 0 0 0 Disable Block of Speed
+Change if start button is pressed;
+#X obj 228 413 spigot;
+#X obj 260 364 r \$0print;
+#X obj 261 385 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 518 443 r \$0PlayNow;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 2 0 31 0;
+#X connect 2 0 32 0;
+#X connect 3 0 11 0;
+#X connect 4 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 46 0;
+#X connect 10 0 9 0;
+#X connect 10 0 8 1;
+#X connect 11 0 16 0;
+#X connect 11 1 7 0;
+#X connect 15 0 1 0;
+#X connect 17 0 18 0;
+#X connect 17 0 22 0;
+#X connect 19 0 17 0;
+#X connect 20 0 19 0;
+#X connect 21 0 17 0;
+#X connect 25 0 7 0;
+#X connect 26 0 7 0;
+#X connect 27 0 2 0;
+#X connect 27 0 13 0;
+#X connect 29 0 28 0;
+#X connect 35 0 36 0;
+#X connect 36 0 34 0;
+#X connect 36 0 43 0;
+#X connect 38 0 35 0;
+#X connect 38 0 39 0;
+#X connect 38 0 41 0;
+#X connect 41 0 40 0;
+#X connect 41 0 42 0;
+#X connect 46 0 6 0;
+#X connect 47 0 48 0;
+#X connect 48 0 46 1;
+#X connect 49 0 41 0;
+#X connect 49 0 39 0;
+#X restore 467 186 pd AutoLoop;
+#N canvas -4 -4 1920 1040 SamplerCore 0;
+#X obj 385 748 *~;
+#X obj 354 749 *~;
+#X obj 442 258 phasor~;
+#X obj 442 328 *~;
+#X obj 705 275 snapshot~;
+#X obj 705 244 metro 50;
+#X floatatom 705 304 10 0 0 0 - - -;
+#X floatatom 459 97 5 0 0 0 - - -;
+#X msg 560 223 0;
+#X obj 354 594 *~;
+#X obj 408 698 -;
+#X msg 408 676 1;
+#X obj 408 653 t b f;
+#X obj 706 190 loadbang;
+#X obj 330 775 outlet~;
+#X obj 385 776 outlet~;
+#X obj 442 185 *;
+#X obj 482 226 pack f;
+#X obj 340 381 tabread4~ \$0-arrayL;
+#X obj 386 610 *~;
+#X obj 443 418 tabread4~ \$0-arrayR;
+#X floatatom 451 210 5 0 0 0 - - -;
+#X msg 416 148 1;
+#X msg 382 150 0;
+#X obj 385 447 multiplex~;
+#X obj 453 685 comment 0 10 helvetica ? 0 0 0 0 LR balance;
+#X obj 314 775 comment 12 10 helvetica ? 0 0 0 0 L;
+#X obj 436 780 comment 29 10 helvetica ? 0 0 0 0 R;
+#X floatatom 408 720 5 0 0 0 - - -;
+#X floatatom 471 505 5 0 0 0 - - -;
+#X obj 449 590 *;
+#X floatatom 452 607 5 0 0 0 - - -;
+#X floatatom 517 551 5 0 0 0 - - -;
+#X obj 466 557 t b f;
+#X obj 459 21 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 775 320 s \$0-currentpos;
+#X obj 773 301 comment 0 10 helvetica ? 0 0 0 0 this is the current
+index into the array the range of currentpos is 0-1.;
+#X obj 366 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X obj 490 444 comment 57 10 helvetica ? 0 0 0 0 MONO hack;
+#X obj 534 482 comment 31 10 helvetica ? 0 0 0 0 Main Vol;
+#X obj 459 -5 r \$0-Start;
+#X obj 258 389 r \$0-Mono;
+#X obj 258 409 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 276 410 5 0 0 0 - - -;
+#X obj 449 480 r \$0-VolKnob;
+#X floatatom 510 666 5 0 0 0 - - -;
+#X obj 409 629 r \$0-RL-Bal-KnobOut;
+#X obj 573 140 r \$0-setpos-PLAY;
+#X obj 465 531 r \$0VolTrim;
+#X obj 548 -25 r \$0-Speed;
+#X obj 458 297 r \$0sampleSize;
+#X obj 465 140 r \$0rate;
+#X obj 706 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 475 164 7 0 0 0 - - -;
+#X obj 773 340 r \$0StopHere;
+#X floatatom 773 362 7 0 0 0 - - -;
+#X obj 1003 388 <;
+#X floatatom 1003 415 5 0 0 0 - - -;
+#X obj 706 402 >;
+#X obj 706 542 spigot;
+#X obj 706 588 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X obj 706 506 t b f;
+#X obj 814 692 spigot;
+#X obj 706 452 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 729 589 5 0 0 0 - - -;
+#X obj 706 426 change;
+#X obj 706 617 s \$0-SampleEnd;
+#X obj 233 24 r \$0-SampleEnd;
+#X obj 814 720 print STOP:;
+#X obj 814 616 float;
+#X obj 841 569 r \$0StopHere;
+#X obj 773 386 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 706 478 spigot;
+#X obj 739 453 tgl 15 0 empty \$0ArmSampleStop empty 17 7 0 10 -4032
+-1 -1 0 1;
+#X msg 760 452 \$0ArmSampleStop;
+#X msg 773 408 1;
+#X msg 921 445 in case speed is negative? or swap START and END?;
+#X msg 33 291 this scales range of phasor from [0-1] to [0-n] where
+n is the number of samples. This index is signal rate bacuse the table
+is audio;
+#X obj 1004 329 r \$0-currentpos;
+#X obj 1059 346 r \$0StopHere;
+#X floatatom 1059 368 7 0 0 0 - - -;
+#X obj 1059 392 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1059 414 1;
+#X obj 765 481 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 688 142 r \$0-setposfine-PLAY;
+#X obj 523 193 +;
+#X obj 459 73 f;
+#X obj 513 16 t b f;
+#X floatatom 669 468 5 0 0 0 - - -;
+#X obj 625 498 -;
+#X msg 625 472 1;
+#X floatatom 625 522 5 0 0 0 - - -;
+#X obj 625 450 t b f;
+#X obj 485 44 spigot;
+#X obj 549 79 tgl 15 0 empty empty empty 17 7 0 10 -257985 -1 -1 1
+1;
+#X floatatom 877 590 5 0 0 0 - - -;
+#X obj 352 51 r \$0-StopButton;
+#X obj 329 26 r \$0-GrabStop;
+#X floatatom 551 102 5 0 0 0 - - -;
+#X obj 626 736 s \$0PassSpeedChange;
+#X obj 550 56 r \$0PassSpeedChange;
+#X msg 286 555 0;
+#X obj 533 592 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 286 527 r \$0Mute;
+#X obj 535 573 r \$0UnMute;
+#X obj 664 645 s \$0Mute;
+#X obj 846 643 r \$0print;
+#X obj 847 664 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 637 -48 r \$0-Speed-UFine;
+#X obj 585 -2 +;
+#X obj 637 -25 t b f;
+#X floatatom 696 -23 5 0 0 0 - - -;
+#X floatatom 616 25 5 0 0 0 - - -;
+#X obj 479 121 s \$0-Speed-Sum;
+#X obj 190 646 output~;
+#X obj 195 174 s \$0UnMute;
+#X msg 195 150 1;
+#X obj 301 178 s \$0Mute;
+#X msg 301 146 1;
+#X obj 537 344 snapshot~;
+#X floatatom 537 373 10 0 0 0 - - -;
+#X obj 860 506 nbx 20 30 -1e+037 1e+037 0 0 empty empty array_index
+0 -15 0 30 -262144 -1 -1 1.94667e+007 256;
+#X obj 954 558 / 44100;
+#X obj 982 616 nbx 20 30 -1e+037 1e+037 0 0 empty empty seconds 0 -15
+0 30 -262144 -1 -1 441.422 256;
+#X obj 952 679 / 60;
+#X obj 977 724 nbx 20 30 -1e+037 1e+037 0 0 empty empty minutes 0 -15
+0 30 -262144 -1 -1 7.35703 256;
+#X obj 574 673 loadbang;
+#X msg 576 704 1;
+#X obj 705 9 hsl 128 8 -0.4 0.4 0 0 empty \$0-Speed-UFine ultrafine
+-2 -8 0 10 -257985 -1 -1 6350 1;
+#X obj 430 -42 hsl 128 8 -10 10 0 0 empty \$0-Speed Coarse -2 -8 0
+10 -257985 -1 -1 6760 1;
+#X obj 428 -54 hsl 128 8 -1 1 0 0 empty \$0-Speed fine -2 -8 0 10 -257985
+-1 -1 10450 1;
+#X obj 139 197 s \$0PassSpeedChange;
+#X msg 594 760 Inhibit speed change after sample stops at OUT point
+;
+#X connect 0 0 15 0;
+#X connect 1 0 14 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 18 0;
+#X connect 3 0 20 0;
+#X connect 3 0 119 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 5 0 119 0;
+#X connect 6 0 35 0;
+#X connect 6 0 58 0;
+#X connect 7 0 16 0;
+#X connect 7 0 113 0;
+#X connect 8 0 2 1;
+#X connect 9 0 1 0;
+#X connect 10 0 0 1;
+#X connect 10 0 28 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 12 1 10 1;
+#X connect 13 0 52 0;
+#X connect 16 0 2 0;
+#X connect 16 0 21 0;
+#X connect 17 0 2 1;
+#X connect 18 0 9 0;
+#X connect 18 0 24 1;
+#X connect 19 0 0 0;
+#X connect 19 0 114 1;
+#X connect 20 0 24 0;
+#X connect 22 0 16 0;
+#X connect 23 0 16 0;
+#X connect 24 0 19 0;
+#X connect 30 0 31 0;
+#X connect 31 0 19 1;
+#X connect 31 0 9 1;
+#X connect 33 0 30 0;
+#X connect 33 1 30 1;
+#X connect 34 0 86 0;
+#X connect 34 0 116 0;
+#X connect 37 0 23 0;
+#X connect 37 0 118 0;
+#X connect 40 0 34 0;
+#X connect 41 0 24 0;
+#X connect 41 0 42 0;
+#X connect 41 0 43 0;
+#X connect 44 0 29 0;
+#X connect 44 0 30 0;
+#X connect 46 0 12 0;
+#X connect 46 0 1 1;
+#X connect 46 0 45 0;
+#X connect 47 0 85 0;
+#X connect 48 0 32 0;
+#X connect 48 0 33 0;
+#X connect 49 0 109 0;
+#X connect 50 0 3 1;
+#X connect 51 0 16 1;
+#X connect 51 0 53 0;
+#X connect 52 0 5 0;
+#X connect 54 0 55 0;
+#X connect 55 0 58 1;
+#X connect 55 0 71 0;
+#X connect 56 0 57 0;
+#X connect 58 0 65 0;
+#X connect 59 0 60 0;
+#X connect 59 0 64 0;
+#X connect 59 0 69 0;
+#X connect 60 0 66 0;
+#X connect 60 0 105 0;
+#X connect 61 0 59 0;
+#X connect 61 1 59 1;
+#X connect 62 0 68 0;
+#X connect 63 0 72 0;
+#X connect 63 0 88 0;
+#X connect 65 0 63 0;
+#X connect 65 0 92 0;
+#X connect 67 0 37 0;
+#X connect 69 0 62 0;
+#X connect 70 0 69 1;
+#X connect 70 0 95 0;
+#X connect 71 0 75 0;
+#X connect 72 0 61 0;
+#X connect 73 0 72 1;
+#X connect 73 0 83 0;
+#X connect 78 0 56 0;
+#X connect 79 0 80 0;
+#X connect 80 0 81 0;
+#X connect 80 0 56 1;
+#X connect 81 0 82 0;
+#X connect 84 0 85 1;
+#X connect 85 0 17 0;
+#X connect 86 0 7 0;
+#X connect 87 0 93 0;
+#X connect 87 1 86 1;
+#X connect 89 0 91 0;
+#X connect 90 0 89 0;
+#X connect 91 0 99 0;
+#X connect 92 0 90 0;
+#X connect 92 1 89 1;
+#X connect 93 0 86 0;
+#X connect 94 0 93 1;
+#X connect 94 0 98 0;
+#X connect 96 0 37 0;
+#X connect 97 0 37 0;
+#X connect 100 0 94 0;
+#X connect 101 0 9 1;
+#X connect 101 0 19 1;
+#X connect 102 0 31 0;
+#X connect 103 0 101 0;
+#X connect 104 0 102 0;
+#X connect 106 0 107 0;
+#X connect 107 0 62 1;
+#X connect 108 0 110 0;
+#X connect 108 0 111 0;
+#X connect 109 0 87 0;
+#X connect 109 0 112 0;
+#X connect 110 0 109 0;
+#X connect 110 1 109 1;
+#X connect 116 0 115 0;
+#X connect 116 0 131 0;
+#X connect 118 0 117 0;
+#X connect 119 0 120 0;
+#X connect 119 0 121 0;
+#X connect 121 0 122 0;
+#X connect 122 0 123 0;
+#X connect 122 0 124 0;
+#X connect 124 0 125 0;
+#X connect 126 0 127 0;
+#X connect 127 0 99 0;
+#X restore 470 235 pd SamplerCore;
+#X obj 471 277 outlet~;
+#X obj 637 274 outlet;
+#X obj 638 295 comment 65 10 helvetica ? 0 0 0 0 Position for video
+sync;
+#X obj 454 277 comment 12 10 helvetica ? 0 0 0 0 L;
+#X obj 603 278 comment 29 10 helvetica ? 0 0 0 0 R;
+#X obj 552 275 outlet~;
+#X obj 478 340 inlet;
+#X obj 478 402 comment 0 10 helvetica ? 0 0 0 0 control message logic
+;
+#N canvas 2177 123 386 460 Granulator 0;
+#X obj 200 296 snapshot~;
+#X floatatom 200 318 8 0 0 0 - - -;
+#X obj 202 277 phasor~ 0.0001;
+#X obj 200 343 spigot;
+#X obj 165 164 initbang;
+#X obj 165 219 metro;
+#X obj 200 373 s \$0-setpos;
+#X obj 192 186 r \$0GranInterval;
+#X floatatom 210 207 7 0 0 0 - - -;
+#X obj 165 191 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 202 245 r \$0GranRate;
+#X floatatom 308 262 8 0 0 0 - - -;
+#X obj 273 308 r \$0GranOn;
+#X obj 273 338 tgl 15 0 empty empty empty 17 7 0 10 -261234 -1 -1 0
+1;
+#X obj 124 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 9 0;
+#X connect 5 0 0 0;
+#X connect 5 0 14 0;
+#X connect 7 0 5 1;
+#X connect 7 0 8 0;
+#X connect 9 0 5 0;
+#X connect 10 0 2 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 13 0 3 1;
+#X restore 545 185 pd Granulator;
+#X obj 468 208 comment 0 10 helvetica ? 0 0 0 0 Granulator depends
+on AutoLoop;
+#X obj 730 246 r \$0-SampleEnd;
+#X obj 730 300 outlet;
+#X obj 793 274 comment 115 10 helvetica ? 0 0 0 0 send a bang when
+sample is done or when Stop Button is pressed;
+#X floatatom 637 250 10 0 0 0 - - -;
+#X obj 637 221 r \$0-currentpos;
+#X obj 730 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-257985 -1;
+#N canvas 1971 56 995 785 GUILogic 0;
+#X floatatom 247 183 10 0 0 0 - - -;
+#X obj 185 201 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 251 251 pack f f;
+#X obj 281 113 comment 63 10 helvetica ? 0 0 0 0 from 1-shot;
+#X obj 294 205 r \$0-Speed;
+#X obj 215 73 r \$0-setpos-PLAY;
+#X obj 243 153 +;
+#X obj 240 123 t b f;
+#X obj 241 94 r \$0-setposfine-PLAY;
+#X msg 52 137 0;
+#X obj 52 111 r \$0ZeroSetposFine;
+#X obj 53 161 s \$0-setposfine-In;
+#X obj 91 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -232576 -1
+-1;
+#X obj 79 252 r \$0-GrabStop;
+#X obj 79 387 s \$0StopHere;
+#X obj 79 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -261234 -1
+-1;
+#X obj 94 303 r \$0-currentpos;
+#X obj 79 329 f;
+#X floatatom 182 325 7 0 0 0 - - -;
+#X floatatom 99 360 7 0 0 0 - - -;
+#X msg 48 371 1;
+#X obj 48 417 s \$0ArmSampleStopButtonIn;
+#X obj 525 241 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 492 259 spigot;
+#X obj 483 -14 ctlin;
+#X obj 526 32 ==;
+#X floatatom 526 59 5 0 0 0 - - -;
+#X obj 543 6 f;
+#X floatatom 565 29 5 0 0 0 - - -;
+#X obj 493 86 spigot;
+#X obj 493 116 / 127;
+#X floatatom 534 180 5 0 0 0 - - -;
+#X obj 493 139 * 4;
+#X obj 492 166 - 2;
+#X obj 180 222 s \$0UnMute;
+#X obj 278 277 spigot;
+#X obj 310 228 r \$0print;
+#X obj 311 249 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 277 309 print PLAY: POS;
+#X obj 478 368 s \$0-Speed-Coarse-In;
+#X obj 530 344 s \$0-Speed-Fine-In;
+#X obj 554 320 s \$0-Speed-UFine-In;
+#X obj 493 290 t f f f;
+#X obj 526 219 r \$0Speed-Midi-Set;
+#X obj 542 -26 r \$0Speed-Midi-CtlNum;
+#X obj 235 371 r \$0ZeroSpeedUfine;
+#X msg 234 396 0;
+#X obj 233 422 s \$0-Speed-UFine-In;
+#X obj 536 435 r \$0ZeroSpeed;
+#X msg 536 458 0;
+#X obj 579 501 s \$0-Speed-Fine-In;
+#X msg 726 451 1;
+#X msg 476 445 10;
+#X msg 378 454 -10;
+#X msg 636 455 -1;
+#X obj 726 428 r \$0Speed1;
+#X obj 636 430 r \$0Speed-1;
+#X obj 378 426 r \$0Speed-10;
+#X obj 476 418 r \$0Speed10;
+#X obj 378 479 t f f;
+#X obj 476 470 t f f;
+#X obj 422 518 s \$0-Speed-Coarse-In;
+#X obj 250 392 bng 10 250 50 0 empty empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 221 518 s \$0ZeroSpeedUfine;
+#X msg 223 487 0;
+#X obj 230 473 bng 10 250 50 0 empty empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 703 95 bendin;
+#X floatatom 703 191 5 0 0 0 - - -;
+#X obj 486 216 +;
+#X obj 506 196 t b f;
+#X obj 703 143 - 0.5;
+#X obj 703 122 / 16383;
+#X obj 703 166 * 10;
+#X floatatom 429 254 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 34 0;
+#X connect 2 0 35 0;
+#X connect 4 0 2 1;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 13 0 15 0;
+#X connect 15 0 17 0;
+#X connect 15 0 20 0;
+#X connect 16 0 17 1;
+#X connect 16 0 18 0;
+#X connect 17 0 14 0;
+#X connect 17 0 19 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 1;
+#X connect 23 0 42 0;
+#X connect 24 0 29 0;
+#X connect 24 1 25 0;
+#X connect 25 0 26 0;
+#X connect 26 0 29 1;
+#X connect 27 0 25 1;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 30 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 31 0;
+#X connect 33 0 68 0;
+#X connect 35 0 38 0;
+#X connect 36 0 37 0;
+#X connect 37 0 35 1;
+#X connect 42 0 39 0;
+#X connect 42 1 40 0;
+#X connect 43 0 22 0;
+#X connect 44 0 27 0;
+#X connect 45 0 46 0;
+#X connect 45 0 62 0;
+#X connect 46 0 47 0;
+#X connect 48 0 49 0;
+#X connect 48 0 65 0;
+#X connect 49 0 50 0;
+#X connect 51 0 50 0;
+#X connect 52 0 60 0;
+#X connect 53 0 59 0;
+#X connect 54 0 50 0;
+#X connect 55 0 51 0;
+#X connect 55 0 65 0;
+#X connect 56 0 54 0;
+#X connect 56 0 65 0;
+#X connect 57 0 53 0;
+#X connect 57 0 65 0;
+#X connect 58 0 52 0;
+#X connect 58 0 65 0;
+#X connect 59 0 50 0;
+#X connect 59 0 61 0;
+#X connect 60 0 61 0;
+#X connect 60 1 50 0;
+#X connect 64 0 63 0;
+#X connect 65 0 64 0;
+#X connect 66 0 71 0;
+#X connect 67 0 69 0;
+#X connect 68 0 23 0;
+#X connect 68 0 73 0;
+#X connect 69 0 68 0;
+#X connect 69 1 68 1;
+#X connect 70 0 72 0;
+#X connect 71 0 70 0;
+#X connect 72 0 67 0;
+#X restore 544 159 pd GUILogic;
+#X text 107 22 Basic Looper Design from: PURE DATA:22 Advanced Audio
+with [tabread4~] by Dr. Raphel Hernandez.;
+#X text 108 57 Lots of enhancement by William Huston: WilliamAHuston@gmail.com
+March 2015;
+#X obj 829 247 r \$0-StopButton;
+#X obj 102 103 cnv 15 350 320 empty empty Looper_3.0 5 8 0 14 -261682
+-66577 0;
+#X obj 433 120 bng 15 250 50 0 \$0LoadFile empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 111 247 hsl 140 8 0 1 0 0 empty \$0-currentpos position -2 -8
+0 10 -232576 -1 -1 6765 1;
+#X obj 299 388 hsl 128 8 -10 10 0 0 \$0-Speed \$0-Speed-Coarse-In Coarse
+-2 -8 0 10 -257985 -1 -1 6760 1;
+#X obj 384 277 knob 32 32 0 1 0 0 \$0-VolKnob \$0-VolKnobIn Vol 10
+40 0 10 -4032 -1 -133214 1550 1;
+#X obj 107 328 hsl 40 15 1 200 0 0 \$0-PanRate \$0-PanRateIn Pan_Rate
+-2 -8 0 10 -204800 -1 -1 960 1;
+#X obj 106 353 bng 15 250 50 0 \$0PanZero empty PanZero 17 7 0 10 -4032
+-1 -1;
+#X obj 154 328 tgl 15 0 \$0AutoPanOn empty AutoPan -15 20 0 10 -204800
+-1 -1 0 1;
+#X obj 109 272 vsl 15 40 0 1 0 0 \$0AutoPanRange \$0AutoPanRangeIn
+Range 0 -9 0 7 -204800 -1 -1 1950 1;
+#X obj 131 273 vsl 15 40 0 1 0 0 \$0AutoPanOffset empty Offset 0 -9
+0 7 -204800 -1 -1 0 1;
+#X obj 300 366 hsl 128 8 -1 1 0 0 empty \$0-Speed-Fine-In fine -2 -8
+0 10 -257985 -1 -1 10452 1;
+#X obj 302 346 hsl 128 8 -0.4 0.4 0 0 \$0-Speed-UFine \$0-Speed-UFine-In
+ultrafine -2 -8 0 10 -257985 -1 -1 6350 1;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-arrayR 4e+007 float 2;
+#X coords 0 1 4e+007 -1 150 100 1 0 0;
+#X restore 107 143 graph;
+#X text 401 131 LoadFile;
+#X obj 152 297 hsl 200 8 5 10000 1 0 \$0sampsiz empty SampleSize -2
+-6 0 10 -260097 -1 -1 0 1;
+#X obj 152 307 hsl 200 8 0 1 0 0 \$0-setpos-PLAY \$0-setpos set_position
+-2 12 0 10 -232576 -1 -1 3400 1;
+#N canvas 0 275 926 631 (subpatch) 0;
+#X array \$0-arrayL 4e+007 float 2;
+#X coords 0 1 4e+007 -1 150 100 1 0 0;
+#X restore 272 145 graph;
+#X symbolatom 105 121 53 0 0 0 - #0filename -;
+#X obj 288 270 bng 15 250 50 0 \$0-Grab empty GrabStart -20 -5 0 10
+-204786 -1 -1;
+#X floatatom 385 258 10 0 0 0 - - -;
+#X obj 331 268 bng 20 250 50 0 \$0-StopButton empty STOP -1 -5 0 10
+-258113 -1 -1;
+#X obj 358 269 bng 20 250 50 0 \$0-StartButton empty START -1 -5 0
+10 -4034 -1 -1;
+#X obj 229 356 hsl 50 15 5 500 1 0 \$0GranInterval \$0GranIntervalIn
+G.Interval 0 -8 0 10 -262130 -1 -1 0 1;
+#X obj 231 385 hsl 50 15 0.0001 0.1 1 0 \$0GranRate empty GranRate
+-2 -6 0 10 -232576 -1 -1 0 1;
+#X obj 207 381 tgl 15 0 \$0GranOn \$0GranOnIn GRAN 0 -7 0 10 -261234
+-1 -1 0 1;
+#X obj 400 215 tgl 15 0 \$0-Mono empty MONO -2 -5 0 10 -262144 -1 -1
+0 1;
+#X floatatom 164 382 5 0 0 0 L-R - -;
+#X floatatom 158 263 7 0 0 3 - #0sampsiz -;
+#X obj 276 249 hsl 140 8 0 1 0 0 empty \$0-currentpos position -2 -8
+0 10 -232576 -1 -1 6765 1;
+#X obj 225 268 bng 15 250 50 0 \$0-setpos \$0LoopBeat 1Shot -5 22 0
+10 -258113 -257985 -1;
+#X obj 204 267 tgl 15 0 \$0AutoLoopToggle \$0AutoLoopToggleIn AutoLoop
+-5 -6 0 8 -159808 -262144 -1 0 1;
+#X obj 107 383 hsl 40 15 0 1 0 0 \$0-RL-Bal-KnobOut \$0-RL-Bal-KnobIn
+L-R_balance -2 -8 0 10 -262144 -1 -1 1950 1;
+#X obj 424 290 vsl 8 40 0.1 20 1 0 \$0VolTrim \$0TrimIn Trim 0 -9 0
+10 -262144 -1 -1 1695 1;
+#X floatatom 179 326 8 0 0 0 - - -;
+#X symbolatom 104 405 50 0 0 0 - #0-SampleText -;
+#X obj 267 271 tgl 15 0 \$0ArmSampleStop \$0ArmSampleStopButtonIn StopAfter
+-10 20 0 8 -4032 -1 -1 0 1;
+#X obj 295 316 hsl 60 8 -0.001 0.001 0 0 \$0-setposfine-PLAY \$0-setposfine-In
+setpos_fine -2 12 0 10 -232576 -1 -1 2950 1;
+#X obj 364 312 bng 15 250 50 0 \$0ZeroSetposFine empty Zero -4 -5 0
+10 -232576 -1 -1;
+#X obj 307 272 bng 15 250 50 0 \$0-GrabStop empty GrabStop 1 20 0 10
+-261234 -1 -1;
+#X obj 415 407 tgl 15 0 empty \$0PassSpeedChange PassSpeedChange -40
+-5 0 8 -257985 -1 -1 1 1;
+#X obj 241 327 hradio 10 1 0 2 \$0print empty print 0 -6 0 10 -262144
+-1 -1 0;
+#X floatatom 383 326 5 0 0 3 speed #0-Speed-Sum -;
+#X obj 360 355 bng 10 250 50 0 \$0ZeroSpeedUfine empty zero 15 5 0
+10 -257985 -1 -1;
+#X obj 361 376 bng 10 250 50 0 \$0ZeroSpeed empty zero 15 6 0 10 -257985
+-1 -1;
+#X obj 432 364 bng 10 250 50 0 \$0Speed1 empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 285 364 bng 10 250 50 0 \$0Speed-1 empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 429 387 bng 10 250 50 0 \$0Speed10 empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 286 387 bng 10 250 50 0 \$0Speed-10 empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 632 113 comment 160 20 LOOPER ? 0 0 0 0 LOOPER3.0;
+#N canvas 662 29 900 352 README! 0;
+#X msg 38 51 LOAD: C:/Users/BH/Music/drum_loops/amen_break.wav;
+#X msg 38 76 MIDICTL: Speed: 0;
+#X msg 37 136 PLAY: POS: 0.969146 2;
+#X msg 37 169 STOP: 0.973791;
+#X msg 37 195 TEXT: This is the text to display;
+#X msg 351 152 VOL: 0.5 \, PLAY: POS: 0.969146 1 \, STOP: 0.973791
+\, TEXT: We're responsible for planning and funding;
+#X obj 346 195 comment 0 10 helvetica ? 0 0 0 0 HINT: Turn on printing
+to see the start/stop points of your sample;
+#X obj 114 91 comment 0 10 helvetica ? 0 0 0 0 Use Controller 0 to
+adjust playback speed;
+#X obj 125 152 comment 0 10 helvetica ? 0 0 0 0 Play from POS at 2x
+normal speed;
+#X obj 347 117 comment 0 20 helvetica ? 0 0 0 0 You can send it compound
+messages like this;
+#X obj 34 13 comment 0 20 helvetica ? 0 0 0 0 You can control [looper~]
+presently with the following messages:;
+#X msg 36 111 VOL: 0.6;
+#X restore 658 137 pd README!;
+#X msg 413 438 WARNING: PassSpeedChange is to show an internal state
+when speed changes are blocked (after a sample has played) it has no
+effect.;
+#X obj 614 340 inlet;
+#X obj 614 365 s \$0-setpos;
+#X obj 650 341 comment 0 10 helvetica ? 0 0 0 0 One shot input;
+#N canvas 2134 106 824 663 control 0;
+#X obj 65 89 inlet;
+#X obj 142 96 comment 0 10 helvetica ? 0 0 0 0 control message logic
+;
+#X obj 429 131 print LOOPER: UNKNOWN COMMAND;
+#X obj 310 208 print TEXT;
+#X obj 120 170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 230 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 312 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 400 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 317 228 list2symbol;
+#X obj 320 246 s \$0-SampleText;
+#X obj 356 177 s \$0-VolKnobIn;
+#X obj 47 391 unpack f f;
+#X floatatom 47 416 5 0 0 0 - - -;
+#X floatatom 104 418 5 0 0 0 - - -;
+#X obj 47 441 s \$0-setpos;
+#X obj 219 469 s \$0-Speed-Course-In;
+#X obj 222 448 s \$0-Speed-Fine-In;
+#X obj 217 425 s \$0-Speed-UFine-In;
+#X obj 156 403 t f f f;
+#X obj 65 271 s \$0-LOAD-FILENAME;
+#X obj 241 314 s \$0StopHere;
+#X obj 219 491 s \$0Speed;
+#X obj 120 191 s \$0-LoopReset;
+#X obj 218 219 print MSG STOP;
+#X obj 109 219 print MSG PLAY;
+#X obj 258 288 s \$0ArmSampleStop;
+#X msg 258 268 1;
+#X obj 65 115 route LOAD: PLAY: STOP: TEXT: VOL: MIDICTL:;
+#X obj 549 211 print MIDICTL: Unknown;
+#X floatatom 449 285 5 0 0 0 - - -;
+#X obj 482 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 499 295 1;
+#X msg 531 297 0;
+#X obj 531 270 initbang;
+#X obj 510 328 s \$0Speed-Midi-Set;
+#X obj 449 349 s \$0Speed-Midi-CtlNum;
+#X obj 48 320 r \$0POSMSG;
+#X obj 100 242 s \$0POSMSG;
+#X obj 47 342 route POS: NOW;
+#X obj 131 363 s \$0PlayNow;
+#X obj 190 274 route NOW;
+#X obj 427 425 s \$0-StopButton;
+#X obj 427 398 r \$0StopNow;
+#X obj 163 309 s \$0StopNow;
+#X msg 429 448 Let's do this until we see a reason not to!;
+#X obj 472 173 route SpeedChan:;
+#X msg 622 178 MIDICTL:SpeedChan;
+#X connect 0 0 27 0;
+#X connect 4 0 22 0;
+#X connect 5 0 26 0;
+#X connect 8 0 9 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 1 18 0;
+#X connect 11 1 21 0;
+#X connect 12 0 14 0;
+#X connect 18 0 15 0;
+#X connect 18 1 16 0;
+#X connect 26 0 25 0;
+#X connect 27 0 19 0;
+#X connect 27 1 4 0;
+#X connect 27 1 24 0;
+#X connect 27 1 37 0;
+#X connect 27 2 5 0;
+#X connect 27 2 23 0;
+#X connect 27 2 40 0;
+#X connect 27 3 3 0;
+#X connect 27 3 6 0;
+#X connect 27 3 8 0;
+#X connect 27 4 10 0;
+#X connect 27 5 45 0;
+#X connect 27 6 7 0;
+#X connect 27 6 2 0;
+#X connect 29 0 35 0;
+#X connect 30 0 31 0;
+#X connect 31 0 34 0;
+#X connect 32 0 34 0;
+#X connect 33 0 32 0;
+#X connect 36 0 38 0;
+#X connect 38 0 11 0;
+#X connect 38 1 39 0;
+#X connect 40 0 43 0;
+#X connect 40 1 20 0;
+#X connect 42 0 41 0;
+#X connect 45 0 29 0;
+#X connect 45 0 30 0;
+#X connect 45 1 28 0;
+#X restore 477 386 pd control message routing;
+#X connect 4 0 5 0;
+#X connect 4 1 10 0;
+#X connect 11 0 79 0;
+#X connect 15 0 20 0;
+#X connect 18 0 6 0;
+#X connect 19 0 18 0;
+#X connect 20 0 16 0;
+#X connect 24 0 20 0;
+#X connect 27 0 44 0;
+#X connect 35 0 28 0;
+#X connect 40 0 58 0;
+#X connect 56 0 51 0;
+#X connect 76 0 77 0;
+#X coords 0 -1 1 1 355 325 1 100 100;

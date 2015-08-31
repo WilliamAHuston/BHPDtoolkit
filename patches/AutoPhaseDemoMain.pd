@@ -1,0 +1,135 @@
+#N canvas 394 78 1280 984 10;
+#X obj 208 1422 output~;
+#X msg 55 97 This patch is part of my BH PD Toolkit http://tinyurl.com/BHPDToolkit
+WilliamAHuston@gmail.com;
+#X obj 183 1290 BillVerb~;
+#X obj 168 246 multi-osc~;
+#X obj 205 1522 MetroGlobal;
+#X obj 147 1125 AutoPan3~;
+#X obj 168 963 AutoPhase3;
+#X obj 164 544 RingMod~;
+#X obj 375 1057 print foo;
+#X obj 374 1024 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 378 214 hsl 128 15 0.001 1 1 0 empty empty noise -2 -8 0 10
+-262144 -1 -1 5300 1;
+#X obj 348 175 hsl 128 15 0 1 0 0 empty empty PW -2 -8 0 10 -262144
+-1 -1 9200 1;
+#X obj 343 195 sig~;
+#X obj 172 800 ADSR2;
+#X obj 454 771 bng 15 250 50 0 empty empty Note_ON 17 7 0 10 -4034
+-1 -1;
+#X obj 451 808 bng 15 250 50 0 empty empty Note_OFF 17 7 0 10 -258113
+-1 -1;
+#X obj 469 791 delay 400;
+#X obj 552 765 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 500 1;
+#X floatatom 565 788 5 0 0 0 - - -;
+#X obj 924 402 Kbd;
+#X obj 614 400 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 712 405 metro 250;
+#X obj 711 386 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 771 383 hsl 128 15 5 1000 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2200 1;
+#X floatatom 794 405 5 0 0 0 - - -;
+#X obj 679 447 f;
+#X obj 762 450 + 1;
+#X floatatom 694 476 5 0 0 0 - - -;
+#X obj 939 517 hsl 128 15 0 127 0 0 empty empty New_Note_Value -2 -8
+0 10 -262144 -1 -1 9200 1;
+#X obj 824 561 BillValSeq2;
+#X floatatom 969 671 5 0 0 0 - - -;
+#X obj 819 662 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 970 692 mtof;
+#X obj 1117 662 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 821 149 keybender;
+#X floatatom 848 265 5 0 0 0 - - -;
+#X floatatom 1085 256 5 0 0 0 - - -;
+#X obj 168 210 *;
+#X obj 550 -54 notein;
+#X floatatom 527 -2 5 0 0 0 - - -;
+#X floatatom 569 -1 5 0 0 0 - - -;
+#X floatatom 616 -13 5 0 0 0 - - -;
+#X obj 507 25 == 57;
+#X obj 618 20 == 17;
+#X obj 618 75 &&;
+#X floatatom 511 49 5 0 0 0 - - -;
+#X floatatom 626 44 5 0 0 0 - - -;
+#X obj 586 106 spigot;
+#X obj 570 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 600 127 > 120;
+#X obj 606 151 sel 1;
+#X obj 611 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 615 202 0;
+#X obj 505 -34 stripnote;
+#X obj 519 337 delay 100;
+#X obj 576 293 hsl 128 15 1 1000 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X connect 2 0 0 0;
+#X connect 2 1 0 1;
+#X connect 3 0 7 0;
+#X connect 5 0 2 0;
+#X connect 5 1 2 1;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 6 2 5 2;
+#X connect 7 0 13 0;
+#X connect 9 0 8 0;
+#X connect 10 0 3 5;
+#X connect 11 0 12 0;
+#X connect 12 0 3 2;
+#X connect 13 0 6 0;
+#X connect 14 0 13 6;
+#X connect 14 0 16 0;
+#X connect 15 0 13 7;
+#X connect 16 0 15 0;
+#X connect 17 0 16 1;
+#X connect 17 0 18 0;
+#X connect 19 0 28 0;
+#X connect 20 0 25 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 1;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 1;
+#X connect 27 0 29 0;
+#X connect 28 0 29 1;
+#X connect 29 0 31 0;
+#X connect 29 1 30 0;
+#X connect 29 2 33 0;
+#X connect 30 0 32 0;
+#X connect 31 0 14 0;
+#X connect 32 0 37 0;
+#X connect 34 0 35 0;
+#X connect 34 0 37 1;
+#X connect 34 1 36 0;
+#X connect 37 0 3 0;
+#X connect 38 0 53 0;
+#X connect 38 1 53 1;
+#X connect 38 2 41 0;
+#X connect 39 0 42 0;
+#X connect 40 0 47 0;
+#X connect 41 0 43 0;
+#X connect 42 0 45 0;
+#X connect 43 0 46 0;
+#X connect 44 0 47 1;
+#X connect 45 0 44 0;
+#X connect 46 0 44 1;
+#X connect 47 0 48 0;
+#X connect 47 0 49 0;
+#X connect 48 0 54 0;
+#X connect 49 0 50 0;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 52 0 25 1;
+#X connect 53 0 39 0;
+#X connect 53 1 40 0;
+#X connect 54 0 20 0;
+#X connect 55 0 54 1;

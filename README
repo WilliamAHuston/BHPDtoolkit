@@ -1,0 +1,64 @@
+This is the README file for Bill Huston's PD Toolkit.
+
+I use these abstractions (modules) and patches to make music and soundscapes for my video work. 
+I hope you find them useful.
+
+I am publishing this now to Github, which should make keeping things up-to-date easier. 
+
+DISCLAIMER
+==========
+
+Everything here is provided without warranty! USE AT YOUR OWN RISK!
+I have tried to produce high-quality code with good practices
+(e.g., removes DC components). But YOU ASSUME ALL RISK of using
+this, including damage to hearing, speakers, etc. 
+
+WARNING: Some modules (like Echo-Reverb) which use regenerative feedback.
+I have tried to build in some overload protections, but caution should
+be used. 
+
+DESCRIPTION
+============
+
+There is a little bit of everthing here:
+
+* Oscillators
+* Filters
+* Sequencers
+* Effects 
+* not enough documentation!!
+
+Installation
+============
+
+1: Download the tarball or the zip file of the archive (or git clone).
+2: Unpack this on your computer. 
+3: Add this directory to you PD search path.
+4: Look in the "patches" folder. 
+
+Milestones:
+===========
+
+* I first started as a PD programmer in ~May 2014.
+* Published my first patch to the FB group July 27, 2014. It's really Ugly!!
+* Published first version of my BH PD Toolkit December 14, 2014
+  Get it here: http://TinyURL.com/BHPDToolkit
+
+Contact:
+========
+
+* EMAIL (preferred): WilliamAHuston@gmail.com
+* Phone: 607-321-7846 (voicemail only)
+* Address: BH, c/o O2E-TV, PO Box 2873, Binghamton, NY 13902
+* PAYPAL DONATIONS: WilliamAHuston@gmail.com
+
+
+Credits:
+========
+
+* Miller Puckette - author of PD
+* Rafael Hernandez - great tutorial videos
+* Martin Brinkmann - wonderful patches to study
+* Email list and Facebook Group - very supportive PD community!!
+
+

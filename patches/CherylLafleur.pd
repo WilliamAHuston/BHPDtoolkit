@@ -1,0 +1,994 @@
+#N canvas 0 0 1920 1040 10;
+#X msg 14 20 LOAD: C:/Users/BH/Music/drum_loops/amen_break.wav;
+#X msg 54 69 LOAD: C:/Users/BH/Music/CherylLafleurFERC1-27-14.wav;
+#X obj 98 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 462 500 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 106 130 r \$0ControlMessageIn;
+#X obj -826 684 flanger~;
+#X obj 165 889 output~;
+#X obj -572 292 hsl 128 15 0 1 0 0 \$0-NoiseLFO \$0LFO-KNOBIN Master_NOISE_AMT
+3 -8 0 10 -1 -257985 -258113 0 1;
+#X obj -352 868 +;
+#X obj -338 803 hsl 128 15 -20 20 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 1000 1;
+#X msg -349 778 0;
+#X floatatom -120 831 5 0 0 0 - - -;
+#X msg -187 781 7;
+#X msg -136 780 11.8;
+#X msg -227 779 4.875;
+#X msg -264 738 -7.25;
+#X msg -350 737 -11.9;
+#X msg -221 737 -5;
+#X obj -289 829 t b f;
+#X msg -295 779 2.04;
+#X msg -258 778 3.6;
+#X msg -307 738 -10.6;
+#X msg -196 738 -3.42;
+#X msg -164 780 9;
+#X msg -332 778 1.888;
+#X obj -229 849 int;
+#X floatatom -250 913 5 0 0 0 - - -;
+#X obj -232 894 comment 0 10 helvetica ? 0 0 0 0 filter FREQ bend;
+#X obj -250 876 mux 1 2;
+#X obj -188 857 vradio 15 1 0 2 empty empty Float_or_Int 0 -8 0 10
+-262144 -1 -1 0;
+#X obj -179 856 comment 0 10 helvetica ? 0 0 0 0 INT;
+#X floatatom -581 315 5 0 0 0 - - -;
+#N canvas 378 37 1248 842 SampleSelect 0;
+#N canvas 240 11 1500 999 messages 0;
+#X msg 1080 763 PLAY: POS: 0.469141 0.984252 \, STOP: 0.471562 \, TEXT:
+A cacaphony of different voices;
+#X msg 1087 705 VOL: 1 \, PLAY: POS: 0.909848 1 \, STOP: 0.91473 \,
+TEXT: speculating about unquantifiable impacts;
+#X msg 569 359 PLAY: POS: 0.652929 1 \, STOP: 0.654729 \, TEXT: And
+that's where FERC comes in;
+#X msg 565 266 PLAY: POS: 0.424771 1 \, STOP: 0.4253 \, TEXT: My Homie
+;
+#X msg 567 214 PLAY: POS: 0.337639 1 \, STOP: 0.338674 \, TEXT: Naural
+Gas;
+#X msg 573 513 PLAY: POS: 0.790466 1 \, STOP: 0.79179 \, TEXT: Environmental
+Activists;
+#X msg 1081 676 PLAY: POS: 0.783464 1 \, STOP: 0.786964 \, TEXT: Pipelines
+are facing unprecidented opposition;
+#X msg 551 798 PLAY: POS: 0.796432 1 \, STOP: 0.797403 \, TEXT: As
+they should be;
+#X msg 1122 334 PLAY: POS: 0.799146 1 \, STOP: 0.800809 \, TEXT: In
+my email inbox;
+#X msg 551 734 PLAY: POS: 0.802462 1 \, STOP: 0.80381 \, TEXT: In my
+twitter feed;
+#X msg 572 393 PLAY: POS: 0.804169 1 \, STOP: 0.805713 \, TEXT: At
+our open meetings;
+#X msg 1116 409 PLAY: POS: 0.80593 1 \, STOP: 0.807267 \, TEXT: Demanding
+to be heard;
+#X msg 564 150 PLAY: POS: 0.807286 1 \, STOP: 0.812981 \, TEXT: And
+literally at our door closing down 1st St;
+#X msg 1087 158 PLAY: POS: 0.820352 1 \, STOP: 0.82233 \, TEXT: And
+try as hard as we can;
+#X msg 1118 445 PLAY: POS: 0.833317 1 \, STOP: 0.835344 \, TEXT: Cause
+we're a creature of Congress;
+#X msg 1092 125 PLAY: POS: 0.840503 1 \, STOP: 0.842933 \, TEXT: Ensuring
+they can be built safely;
+#X msg 1089 82 PLAY: POS: 0.969146 1 \, STOP: 0.973791 \, TEXT: We're
+responsible for planning and funding of interstate transmission;
+#X msg 569 475 PLAY: POS: 0.508744 1 \, STOP: 0.51028 \, TEXT: Whether
+they're in our jurisdiction;
+#X msg 1120 371 PLAY: POS: 0.512714 1 \, STOP: 0.514075 \, TEXT: They're
+at our doorstep;
+#X msg 1080 742 PLAY: POS: 0.97891 1 \, STOP: 0.979517 \, TEXT: Duh
+;
+#X msg 587 624 PLAY: POS: 0.141558 1 \, STOP: 0.143326 \, TEXT: We
+are responsible;
+#X msg 568 320 PLAY: POS: 0.537236 1 \, STOP: 0.541614 \, TEXT: I hope
+they won't be too geeky so you'll invite FERC people back;
+#X obj 500 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 500 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 500 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 500 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 500 6 5 0 0 0 - - -;
+#X obj 500 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 491 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 491 247 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 491 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 491 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 492 292 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 269 220 + 0.5;
+#X obj 269 248 int;
+#X obj 1081 333 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1081 347 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1081 361 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1081 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1081 392 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 514 484 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 515 500 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 515 517 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 515 533 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 517 547 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1041 638 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1041 653 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1041 668 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1041 684 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1041 699 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 502 729 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 502 743 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 502 758 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 954 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X symbolatom 105 133 40 0 0 0 - #0Display -;
+#X obj 126 237 list2symbol;
+#X obj 108 110 hsl 128 15 0 32 0 0 \$0Slider empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 251 113 bng 15 250 50 0 \$0Play empty Play 17 7 0 10 -4034 -1
+-1;
+#X obj 126 265 s \$0Display;
+#X obj 269 197 r \$0Slider;
+#X obj 468 -67 r \$0Play;
+#X obj 239 410 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 465 spigot;
+#X obj 189 438 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 209 410 0;
+#X obj 126 210 route TEXT:;
+#X obj 525 -18 s \$0OpenSpigot;
+#X msg 136 405 1;
+#X obj 107 373 r \$0OpenSpigot;
+#X obj 467 -44 t b b b;
+#X obj 368 -2 s \$0CloseSpigot;
+#X obj 259 369 r \$0Slider;
+#X obj 221 338 r \$0CloseSpigot;
+#X obj 963 669 s \$0FOO;
+#X obj 126 182 r \$0FOO;
+#X obj 108 408 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 136 438 r \$0FOO;
+#X obj 156 493 s \$0ControlMessageIn;
+#X msg 560 116 PLAY: POS: 0.588392 1 \, STOP: 0.592704 \, TEXT: are
+looking for us to publically validate their views;
+#X obj 299 114 nbx 5 14 -1e+037 1e+037 0 0 empty \$0SliderInt empty
+0 -8 0 10 -262144 -1 -1 0 256;
+#X msg 560 81 PLAY: POS: 0.549749 1 \, STOP: 0.554114 \, TEXT: From
+groups across all segments/regions;
+#X msg 1117 474 PLAY: POS: 0.497286 1 \, STOP: 0.498707 \, TEXT: Little
+Old FERC;
+#X obj 269 272 s \$0SliderInt;
+#X obj 104 66 inlet;
+#X obj 251 71 inlet;
+#X msg 564 182 PLAY: POS: 0.164925 1 \, STOP: 0.167635 \, TEXT: as
+well as LNG facilities;
+#X msg 1086 185 PLAY: POS: 0.596132 1 \, STOP: 0.598036 \, TEXT: I
+don't think that's FERC's role.;
+#X msg 1085 221 PLAY: POS: 0.59397 1 \, STOP: 0.59593 \, TEXT: I've
+taken a pretty firm line;
+#X msg 578 586 PLAY: POS: 0.598995 1 \, STOP: 0.601566 \, TEXT: FERC
+is not an environmental regulator;
+#X msg 575 547 PLAY: POS: 0.157837 1 \, STOP: 0.162009 \, TEXT: Interstate
+Transmission and NG pipelines;
+#X msg 551 767 PLAY: POS: 0.495327 0.982677 \, STOP: 0.4967 \, TEXT:
+And for better or for worse;
+#X obj 499 27 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+19 20 21 22 23 24 25 26 27 28 29 30 31 32;
+#X msg 567 287 PLAY: POS: 0.543266 1 \, STOP: 0.549473 \, TEXT: Over
+the past months at FERC steady stream of visitors at our door;
+#X obj 104 480 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1076 648 VOL: 1 \, PLAY: POS: 0.813619 1 \, STOP: 0.814952 \,
+TEXT: We have a situation here...;
+#X msg 1078 763 PLAY: POS: 0.469141 0.984252 \, STOP: 0.471562 \, TEXT:
+A cacaphony of different voices;
+#X msg 1085 705 VOL: 1 \, PLAY: POS: 0.909848 1 \, STOP: 0.91473 \,
+TEXT: speculating about unquantifiable impacts;
+#X msg 567 359 PLAY: POS: 0.652929 1 \, STOP: 0.654729 \, TEXT: And
+that's where FERC comes in;
+#X msg 563 266 PLAY: POS: 0.424771 1 \, STOP: 0.4253 \, TEXT: My Homie
+;
+#X msg 565 214 PLAY: POS: 0.337639 1 \, STOP: 0.338674 \, TEXT: Naural
+Gas;
+#X msg 571 513 PLAY: POS: 0.790466 1 \, STOP: 0.79179 \, TEXT: Environmental
+Activists;
+#X msg 1079 676 PLAY: POS: 0.783464 1 \, STOP: 0.786964 \, TEXT: Pipelines
+are facing unprecidented opposition;
+#X msg 549 798 PLAY: POS: 0.796432 1 \, STOP: 0.797403 \, TEXT: As
+they should be;
+#X msg 1120 334 PLAY: POS: 0.799146 1 \, STOP: 0.800809 \, TEXT: In
+my email inbox;
+#X msg 549 734 PLAY: POS: 0.802462 1 \, STOP: 0.80381 \, TEXT: In my
+twitter feed;
+#X msg 570 393 PLAY: POS: 0.804169 1 \, STOP: 0.805713 \, TEXT: At
+our open meetings;
+#X msg 1114 409 PLAY: POS: 0.80593 1 \, STOP: 0.807267 \, TEXT: Demanding
+to be heard;
+#X msg 562 150 PLAY: POS: 0.807286 1 \, STOP: 0.812981 \, TEXT: And
+literally at our door closing down 1st St;
+#X msg 1085 158 PLAY: POS: 0.820352 1 \, STOP: 0.82233 \, TEXT: And
+try as hard as we can;
+#X msg 1116 445 PLAY: POS: 0.833317 1 \, STOP: 0.835344 \, TEXT: Cause
+we're a creature of Congress;
+#X msg 1090 125 PLAY: POS: 0.840503 1 \, STOP: 0.842933 \, TEXT: Ensuring
+they can be built safely;
+#X msg 1087 82 PLAY: POS: 0.969146 1 \, STOP: 0.973791 \, TEXT: We're
+responsible for planning and funding of interstate transmission;
+#X msg 567 475 PLAY: POS: 0.508744 1 \, STOP: 0.51028 \, TEXT: Whether
+they're in our jurisdiction;
+#X msg 1118 371 PLAY: POS: 0.512714 1 \, STOP: 0.514075 \, TEXT: They're
+at our doorstep;
+#X msg 1078 742 PLAY: POS: 0.97891 1 \, STOP: 0.979517 \, TEXT: Duh
+;
+#X msg 585 624 PLAY: POS: 0.141558 1 \, STOP: 0.143326 \, TEXT: We
+are responsible;
+#X msg 566 320 PLAY: POS: 0.537236 1 \, STOP: 0.541614 \, TEXT: I hope
+they won't be too geeky so you'll invite FERC people back;
+#X obj 498 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 498 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 498 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 498 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 498 6 5 0 0 0 - - -;
+#X obj 498 130 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1051 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1051 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1051 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1051 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1051 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 489 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 489 247 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 489 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 489 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 490 292 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 267 220 + 0.5;
+#X obj 267 248 int;
+#X obj 1079 333 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1079 347 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1079 361 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1079 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1079 392 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 512 484 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 513 500 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 513 517 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 513 533 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 515 547 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1039 638 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1039 653 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1039 668 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1039 684 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1039 699 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 500 729 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 500 743 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 500 758 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 952 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X symbolatom 103 133 40 0 0 0 - #0Display -;
+#X obj 124 237 list2symbol;
+#X obj 106 110 hsl 128 15 0 32 0 0 \$0Slider empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 249 113 bng 15 250 50 0 \$0Play empty Play 17 7 0 10 -4034 -1
+-1;
+#X obj 124 265 s \$0Display;
+#X obj 267 197 r \$0Slider;
+#X obj 466 -67 r \$0Play;
+#X obj 237 410 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 154 465 spigot;
+#X obj 187 438 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 207 410 0;
+#X obj 124 210 route TEXT:;
+#X obj 523 -18 s \$0OpenSpigot;
+#X msg 134 405 1;
+#X obj 105 373 r \$0OpenSpigot;
+#X obj 465 -44 t b b b;
+#X obj 366 -2 s \$0CloseSpigot;
+#X obj 257 369 r \$0Slider;
+#X obj 219 338 r \$0CloseSpigot;
+#X obj 961 669 s \$0FOO;
+#X obj 124 182 r \$0FOO;
+#X obj 106 408 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 134 438 r \$0FOO;
+#X obj 154 493 s \$0ControlMessageIn;
+#X msg 558 116 PLAY: POS: 0.588392 1 \, STOP: 0.592704 \, TEXT: are
+looking for us to publically validate their views;
+#X obj 297 114 nbx 5 14 -1e+037 1e+037 0 0 empty \$0SliderInt empty
+0 -8 0 10 -262144 -1 -1 0 256;
+#X msg 558 81 PLAY: POS: 0.549749 1 \, STOP: 0.554114 \, TEXT: From
+groups across all segments/regions;
+#X msg 1115 474 PLAY: POS: 0.497286 1 \, STOP: 0.498707 \, TEXT: Little
+Old FERC;
+#X obj 267 272 s \$0SliderInt;
+#X obj 102 66 inlet;
+#X obj 249 71 inlet;
+#X msg 562 182 PLAY: POS: 0.164925 1 \, STOP: 0.167635 \, TEXT: as
+well as LNG facilities;
+#X msg 1084 185 PLAY: POS: 0.596132 1 \, STOP: 0.598036 \, TEXT: I
+don't think that's FERC's role.;
+#X msg 1083 221 PLAY: POS: 0.59397 1 \, STOP: 0.59593 \, TEXT: I've
+taken a pretty firm line;
+#X msg 576 586 PLAY: POS: 0.598995 1 \, STOP: 0.601566 \, TEXT: FERC
+is not an environmental regulator;
+#X msg 573 547 PLAY: POS: 0.157837 1 \, STOP: 0.162009 \, TEXT: Interstate
+Transmission and NG pipelines;
+#X msg 549 767 PLAY: POS: 0.495327 0.982677 \, STOP: 0.4967 \, TEXT:
+And for better or for worse;
+#X obj 497 27 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+19 20 21 22 23 24 25 26 27 28 29 30 31 32;
+#X msg 565 287 PLAY: POS: 0.543266 1 \, STOP: 0.549473 \, TEXT: Over
+the past months at FERC steady stream of visitors at our door;
+#X obj 102 480 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 78 0;
+#X connect 1 0 78 0;
+#X connect 2 0 78 0;
+#X connect 3 0 78 0;
+#X connect 4 0 78 0;
+#X connect 5 0 78 0;
+#X connect 6 0 78 0;
+#X connect 7 0 78 0;
+#X connect 8 0 78 0;
+#X connect 9 0 78 0;
+#X connect 10 0 78 0;
+#X connect 11 0 78 0;
+#X connect 12 0 78 0;
+#X connect 13 0 78 0;
+#X connect 14 0 78 0;
+#X connect 15 0 78 0;
+#X connect 16 0 78 0;
+#X connect 17 0 78 0;
+#X connect 18 0 78 0;
+#X connect 19 0 78 0;
+#X connect 20 0 78 0;
+#X connect 21 0 78 0;
+#X connect 22 0 85 0;
+#X connect 23 0 83 0;
+#X connect 24 0 12 0;
+#X connect 25 0 90 0;
+#X connect 26 0 96 0;
+#X connect 27 0 4 0;
+#X connect 28 0 16 0;
+#X connect 29 0 15 0;
+#X connect 30 0 13 0;
+#X connect 31 0 91 0;
+#X connect 32 0 92 0;
+#X connect 33 0 3 0;
+#X connect 34 0 97 0;
+#X connect 35 0 21 0;
+#X connect 36 0 2 0;
+#X connect 37 0 10 0;
+#X connect 38 0 39 0;
+#X connect 39 0 26 0;
+#X connect 39 0 87 0;
+#X connect 40 0 8 0;
+#X connect 41 0 18 0;
+#X connect 42 0 11 0;
+#X connect 43 0 14 0;
+#X connect 44 0 86 0;
+#X connect 45 0 17 0;
+#X connect 46 0 5 0;
+#X connect 47 0 94 0;
+#X connect 48 0 93 0;
+#X connect 49 0 20 0;
+#X connect 51 0 6 0;
+#X connect 52 0 1 0;
+#X connect 53 0 19 0;
+#X connect 54 0 0 0;
+#X connect 55 0 9 0;
+#X connect 56 0 95 0;
+#X connect 57 0 7 0;
+#X connect 60 0 63 0;
+#X connect 64 0 38 0;
+#X connect 65 0 74 0;
+#X connect 66 0 69 0;
+#X connect 67 0 82 0;
+#X connect 68 0 67 1;
+#X connect 69 0 68 0;
+#X connect 70 0 60 0;
+#X connect 72 0 68 0;
+#X connect 73 0 72 0;
+#X connect 73 0 80 0;
+#X connect 74 0 75 0;
+#X connect 74 1 26 0;
+#X connect 74 2 71 0;
+#X connect 77 0 66 0;
+#X connect 79 0 70 0;
+#X connect 81 0 67 0;
+#X connect 81 0 98 0;
+#X connect 83 0 78 0;
+#X connect 85 0 78 0;
+#X connect 86 0 78 0;
+#X connect 88 0 61 0;
+#X connect 89 0 62 0;
+#X connect 90 0 78 0;
+#X connect 91 0 78 0;
+#X connect 92 0 78 0;
+#X connect 93 0 78 0;
+#X connect 94 0 78 0;
+#X connect 95 0 78 0;
+#X connect 96 0 22 0;
+#X connect 96 1 23 0;
+#X connect 96 2 24 0;
+#X connect 96 3 25 0;
+#X connect 96 4 27 0;
+#X connect 96 5 28 0;
+#X connect 96 6 29 0;
+#X connect 96 7 30 0;
+#X connect 96 8 31 0;
+#X connect 96 9 32 0;
+#X connect 96 10 33 0;
+#X connect 96 11 34 0;
+#X connect 96 12 35 0;
+#X connect 96 13 36 0;
+#X connect 96 14 37 0;
+#X connect 96 15 40 0;
+#X connect 96 16 41 0;
+#X connect 96 17 42 0;
+#X connect 96 18 43 0;
+#X connect 96 19 44 0;
+#X connect 96 20 45 0;
+#X connect 96 21 46 0;
+#X connect 96 22 47 0;
+#X connect 96 23 48 0;
+#X connect 96 24 49 0;
+#X connect 96 25 50 0;
+#X connect 96 26 51 0;
+#X connect 96 27 52 0;
+#X connect 96 28 53 0;
+#X connect 96 29 54 0;
+#X connect 96 30 55 0;
+#X connect 96 31 56 0;
+#X connect 96 32 57 0;
+#X connect 96 33 58 0;
+#X connect 97 0 78 0;
+#X connect 99 0 178 0;
+#X connect 100 0 178 0;
+#X connect 101 0 178 0;
+#X connect 102 0 178 0;
+#X connect 103 0 178 0;
+#X connect 104 0 178 0;
+#X connect 105 0 178 0;
+#X connect 106 0 178 0;
+#X connect 107 0 178 0;
+#X connect 108 0 178 0;
+#X connect 109 0 178 0;
+#X connect 110 0 178 0;
+#X connect 111 0 178 0;
+#X connect 112 0 178 0;
+#X connect 113 0 178 0;
+#X connect 114 0 178 0;
+#X connect 115 0 178 0;
+#X connect 116 0 178 0;
+#X connect 117 0 178 0;
+#X connect 118 0 178 0;
+#X connect 119 0 178 0;
+#X connect 120 0 178 0;
+#X connect 121 0 178 0;
+#X connect 122 0 185 0;
+#X connect 123 0 183 0;
+#X connect 124 0 112 0;
+#X connect 125 0 190 0;
+#X connect 126 0 196 0;
+#X connect 127 0 104 0;
+#X connect 128 0 116 0;
+#X connect 129 0 115 0;
+#X connect 130 0 113 0;
+#X connect 131 0 191 0;
+#X connect 132 0 192 0;
+#X connect 133 0 103 0;
+#X connect 134 0 197 0;
+#X connect 135 0 121 0;
+#X connect 136 0 102 0;
+#X connect 137 0 110 0;
+#X connect 138 0 139 0;
+#X connect 139 0 126 0;
+#X connect 139 0 187 0;
+#X connect 140 0 108 0;
+#X connect 141 0 118 0;
+#X connect 142 0 111 0;
+#X connect 143 0 114 0;
+#X connect 144 0 186 0;
+#X connect 145 0 117 0;
+#X connect 146 0 105 0;
+#X connect 147 0 194 0;
+#X connect 148 0 193 0;
+#X connect 149 0 120 0;
+#X connect 150 0 99 0;
+#X connect 151 0 106 0;
+#X connect 152 0 101 0;
+#X connect 153 0 119 0;
+#X connect 154 0 100 0;
+#X connect 155 0 109 0;
+#X connect 156 0 195 0;
+#X connect 157 0 107 0;
+#X connect 160 0 163 0;
+#X connect 164 0 138 0;
+#X connect 165 0 174 0;
+#X connect 166 0 169 0;
+#X connect 167 0 182 0;
+#X connect 168 0 167 1;
+#X connect 169 0 168 0;
+#X connect 170 0 160 0;
+#X connect 172 0 168 0;
+#X connect 173 0 172 0;
+#X connect 173 0 180 0;
+#X connect 174 0 175 0;
+#X connect 174 1 126 0;
+#X connect 174 2 171 0;
+#X connect 177 0 166 0;
+#X connect 179 0 170 0;
+#X connect 181 0 167 0;
+#X connect 181 0 198 0;
+#X connect 183 0 178 0;
+#X connect 185 0 178 0;
+#X connect 186 0 178 0;
+#X connect 188 0 161 0;
+#X connect 189 0 162 0;
+#X connect 190 0 178 0;
+#X connect 191 0 178 0;
+#X connect 192 0 178 0;
+#X connect 193 0 178 0;
+#X connect 194 0 178 0;
+#X connect 195 0 178 0;
+#X connect 196 0 122 0;
+#X connect 196 1 123 0;
+#X connect 196 2 124 0;
+#X connect 196 3 125 0;
+#X connect 196 4 127 0;
+#X connect 196 5 128 0;
+#X connect 196 6 129 0;
+#X connect 196 7 130 0;
+#X connect 196 8 131 0;
+#X connect 196 9 132 0;
+#X connect 196 10 133 0;
+#X connect 196 11 134 0;
+#X connect 196 12 135 0;
+#X connect 196 13 136 0;
+#X connect 196 14 137 0;
+#X connect 196 15 140 0;
+#X connect 196 16 141 0;
+#X connect 196 17 142 0;
+#X connect 196 18 143 0;
+#X connect 196 19 144 0;
+#X connect 196 20 145 0;
+#X connect 196 21 146 0;
+#X connect 196 22 147 0;
+#X connect 196 23 148 0;
+#X connect 196 24 149 0;
+#X connect 196 25 150 0;
+#X connect 196 26 151 0;
+#X connect 196 27 152 0;
+#X connect 196 28 153 0;
+#X connect 196 29 154 0;
+#X connect 196 30 155 0;
+#X connect 196 31 156 0;
+#X connect 196 32 157 0;
+#X connect 196 33 158 0;
+#X connect 197 0 178 0;
+#X coords 0 -1 1 1 260 60 1 100 100;
+#X restore 103 173 pd messages;
+#X obj 511 -63 metro 500;
+#X floatatom 591 242 5 0 0 0 - - -;
+#X obj 332 115 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 110 115 hsl 128 15 5 8000 1 0 empty empty MetroRate -2 -8 0
+10 -262144 -1 -1 0 1;
+#X floatatom 245 114 5 0 0 0 - - -;
+#X obj 519 26 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 618 119 t b f;
+#X obj 618 79 counter 32;
+#X obj 618 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 618 145 delay 5;
+#X floatatom 520 72 5 0 0 0 - - -;
+#X obj 520 51 random 32;
+#X floatatom 619 99 5 0 0 0 - - -;
+#X obj 286 121 vradio 15 1 0 2 empty empty Random 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 554 108 mux 0 1;
+#X obj 108 147 hsl 128 15 5 8000 1 0 empty empty Delay -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 246 147 5 0 0 0 - - -;
+#X obj 111 49 inlet;
+#X connect 1 0 6 0;
+#X connect 2 0 0 1;
+#X connect 3 0 1 0;
+#X connect 4 0 1 1;
+#X connect 4 0 5 0;
+#X connect 6 0 12 0;
+#X connect 6 0 8 0;
+#X connect 7 0 10 0;
+#X connect 7 1 2 0;
+#X connect 8 0 13 0;
+#X connect 8 0 15 1;
+#X connect 9 0 0 3;
+#X connect 10 0 9 0;
+#X connect 11 0 15 0;
+#X connect 12 0 11 0;
+#X connect 14 0 15 2;
+#X connect 15 0 7 0;
+#X connect 16 0 17 0;
+#X connect 16 0 10 1;
+#X connect 18 0 0 1;
+#X coords 0 -1 1 1 270 140 1 100 100;
+#X restore 554 189 pd SampleSelect;
+#N canvas 346 190 1054 626 MidiCtlView 0;
+#X obj 196 80 ctlin;
+#N canvas 1245 539 450 300 DisplayCTL 0;
+#X obj 146 120 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 1294 1;
+#X obj 107 132 hsl 40 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1628 1;
+#X floatatom -156 93 5 0 0 0 - - -;
+#X obj 89 50 inlet;
+#X obj 104 106 nbx 3 20 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+20 -262144 -1 -1 53 256;
+#X connect 3 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 0 1 0;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 109 105 pd DisplayCTL;
+#N canvas 1245 539 450 300 DisplayCTL 0;
+#X obj 146 120 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 107 132 hsl 40 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom -156 93 5 0 0 0 - - -;
+#X obj 89 50 inlet;
+#X obj 104 106 nbx 3 20 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+20 -262144 -1 -1 0 256;
+#X connect 3 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 0 1 0;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 211 108 pd DisplayCTL;
+#N canvas 1245 539 450 300 DisplayCTL 0;
+#X obj 146 120 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 415 1;
+#X obj 107 132 hsl 40 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 522 1;
+#X floatatom -156 93 5 0 0 0 - - -;
+#X obj 89 50 inlet;
+#X obj 104 106 nbx 3 20 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+20 -262144 -1 -1 17 256;
+#X connect 3 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 0 1 0;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 311 106 pd DisplayCTL;
+#X symbolatom 112 171 15 0 0 0 - - -;
+#X symbolatom 210 173 15 0 0 0 - - -;
+#X symbolatom 308 174 15 0 0 0 - - -;
+#X obj 480 286 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 489 246 initbang;
+#X msg 114 301 symbol controler value;
+#X msg 346 304 symbol MIDI-chan;
+#X msg 221 303 symbol controler-number;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 7 0 10 0;
+#X connect 7 0 11 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 10 0 6 0;
+#X connect 11 0 5 0;
+#X coords 0 -1 1 1 300 100 1 100 100;
+#X restore -934 559 pd MidiCtlView;
+#N canvas 525 293 859 583 FormantModLFO 0;
+#X floatatom 105 285 5 0 0 0 - - -;
+#X obj 106 332 - 1;
+#X floatatom 114 354 5 0 0 0 - - -;
+#X obj 122 194 hsl 60 15 0 20 0 0 empty empty ModAmt -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 258 309 comment 67 10 helvetica ? 0 0 0 0 Mod Amt;
+#X floatatom 244 190 5 0 0 0 - - -;
+#X floatatom 190 194 5 0 0 0 - - -;
+#X floatatom 133 331 5 0 0 0 - - -;
+#X obj 106 310 * 2;
+#X obj 106 442 *;
+#X floatatom 106 472 5 0 0 0 - - -;
+#X obj 186 336 t b f;
+#X obj 106 496 outlet;
+#X obj 105 107 LFO;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 1 0 9 0;
+#X connect 3 0 6 0;
+#X connect 3 0 11 0;
+#X connect 8 0 1 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 9 0;
+#X connect 11 1 9 1;
+#X connect 13 0 0 0;
+#X connect 13 1 5 0;
+#X coords 0 -1 1 1 180 120 1 100 100;
+#X restore -597 686 pd FormantModLFO;
+#X obj -360 897 s \$0FilterBend;
+#X obj -788 288 s~ MultiOsc;
+#N canvas 2060 122 1040 693 Formant 0;
+#X obj 102 104 cnv 15 315 195 empty empty Stereo_3-Band_Formant_Filter
+5 185 0 14 -162280 -66577 0;
+#X obj 111 344 outlet~;
+#X obj 267 354 outlet~;
+#X obj 226 43 inlet;
+#X obj 395 41 inlet;
+#X obj 266 109 vowellfilter1;
+#X obj 116 111 vowellfilter1;
+#X obj 101 43 inlet~;
+#X obj 160 42 inlet~;
+#X obj 283 42 inlet;
+#X obj 337 42 inlet;
+#X msg -156 126 inlets 1: Sound in L 2: Sound in R 3: Filter Frequencies
+(3-tuple list) 4: Formant Rate Change 5 5: Filter bend amount / LFO
+6: Noise level;
+#X connect 3 0 5 1;
+#X connect 3 0 6 1;
+#X connect 4 0 5 4;
+#X connect 4 0 6 4;
+#X connect 5 0 2 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 6 2;
+#X connect 9 0 5 2;
+#X connect 10 0 6 3;
+#X connect 10 0 5 3;
+#X coords 0 -1 1 1 320 200 1 100 100;
+#X restore -371 6 pd Formant;
+#N canvas 799 43 912 607 FormantControl 0;
+#X obj 119 214 hsl 60 15 200 4000 0 0 \$0Formant1 \$0Formant1In Formant1
+-2 -8 0 10 -257985 -1 -1 4695 1;
+#X obj 192 215 hsl 60 15 200 4000 0 0 \$0Formant2 \$0Formant2In Formant2
+-2 -8 0 10 -4034 -1 -1 5017 1;
+#X obj 262 214 hsl 60 15 200 4000 0 0 \$0Formant3 \$0Formant3In Formant3
+-2 -8 0 10 -261234 -1 -1 2091 1;
+#X floatatom 401 437 5 0 0 0 - - -;
+#X floatatom 498 413 5 0 0 0 - - -;
+#X floatatom 586 424 5 0 0 0 - - -;
+#X obj 502 444 t b f;
+#X obj 578 448 t b f;
+#X obj 118 245 hsl 128 15 1 8000 1 0 \$0FormantRateChange empty Formant_Change_Rate
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 107 113 kbd;
+#X obj 129 324 demux 0 1 2;
+#X floatatom 197 359 5 0 0 0 - - -;
+#X floatatom 124 360 5 0 0 0 - - -;
+#X floatatom 160 360 5 0 0 0 - - -;
+#X floatatom 397 211 5 0 0 0 - - -;
+#X obj 82 273 mtof;
+#X floatatom 92 296 5 0 0 0 - - -;
+#X obj 339 212 hradio 15 1 0 3 empty empty FilterSel 0 -8 0 10 -262144
+-1 -1 0;
+#X text 244 346 FORMANT CONTROL;
+#X floatatom 262 245 5 0 0 0 - - -;
+#X obj 569 149 ctlin 16;
+#X floatatom 570 274 5 0 0 0 - - -;
+#X floatatom 615 175 5 0 0 0 - - -;
+#X obj 569 180 / 127;
+#X obj 570 247 + 200;
+#X floatatom 662 270 5 0 0 0 - - -;
+#X floatatom 707 171 5 0 0 0 - - -;
+#X obj 661 176 / 127;
+#X obj 661 213 * 3800;
+#X obj 662 243 + 200;
+#X floatatom 750 270 5 0 0 0 - - -;
+#X floatatom 795 171 5 0 0 0 - - -;
+#X obj 749 176 / 127;
+#X obj 749 213 * 3800;
+#X obj 750 243 + 200;
+#X obj 660 147 ctlin 17;
+#X obj 749 144 ctlin 18;
+#X obj 540 481 pack f f f;
+#X floatatom 530 179 5 0 0 0 - - -;
+#X obj 577 343 s \$0Formant1In;
+#X obj 684 348 s \$0Formant2In;
+#X obj 796 346 s \$0Formant3In;
+#X obj 46 386 s \$0Formant1In;
+#X obj 153 391 s \$0Formant2In;
+#X obj 265 389 s \$0Formant3In;
+#X obj 399 412 r \$0Formant1;
+#X obj 497 390 r \$0Formant2;
+#X obj 584 399 r \$0Formant3;
+#X obj 540 530 outlet;
+#X obj 569 217 * 4800;
+#X connect 3 0 37 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 37 0;
+#X connect 6 1 37 1;
+#X connect 7 0 37 0;
+#X connect 7 1 37 2;
+#X connect 8 0 19 0;
+#X connect 9 0 15 0;
+#X connect 10 0 12 0;
+#X connect 10 1 13 0;
+#X connect 10 2 11 0;
+#X connect 11 0 44 0;
+#X connect 12 0 42 0;
+#X connect 13 0 43 0;
+#X connect 15 0 16 0;
+#X connect 16 0 10 0;
+#X connect 17 0 10 1;
+#X connect 17 0 14 0;
+#X connect 20 0 23 0;
+#X connect 20 0 38 0;
+#X connect 20 1 22 0;
+#X connect 21 0 39 0;
+#X connect 23 0 49 0;
+#X connect 24 0 21 0;
+#X connect 25 0 40 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 25 0;
+#X connect 30 0 41 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 30 0;
+#X connect 35 0 27 0;
+#X connect 35 1 26 0;
+#X connect 36 0 32 0;
+#X connect 36 1 31 0;
+#X connect 37 0 48 0;
+#X connect 45 0 3 0;
+#X connect 46 0 4 0;
+#X connect 47 0 5 0;
+#X connect 49 0 24 0;
+#X coords 0 -1 1 1 370 170 1 100 100;
+#X restore -766 342 pd FormantControl;
+#X obj -434 289 s \$0LFO-KNOBIN;
+#X obj -139 726 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -582 -11 multi-osc~;
+#X obj 340 71 r \$0FilterFreqs;
+#X obj 350 81 r \$0FilterFreqs;
+#X obj 340 71 r \$0FilterFreqs;
+#X obj 350 81 r \$0FilterFreqs;
+#X obj -768 519 s \$0FilterFreqs;
+#X obj -240 -67 r \$0FilterFreqs;
+#X obj 123 501 s~ \$0SampL;
+#X obj 221 496 s~ \$0SampR;
+#X obj -139 700 loadbang;
+#X msg 22 -45 inlets 1: Sound in L 2: Sound in R 3: Filter Frequencies
+(3-tuple list) 4: Formant Rate Change 5: Filter bend amount / LFO 5:
+Noise level;
+#X obj -433 -77 r~ MultiOsc;
+#X obj -405 -57 r~ \$0SampL;
+#X obj -332 -75 r~ MultiOsc;
+#X obj -313 -54 r~ \$0SampR;
+#X obj -129 -20 r \$0FilterBend;
+#X obj -195 -44 r \$0FormantRateChange;
+#X obj 15 -79 r \$0-NoiseLFO;
+#X obj -24 614 BillEchoVerb~;
+#X obj -263 464 AutoPhase~;
+#X obj 553 86 MetroGlobal;
+#X obj -786 0 multi-osc~;
+#X msg 103 105 MIDICTL: SpeedChan: 0;
+#X obj 118 157 looperV3.0~;
+#X connect 0 0 64 0;
+#X connect 1 0 64 0;
+#X connect 2 0 1 0;
+#X connect 4 0 64 0;
+#X connect 7 0 31 0;
+#X connect 8 0 35 0;
+#X connect 9 0 11 0;
+#X connect 9 0 25 0;
+#X connect 9 0 28 0;
+#X connect 10 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 15 0 9 0;
+#X connect 16 0 9 0;
+#X connect 17 0 9 0;
+#X connect 18 0 8 0;
+#X connect 18 1 8 1;
+#X connect 19 0 9 0;
+#X connect 20 0 9 0;
+#X connect 21 0 9 0;
+#X connect 22 0 9 0;
+#X connect 23 0 9 0;
+#X connect 24 0 9 0;
+#X connect 25 0 28 1;
+#X connect 26 0 18 0;
+#X connect 28 0 26 0;
+#X connect 29 0 28 2;
+#X connect 34 0 8 0;
+#X connect 37 0 60 0;
+#X connect 37 1 60 1;
+#X connect 38 0 46 0;
+#X connect 40 0 10 0;
+#X connect 41 1 39 0;
+#X connect 47 0 37 2;
+#X connect 50 0 40 0;
+#X connect 52 0 37 0;
+#X connect 53 0 37 0;
+#X connect 54 0 37 1;
+#X connect 55 0 37 1;
+#X connect 56 0 37 4;
+#X connect 57 0 37 3;
+#X connect 58 0 37 5;
+#X connect 59 0 6 0;
+#X connect 59 1 6 1;
+#X connect 60 0 59 0;
+#X connect 60 1 59 1;
+#X connect 62 0 36 0;
+#X connect 63 0 64 0;
+#X connect 64 0 48 0;
+#X connect 64 1 49 0;
+#X connect 64 3 3 0;

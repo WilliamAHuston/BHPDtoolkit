@@ -1,0 +1,30 @@
+#N canvas 0 0 1159 690 10;
+#X obj 102 102 cnv 15 315 195 empty empty Stereo_3-Band_Formant_Filter
+5 185 0 14 -162280 -66577 0;
+#X obj 111 342 outlet~;
+#X obj 267 352 outlet~;
+#X obj 207 42 inlet;
+#X obj 395 39 inlet;
+#X obj 101 41 inlet~;
+#X obj 160 40 inlet~;
+#X obj 283 40 inlet;
+#X obj 337 40 inlet;
+#X obj 262 104 vowellfilter1;
+#X obj 243 41 inlet;
+#X msg -76 418 inlets 1: Sound in L 2: Sound in R 3 \, 4: Filter Frequencies
+L \, R (3-tuple list) 5: Formant Rate Change 6 5: Filter bend amount
+/ LFO 7: Noise level;
+#X obj 116 109 vowellfilter1;
+#X connect 3 0 12 1;
+#X connect 4 0 9 4;
+#X connect 4 0 12 4;
+#X connect 5 0 12 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 2;
+#X connect 7 0 12 2;
+#X connect 8 0 9 3;
+#X connect 8 0 12 3;
+#X connect 9 0 2 0;
+#X connect 10 0 9 1;
+#X connect 12 0 1 0;
+#X coords 0 -1 1 1 320 200 1 100 100;

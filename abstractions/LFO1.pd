@@ -1,0 +1,42 @@
+#N canvas 2119 212 974 533 10;
+#X obj 45 174 osc~ 1;
+#X obj 354 46 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 118 111 hsl 128 15 0.01 300 1 0 empty empty Rate -2 -8 0 10
+-262144 -1 -1 500 1;
+#X obj 117 140 hsl 60 15 0 0.5 0 0 empty empty Amt -2 -8 0 10 -262144
+-1 -1 100 1;
+#X obj 188 140 hsl 60 15 0 1 0 0 empty empty Offset -2 -8 0 10 -262144
+-1 -1 5200 1;
+#X obj 365 21 loadbang;
+#X obj 46 196 *~ 0.5;
+#X obj 45 219 +~ 0.5;
+#X obj 128 342 outlet~;
+#X obj 255 106 vsl 15 49 0 2 0 0 empty empty empty 0 -9 0 10 -204800
+-1 -1 0 1;
+#X obj 156 265 *~;
+#X msg 300 63 0.5;
+#X floatatom 260 175 5 0 0 0 - - -;
+#X msg 320 94 1;
+#X obj 211 319 snapshot~;
+#X obj 219 297 r MetroGlobal;
+#X obj 191 347 outlet;
+#X connect 0 0 6 0;
+#X connect 1 0 11 0;
+#X connect 1 0 13 0;
+#X connect 2 0 0 0;
+#X connect 3 0 6 1;
+#X connect 4 0 7 1;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 9 0 10 1;
+#X connect 9 0 12 0;
+#X connect 10 0 8 0;
+#X connect 10 0 14 0;
+#X connect 11 0 3 0;
+#X connect 11 0 4 0;
+#X connect 13 0 9 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X coords 0 -1 1 1 180 65 1 100 100;

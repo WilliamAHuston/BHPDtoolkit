@@ -1,0 +1,31 @@
+#N canvas 551 5 814 1032 10;
+#X obj 106 99 looperV3.0~;
+#X obj 372 487 BillVerb~;
+#X obj 381 643 output~;
+#X obj 48 33 openpanel;
+#X obj 44 5 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 49 59 LOAD: \$1;
+#X obj 89 443 RingMod~;
+#X obj 90 692 s~ \$0RingOutL;
+#X obj 283 692 s~ \$0RingOutR;
+#X obj 371 463 r~ \$0RingOutL;
+#X obj 484 461 r~ \$0RingOutR;
+#X msg 177 -21 Get the wave file here: https://archive.org/details/TomOmaraOnLPGSenecaLake
+or here (source): http://bcove.me/vtw048gk http://blog.timesunion.com/capitol/archives/227437/caught-on-camera-tom-omara-apologizes-for-outburst/
+;
+#X msg 536 182 This patch is part of my BH PD Toolkit http://tinyurl.com/BHPDToolkit
+WilliamAHuston@gmail.com;
+#X msg 138 60 MIDICTL: SpeedChan: 0;
+#X connect 0 0 6 0;
+#X connect 0 1 6 1;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 9 0 1 0;
+#X connect 10 0 1 1;
+#X connect 13 0 0 0;

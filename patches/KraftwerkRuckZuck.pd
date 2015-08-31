@@ -1,0 +1,205 @@
+#N canvas 0 0 1920 1040 12;
+#X obj 384 549 output~;
+#X obj 131 229 BillPan~;
+#X obj 135 -252 multi-osc~;
+#X obj 133 60 ADSR2;
+#X obj 358 -75 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 310 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 312 40 delay 100;
+#X obj 621 -5 metro 500;
+#X obj 620 -40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 654 -45 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1600 1;
+#X obj 367 315 BillEchoVerb~;
+#X obj 713 -22 FormantControl;
+#X floatatom 1118 165 5 0 0 0 - - -;
+#X obj 1225 23 keybender;
+#X floatatom 1485 127 5 0 0 0 - - -;
+#X obj 548 146 unpack f f f;
+#X floatatom 530 173 5 0 0 0 - - -;
+#X floatatom 571 174 5 0 0 0 - - -;
+#X floatatom 610 178 5 0 0 0 - - -;
+#X obj 395 16 hsl 128 15 5 5000 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3600 1;
+#X floatatom 401 37 5 0 0 0 - - -;
+#X obj 184 284 lop~;
+#X obj 249 285 lop~;
+#X obj 333 263 hsl 128 15 500 15000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 10300 1;
+#X obj 184 304 lop~;
+#X obj 248 307 lop~;
+#X obj 390 -310 FormantControl;
+#X obj 894 -158 unpack f f f;
+#X obj 891 -98 s \$0Freq;
+#X obj 929 -111 s \$0Offset;
+#X obj 968 -72 s \$0Decay;
+#X obj 136 -278 r \$0Freq;
+#X obj 1344 139 r \$0Offset;
+#X obj 2 29 r \$0Decay;
+#X obj 826 -79 s \$0Trigger;
+#X obj 839 -120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -3 -4 r \$0Trigger;
+#X obj 862 -466 metro 600;
+#X obj 823 -498 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 863 -437 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 866 -517 hsl 128 15 5 1000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 7800 1;
+#X obj 864 -414 f;
+#X obj 904 -416 + 1;
+#X floatatom 862 -388 5 0 0 0 - - -;
+#X obj 859 -336 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X obj 513 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 880 -261 220 0 100;
+#X obj 793 -332 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 1358 159 5 0 0 0 - - -;
+#X floatatom 863 -496 5 0 0 0 - - -;
+#X obj 864 -361 % 16;
+#X obj 1009 -300 delay 10;
+#X msg 810 -260 220 0 150;
+#X msg 963 -259 196 -2 200;
+#X obj 234 -529 BillBangSeq;
+#X obj 69 -427 ADSR2;
+#X obj 23 -496 noise~;
+#X obj 39 -467 *~;
+#X obj 80 -531 hsl 128 15 0 5 0 0 empty empty empty -2 -8 0 10 -257985
+-1 -1 1800 1;
+#X obj 127 -466 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 511 80 loadbang;
+#X obj 272 -351 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 277 -312 5 0 0 0 - - -;
+#X obj 255 -291 sig~;
+#X msg 502 -496 1 0 1 0 1 0 1 0 0 1 0 1 1 0 0 0;
+#X obj 568 -532 loadbang;
+#X obj 157 -443 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X obj 148 -466 delay 100;
+#X obj 221 -463 hsl 128 15 5 500 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6600 1;
+#X floatatom 218 -447 5 0 0 0 - - -;
+#X obj 1317 392 mux 0 1;
+#X obj 1344 370 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X floatatom 1324 426 5 0 0 0 - - -;
+#X obj 1382 210 +;
+#X msg 397 -126 WARNING!! This patch is prone to DEADLY feedback PLEASE
+READ_THE_"README" in the Documentation folder! You assume ALL RISKS
+to speakers hearing etc. You agree to HOLD ME HARMLESS. You have been
+warned! Use at your own risk!!;
+#X msg 339 173 219.9 659.1 1759;
+#X msg 338 139 110 220.6 659;
+#X msg 337 119 879.8 1318 1759;
+#X msg 336 95 440 1318 1759;
+#X obj -130 -281 bendin;
+#X floatatom -130 -254 7 0 0 0 - - -;
+#X floatatom -210 -112 7 0 0 0 - - -;
+#X obj -130 -231 / 8192;
+#X obj -130 -184 - 1;
+#X floatatom -130 -207 5 0 0 0 - - -;
+#X connect 1 0 21 0;
+#X connect 1 1 22 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 6;
+#X connect 4 0 6 0;
+#X connect 5 0 3 7;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 10 0 0 0;
+#X connect 10 1 0 1;
+#X connect 11 0 10 2;
+#X connect 11 0 15 0;
+#X connect 11 1 12 0;
+#X connect 11 1 10 3;
+#X connect 13 1 14 0;
+#X connect 13 1 73 1;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 15 2 18 0;
+#X connect 19 0 20 0;
+#X connect 19 0 6 1;
+#X connect 21 0 24 0;
+#X connect 22 0 25 0;
+#X connect 23 0 22 1;
+#X connect 23 0 21 1;
+#X connect 23 0 24 1;
+#X connect 23 0 25 1;
+#X connect 24 0 10 0;
+#X connect 25 0 10 1;
+#X connect 26 0 2 0;
+#X connect 27 0 28 0;
+#X connect 27 0 35 0;
+#X connect 27 1 29 0;
+#X connect 27 2 30 0;
+#X connect 31 0 2 0;
+#X connect 32 0 48 0;
+#X connect 32 0 73 0;
+#X connect 33 0 3 3;
+#X connect 35 0 34 0;
+#X connect 36 0 4 0;
+#X connect 37 0 39 0;
+#X connect 38 0 37 0;
+#X connect 39 0 41 0;
+#X connect 40 0 37 1;
+#X connect 40 0 49 0;
+#X connect 41 0 42 0;
+#X connect 41 0 43 0;
+#X connect 42 0 41 1;
+#X connect 43 0 50 0;
+#X connect 44 0 52 0;
+#X connect 44 0 47 0;
+#X connect 44 2 46 0;
+#X connect 44 3 46 0;
+#X connect 44 4 52 0;
+#X connect 44 6 46 0;
+#X connect 44 7 46 0;
+#X connect 44 9 46 0;
+#X connect 44 11 46 0;
+#X connect 44 12 53 0;
+#X connect 44 13 51 0;
+#X connect 45 0 78 0;
+#X connect 46 0 27 0;
+#X connect 50 0 44 0;
+#X connect 50 0 54 0;
+#X connect 51 0 46 0;
+#X connect 52 0 27 0;
+#X connect 53 0 27 0;
+#X connect 54 0 59 0;
+#X connect 55 0 1 0;
+#X connect 56 0 57 0;
+#X connect 57 0 55 0;
+#X connect 58 0 57 1;
+#X connect 59 0 55 6;
+#X connect 59 0 67 0;
+#X connect 60 0 45 0;
+#X connect 61 0 62 0;
+#X connect 61 0 63 0;
+#X connect 63 0 2 2;
+#X connect 64 0 54 2;
+#X connect 65 0 64 0;
+#X connect 66 0 55 7;
+#X connect 67 0 66 0;
+#X connect 68 0 69 0;
+#X connect 68 0 67 1;
+#X connect 70 0 72 0;
+#X connect 71 0 70 2;
+#X connect 73 0 10 4;
+#X connect 75 0 10 2;
+#X connect 76 0 10 2;
+#X connect 77 0 10 2;
+#X connect 78 0 10 2;
+#X connect 79 0 80 0;
+#X connect 80 0 82 0;
+#X connect 82 0 84 0;
+#X connect 84 0 83 0;

@@ -1,0 +1,65 @@
+#N canvas 1985 0 1237 916 10;
+#X obj 389 568 output~;
+#X obj 131 229 BillPan~;
+#X obj 136 -236 multi-osc~;
+#X obj 133 60 ADSR2;
+#X obj 410 -44 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 409 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 411 16 delay 100;
+#X obj 513 -59 metro 500;
+#X obj 516 -92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 605 -99 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 900 1;
+#X obj 372 309 BillEchoVerb~;
+#X obj 713 -22 FormantControl;
+#X floatatom 1118 165 5 0 0 0 - - -;
+#X obj 714 175 keybender;
+#X floatatom 970 283 5 0 0 0 - - -;
+#X obj 529 179 unpack f f f;
+#X floatatom 511 206 5 0 0 0 - - -;
+#X floatatom 552 207 5 0 0 0 - - -;
+#X floatatom 591 211 5 0 0 0 - - -;
+#X obj 497 -19 hsl 128 15 5 500 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4100 1;
+#X floatatom 516 17 5 0 0 0 - - -;
+#X obj 184 278 lop~;
+#X obj 340 238 lop~;
+#X obj 365 136 hsl 128 15 500 15000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 194 306 lop~;
+#X obj 354 256 lop~;
+#X connect 1 0 21 0;
+#X connect 1 1 22 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 6;
+#X connect 4 0 6 0;
+#X connect 5 0 3 7;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 10 0 0 0;
+#X connect 10 1 0 1;
+#X connect 11 0 10 2;
+#X connect 11 0 15 0;
+#X connect 11 1 12 0;
+#X connect 11 1 10 3;
+#X connect 13 1 10 4;
+#X connect 13 1 14 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 15 2 18 0;
+#X connect 19 0 20 0;
+#X connect 19 0 6 1;
+#X connect 21 0 24 0;
+#X connect 22 0 25 0;
+#X connect 23 0 22 1;
+#X connect 23 0 21 1;
+#X connect 23 0 24 1;
+#X connect 23 0 25 1;
+#X connect 24 0 10 0;
+#X connect 25 0 10 1;
