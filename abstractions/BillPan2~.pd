@@ -2,11 +2,11 @@
 #X obj 348 43 inlet~;
 #X obj 197 489 outlet~;
 #X obj 529 519 outlet~;
-#X obj 107 102 hsl 110 15 0 1 0 0 empty \$0LinearLev empty -2 -8 0
-10 -261234 -1 -1 2710 1;
+#X obj 106 112 hsl 110 15 0 1 0 0 empty \$0LinearLev empty -2 -8 0
+10 -261234 -1 -1 0 1;
 #X obj 116 35 initbang;
 #X msg 116 58 0.5;
-#X obj 222 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 221 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 201 457 *~;
 #X obj 509 483 *~;
@@ -15,11 +15,11 @@
 #X obj 415 42 inlet~;
 #X msg 191 -28 This version is intended to be driven by an audio-rate
 modulator so the HSL is for display only.;
-#X obj 241 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 240 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 53 555 snapshot;
 #X obj 89 223 hsl 110 8 0 1 0 0 empty \$0SliderR empty -2 -8 0 10 -261234
--1 -1 9448 1;
+-1 -1 0 1;
 #X obj 246 138 s \$0Linear;
 #X obj 255 507 snapshot~;
 #X obj 471 250 spigot~;
@@ -34,14 +34,14 @@ modulator so the HSL is for display only.;
 #X obj 236 435 +~;
 #X obj 534 454 +~;
 #X obj 256 531 s \$0SliderL;
-#X obj 371 300 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1.07066
+#X obj 371 300 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1.07066;
 #X obj 587 239 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 386 564 hsl 110 8 0 1 0 0 empty empty empty -2 -8 0 10 -261234
--1 -1 9448 1;
+-1 -1 0 1;
 #X obj 224 559 hsl 110 8 0 1 0 0 empty empty empty -2 -8 0 10 -261234
--1 -1 5435 1;
+-1 -1 0 1;
 #X obj 514 552 snapshot;
 #X obj 537 41 inlet;
 #X msg 529 23 linear?;
@@ -95,4 +95,4 @@ modulator so the HSL is for display only.;
 #X connect 39 2 21 0;
 #X connect 41 0 43 0;
 #X connect 42 0 41 0;
-#X coords 0 -1 1 1 160 20 1 100 100;
+#X coords 0 -1 1 1 160 30 1 100 100;

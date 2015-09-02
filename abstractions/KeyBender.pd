@@ -78,7 +78,7 @@
 #X msg 356 227 12;
 #X floatatom 252 107 5 0 0 0 - - -;
 #X obj 110 134 hsl 128 15 -1 1 0 0 empty empty Fine 7 7 0 10 -262144
--1 -1 6450 1;
+-1 -1 6350 1;
 #X msg 360 301 0;
 #X obj 358 275 initbang;
 #X floatatom 249 130 5 0 0 0 - - -;
@@ -108,6 +108,7 @@
 #X obj 206 532 r \$0rate;
 #X floatatom 223 555 5 0 0 0 - - -;
 #X floatatom 211 607 5 0 0 0 - - -;
+#X obj 269 37 initbang;
 #X connect 0 0 26 0;
 #X connect 1 0 28 0;
 #X connect 2 0 30 0;
@@ -185,4 +186,6 @@
 #X connect 75 0 74 0;
 #X connect 76 0 77 0;
 #X connect 76 0 75 1;
+#X connect 79 0 59 0;
+#X connect 79 0 58 0;
 #X coords 0 -1 1 1 265 95 1 100 100;

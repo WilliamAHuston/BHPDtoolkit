@@ -1,0 +1,38 @@
+#N canvas 707 97 740 910 10;
+#X obj 348 43 inlet~;
+#X obj 172 566 outlet~;
+#X obj 467 525 outlet~;
+#X obj 106 112 hsl 110 15 0 1 0 0 empty empty empty -2 -8 0 10 -261234
+-1 -1 5450 1;
+#X obj 116 35 initbang;
+#X msg 116 58 0.5;
+#X obj 221 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 189 486 *~;
+#X obj 456 497 *~;
+#X floatatom 43 162 5 0 0 0 - - -;
+#X msg 346 17 audio in;
+#X msg 191 -28 This version is intended to be driven by an audio-rate
+modulator so the HSL is for display only.;
+#X obj 336 567 snapshot;
+#X obj 256 450 +~;
+#X obj 514 552 snapshot;
+#X obj 326 411 sig~;
+#X obj 395 451 -;
+#X msg 370 390 1 \$1;
+#X connect 0 0 8 0;
+#X connect 0 0 13 0;
+#X connect 3 0 9 0;
+#X connect 3 0 15 0;
+#X connect 3 0 17 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X connect 8 0 2 0;
+#X connect 13 0 7 1;
+#X connect 13 0 12 0;
+#X connect 15 0 13 1;
+#X connect 16 0 8 1;
+#X connect 17 0 16 0;
+#X coords 0 -1 1 1 160 30 1 100 100;
