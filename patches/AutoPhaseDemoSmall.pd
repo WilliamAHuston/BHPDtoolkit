@@ -1,18 +1,27 @@
-#N canvas 1938 116 1226 754 10;
+#N canvas 1938 116 1226 839 10;
 #X obj 48 104 multi-osc~;
-#X obj 227 470 output~;
+#X obj 563 576 output~;
 #X obj 259 109 MetroGlobal;
 #X obj 263 164 Snapshot;
 #X obj 124 66 hsl 128 15 0 1 0 0 empty empty Duty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 1300 1;
 #X obj 122 82 sig~;
-#X obj 55 568 AutoPan3~;
+#X obj 68 566 AutoPan3~;
 #X obj 45 409 AutoPhase3;
-#X obj 285 442 catch~ \$0OutR;
-#X obj 228 422 catch~ \$0OutL;
+#X obj 621 548 catch~ \$0OutR;
+#X obj 564 528 catch~ \$0OutL;
 #X obj 77 743 throw~ \$0OutL;
 #X obj 234 749 throw~ \$0OutR;
-#X connect 0 0 7 0;
+#X obj 643 590 comment 0 30 helvetica ? 0 0 0 0 1: Turn on DAC;
+#X obj 1617 1130 keybender;
+#X obj 1627 1140 keybender;
+#X obj 252 308 comment 0 30 helvetica ? 0 0 0 0 2: Turn up Sin \, Saw
+\, PWM \, or Noise source;
+#X obj 225 473 comment 0 30 helvetica ? 0 0 0 0 3: Adjust Controls
+here;
+#X obj 282 635 comment 0 30 helvetica ? 0 0 0 0 4: ...and here!;
+#X obj 792 359 FixedFilter~;
+#X connect 0 0 18 0;
 #X connect 4 0 5 0;
 #X connect 5 0 0 2;
 #X connect 6 0 10 0;
@@ -22,3 +31,4 @@
 #X connect 7 2 6 2;
 #X connect 8 0 1 1;
 #X connect 9 0 1 0;
+#X connect 18 0 7 0;
