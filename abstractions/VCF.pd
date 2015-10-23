@@ -35,7 +35,7 @@
 #X floatatom 44 163 5 0 0 0 - - -;
 #X obj -23 437 *~;
 #X obj -10 460 -~ 24;
-#X obj 64 478 snapshot~;
+#X obj 64 478 Snapshot~;
 #X floatatom 84 165 5 0 0 0 - - -;
 #X obj 79 434 r MetroGlobal;
 #X obj 82 28 vsl 15 128 0 127 0 0 empty empty G 0 -9 0 15 -258049 -1

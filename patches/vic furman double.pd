@@ -7,7 +7,7 @@
 #X msg 754 26 This patch is part of my BH PD Toolkit http://tinyurl.com/BHPDToolkit
 WilliamAHuston@gmail.com;
 #X msg 194 54 MIDICTL: SpeedChan: 0;
-#X obj 31 1024 BillVerb~;
+#X obj 31 1024 billverb~;
 #X obj 540 691 unpack;
 #X floatatom 539 727 5 0 0 0 - - -;
 #X floatatom 621 717 5 0 0 0 - - -;

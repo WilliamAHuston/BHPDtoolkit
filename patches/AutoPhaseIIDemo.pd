@@ -6,7 +6,7 @@
 #X obj 111 49 hsl 128 15 0 1 0 0 empty empty Duty -2 -8 0 10 -262144
 -1 -1 5800 1;
 #X obj 110 73 sig~;
-#X obj 649 327 BillVerb~;
+#X obj 649 327 billverb~;
 #X obj -278 -11 kbd;
 #X floatatom 77 63 5 0 0 0 - - -;
 #X floatatom -279 96 5 0 0 0 - - -;
@@ -106,7 +106,7 @@
 #X restore 847 99 pd LFO;
 #X obj 59 460 vowellfilter1;
 #X obj 270 88 FormantControl;
-#X obj 285 276 keybender;
+#X obj 285 276 KeyBender;
 #X obj 350 558 AutoPan3~;
 #X obj 370 410 AutoPhase3;
 #X obj -163 220 metro 250;

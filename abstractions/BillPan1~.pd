@@ -14,9 +14,9 @@
 #X msg 346 17 audio in;
 #X msg 191 -28 This version is intended to be driven by an audio-rate
 modulator so the HSL is for display only.;
-#X obj 336 567 snapshot;
+#X obj 336 567 Snapshot;
 #X obj 256 450 +~;
-#X obj 514 552 snapshot;
+#X obj 514 552 Snapshot;
 #X obj 326 411 sig~;
 #X obj 395 451 -;
 #X msg 370 390 1 \$1;

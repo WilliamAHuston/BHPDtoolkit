@@ -1,6 +1,6 @@
 #N canvas 551 5 814 1032 10;
 #X obj 106 99 looperV3.0~;
-#X obj 372 487 BillVerb~;
+#X obj 372 487 billverb~;
 #X obj 381 643 output~;
 #X obj 48 33 openpanel;
 #X obj 44 5 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1

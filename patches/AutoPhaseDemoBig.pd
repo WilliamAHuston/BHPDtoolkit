@@ -6,7 +6,7 @@
 #X obj 480 125 hsl 128 15 0 1 0 0 empty empty Duty -2 -8 0 10 -262144
 -1 -1 9900 1;
 #X obj 478 147 sig~;
-#X obj 416 1176 BillVerb~;
+#X obj 416 1176 billverb~;
 #X obj 311 -37 kbd;
 #X floatatom 654 74 5 0 0 0 - - -;
 #X floatatom 309 68 5 0 0 0 - - -;
@@ -53,7 +53,7 @@
 #X obj -40 564 VCF;
 #X obj 463 411 r VCF;
 #X obj 490 434 +;
-#X obj 511 276 keybender;
+#X obj 511 276 KeyBender;
 #X obj -68 396 BillBangSeq;
 #X obj -763 946 BillEchoVerb~;
 #X obj -308 1180 output~;
@@ -64,7 +64,7 @@
 #X floatatom 830 429 5 0 0 0 - - -;
 #X floatatom 788 390 5 0 0 0 - - -;
 #X floatatom 875 392 5 0 0 0 - - -;
-#X obj -492 582 keybender;
+#X obj -492 582 KeyBender;
 #X obj 154 497 delay 100;
 #X obj 164 534 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;

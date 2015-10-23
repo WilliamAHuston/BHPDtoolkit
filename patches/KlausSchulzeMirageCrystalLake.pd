@@ -9,9 +9,9 @@
 #X floatatom 239 107 5 0 0 0 - - -;
 #X obj 323 7 MetroGlobal;
 #X obj 436 8 Snapshot;
-#X obj 178 672 BillVerb~;
+#X obj 178 672 billverb~;
 #X msg 104 64 543;
-#X obj 63 540 AutoPhase~;
+#X obj 63 540 AutoPhase3;
 #X obj 665 274 kbd;
 #X obj 670 393 KeyBender;
 #X obj 567 543 expr $f2 * pow (1.059462 \, $f1);
@@ -42,7 +42,7 @@
 #X obj -79 181 *~;
 #X obj 108 141 hsl 65 15 0.006 0.6 1 0 empty empty VibAmt 7 7 0 10
 -204800 -1 -1 0 1;
-#X obj -114 202 snapshot~;
+#X obj -114 202 Snapshot~;
 #X obj -137 104 r MetroGlobal;
 #X floatatom 200 151 5 0 0 0 - - -;
 #X obj -113 237 outlet;
@@ -616,7 +616,7 @@ Crystal Lake from Mirage. If you can't load this due to missing abstractions
 #X obj -79 181 *~;
 #X obj 108 141 hsl 65 15 0.006 0.6 1 0 empty empty VibAmt 7 7 0 10
 -204800 -1 -1 0 1;
-#X obj -114 202 snapshot~;
+#X obj -114 202 Snapshot~;
 #X obj -137 104 r MetroGlobal;
 #X floatatom 200 151 5 0 0 0 - - -;
 #X obj -113 237 outlet;

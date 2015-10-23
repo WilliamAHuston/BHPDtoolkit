@@ -23,11 +23,11 @@
 #X obj 112 191 hsl 128 15 0 1 0 0 empty \$0p1 Phase1 15 8 0 10 -260097
 -1 -1 7321 1;
 #X obj 310 528 r MetroGlobal;
-#X obj 297 552 snapshot~;
+#X obj 297 552 Snapshot~;
 #X obj 585 526 r MetroGlobal;
-#X obj 575 546 snapshot~;
+#X obj 575 546 Snapshot~;
 #X obj 900 525 r MetroGlobal;
-#X obj 894 547 snapshot~;
+#X obj 894 547 Snapshot~;
 #X obj 236 697 outlet~;
 #X obj 472 685 outlet~;
 #X obj 786 663 outlet~;

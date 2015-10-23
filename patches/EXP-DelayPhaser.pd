@@ -67,18 +67,18 @@
 -1 -1 7868 1;
 #X obj 675 674 expr~ 1-pow($v1 \, 2) \; 1-pow(1-$v1 \, 2);
 #X obj 687 702 r MetroGlobal;
-#X obj 676 721 snapshot~;
+#X obj 676 721 Snapshot~;
 #X obj 680 768 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -162280
 -1 -1 6691 1;
 #X obj 842 683 expr~ 1-pow($v1 \, 2) \; 1-pow(1-$v1 \, 2);
 #X obj 852 717 r MetroGlobal;
-#X obj 842 737 snapshot~;
+#X obj 842 737 Snapshot~;
 #X obj 680 790 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -162280
 -1 -1 7931 1;
 #X obj 1025 685 expr~ 1-pow($v1 \, 2) \; 1-pow(1-$v1 \, 2);
 #X obj 1035 719 r MetroGlobal;
-#X obj 1026 739 snapshot~;
-#X obj 51 725 BillVerb~;
+#X obj 1026 739 Snapshot~;
+#X obj 51 725 billverb~;
 #X obj 286 -16 kbd;
 #X floatatom 585 135 5 0 0 0 - - -;
 #X floatatom 266 88 5 0 0 0 - - -;

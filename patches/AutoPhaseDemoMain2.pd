@@ -43,7 +43,7 @@ WilliamAHuston@gmail.com;
 #X obj 1056 313 mtof;
 #X obj 1147 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 120 -26 keybender;
+#X obj 120 -26 KeyBender;
 #X floatatom 149 75 5 0 0 0 - - -;
 #X floatatom 386 66 5 0 0 0 - - -;
 #X obj 168 210 *;
@@ -74,7 +74,7 @@ WilliamAHuston@gmail.com;
 #X obj 556 888 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 861 496 AutoPan3~;
-#X obj 1597 1110 keybender;
+#X obj 1597 1110 KeyBender;
 #X floatatom 810 79 5 0 0 0 - - -;
 #X obj 428 561 bng 15 250 50 0 empty empty Note_ON 17 7 0 10 -4034
 -1 -1;
@@ -97,13 +97,13 @@ WilliamAHuston@gmail.com;
 -1 -1 0 1;
 #X obj 1837 269 sig~;
 #X obj 1118 1445 output~;
-#X obj 1671 126 keybender;
+#X obj 1671 126 KeyBender;
 #X obj 873 874 StereoFormant~;
 #X obj 1150 647 FormantControl;
 #X obj 1580 159 *;
 #X obj 1601 117 t b f;
 #X floatatom 1724 259 5 0 0 0 - - -;
-#X obj 1257 539 keybender;
+#X obj 1257 539 KeyBender;
 #X obj 593 1037 metro 100;
 #X obj 594 1005 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 1 1;

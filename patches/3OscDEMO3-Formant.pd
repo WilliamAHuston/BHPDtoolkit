@@ -5,7 +5,7 @@
 #X obj 466 657 StereoFormant~;
 #X obj 547 446 FormantControl;
 #X obj 1385 -41 MetroGlobal;
-#X obj 114 307 AutoPhase~;
+#X obj 114 307 AutoPhase3;
 #X obj 319 -94 r notes;
 #X obj 319 -70 unpack f f f;
 #X floatatom 293 -47 5 0 0 0 - - -;
@@ -156,7 +156,7 @@
 -1 -1 0 1;
 #X floatatom 146 157 5 0 0 0 - - -;
 #X obj 45 36 loadbang;
-#X obj 163 272 snapshot~;
+#X obj 163 272 Snapshot~;
 #X obj 226 225 r MetroGlobal;
 #X obj 164 299 s \$0LFO-CTL;
 #X msg 102 69 3;
@@ -211,7 +211,7 @@
 #X restore 926 428 pd initformant;
 #X obj 926 403 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 633 870 BillVerb~;
+#X obj 633 870 billverb~;
 #N canvas 2152 374 860 533 chord 0;
 #X obj 109 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -159808
 -1 -1;

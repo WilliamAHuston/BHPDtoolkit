@@ -48,7 +48,7 @@
 #X msg 373 437 1;
 #X obj 373 415 r \$0-print;
 #X msg 373 462 print \$1;
-#X obj 101 102 cnv 15 120 110 empty empty BillVerb 5 6 0 14 -261234
+#X obj 101 102 cnv 15 120 110 empty empty billverb 5 6 0 14 -261234
 -66577 0;
 #X obj 107 127 hsl 40 15 0 1 0 0 \$0-RoomSize \$0-RoomSizeIn Roomsize
 -2 -6 0 10 -204800 -1 -1 2730 1;

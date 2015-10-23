@@ -18,7 +18,7 @@
 #X msg 300 63 0.5;
 #X floatatom 260 175 5 0 0 0 - - -;
 #X msg 320 94 1;
-#X obj 211 319 snapshot~;
+#X obj 211 319 Snapshot~;
 #X obj 219 297 r MetroGlobal;
 #X obj 191 347 outlet;
 #X connect 0 0 6 0;

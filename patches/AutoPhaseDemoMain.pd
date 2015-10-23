@@ -44,7 +44,7 @@ WilliamAHuston@gmail.com;
 #X obj 1056 313 mtof;
 #X obj 1147 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 120 -26 keybender;
+#X obj 120 -26 KeyBender;
 #X floatatom 149 75 5 0 0 0 - - -;
 #X floatatom 386 66 5 0 0 0 - - -;
 #X obj 168 210 *;
@@ -75,7 +75,7 @@ WilliamAHuston@gmail.com;
 #X obj 556 888 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 861 496 AutoPan3~;
-#X obj 1208 549 keybender;
+#X obj 1208 549 KeyBender;
 #X floatatom 810 79 5 0 0 0 - - -;
 #X obj 428 561 bng 15 250 50 0 empty empty Note_ON 17 7 0 10 -4034
 -1 -1;

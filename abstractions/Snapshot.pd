@@ -1,5 +1,5 @@
 #N canvas 0 0 979 546 10;
-#X obj 310 78 snapshot~;
+#X obj 310 78 Snapshot~;
 #X floatatom 109 109 5 0 0 1 Cur #0Cur -;
 #X obj 342 44 r MetroGlobal;
 #X obj 287 25 inlet~;

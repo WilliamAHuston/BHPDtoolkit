@@ -935,7 +935,7 @@ Noise level;
 #X obj -195 -44 r \$0FormantRateChange;
 #X obj 15 -79 r \$0-NoiseLFO;
 #X obj -24 614 BillEchoVerb~;
-#X obj -263 464 AutoPhase~;
+#X obj -263 464 AutoPhase3;
 #X obj 553 86 MetroGlobal;
 #X obj -786 0 multi-osc~;
 #X msg 103 105 MIDICTL: SpeedChan: 0;

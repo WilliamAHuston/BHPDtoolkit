@@ -1,4 +1,4 @@
-#N canvas 0 0 1920 1040 12;
+#N canvas 0 109 720 411 12;
 #X obj 384 549 output~;
 #X obj 131 229 BillPan~;
 #X obj 135 -252 multi-osc~;
@@ -12,23 +12,23 @@
 #X obj 620 -40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 654 -45 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1600 1;
+-1 -1 1900 1;
 #X obj 367 315 BillEchoVerb~;
 #X obj 713 -22 FormantControl;
 #X floatatom 1118 165 5 0 0 0 - - -;
-#X obj 1225 23 keybender;
+#X obj 1225 23 KeyBender;
 #X floatatom 1485 127 5 0 0 0 - - -;
 #X obj 548 146 unpack f f f;
 #X floatatom 530 173 5 0 0 0 - - -;
 #X floatatom 571 174 5 0 0 0 - - -;
 #X floatatom 610 178 5 0 0 0 - - -;
 #X obj 395 16 hsl 128 15 5 5000 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3600 1;
+-1 -1 7800 1;
 #X floatatom 401 37 5 0 0 0 - - -;
 #X obj 184 284 lop~;
 #X obj 249 285 lop~;
 #X obj 333 263 hsl 128 15 500 15000 1 0 empty empty empty -2 -8 0 10
--262144 -1 -1 10300 1;
+-262144 -1 -1 5500 1;
 #X obj 184 304 lop~;
 #X obj 248 307 lop~;
 #X obj 390 -310 FormantControl;
@@ -49,7 +49,7 @@
 #X obj 863 -437 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 866 -517 hsl 128 15 5 1000 1 0 empty empty empty -2 -8 0 10
--262144 -1 -1 7800 1;
+-262144 -1 -1 8800 1;
 #X obj 864 -414 f;
 #X obj 904 -416 + 1;
 #X floatatom 862 -388 5 0 0 0 - - -;
@@ -70,7 +70,7 @@
 #X obj 23 -496 noise~;
 #X obj 39 -467 *~;
 #X obj 80 -531 hsl 128 15 0 5 0 0 empty empty empty -2 -8 0 10 -257985
--1 -1 1800 1;
+-1 -1 3300 1;
 #X obj 127 -466 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
 -1;
 #X obj 511 80 loadbang;
@@ -84,7 +84,7 @@
 -1 -1;
 #X obj 148 -466 delay 100;
 #X obj 221 -463 hsl 128 15 5 500 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6600 1;
+-1 -1 2100 1;
 #X floatatom 218 -447 5 0 0 0 - - -;
 #X obj 1317 392 mux 0 1;
 #X obj 1344 370 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1

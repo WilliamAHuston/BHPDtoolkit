@@ -3,7 +3,7 @@
 #X obj 602 966 hip~ 5;
 #X obj 433 971 hip~ 5;
 #X obj 1385 -41 MetroGlobal;
-#X obj 114 307 AutoPhase~;
+#X obj 114 307 AutoPhase3;
 #X obj 319 -94 r notes;
 #X obj 319 -70 unpack f f f;
 #X floatatom 293 -47 5 0 0 0 - - -;
@@ -281,7 +281,7 @@
 -1 -1 0 1;
 #X floatatom 146 157 5 0 0 0 - - -;
 #X obj 45 36 loadbang;
-#X obj 163 272 snapshot~;
+#X obj 163 272 Snapshot~;
 #X obj 226 225 r MetroGlobal;
 #X obj 164 299 s \$0LFO-CTL;
 #X msg 102 69 3;
@@ -302,7 +302,7 @@
 #X coords 0 -1 1 1 85 75 1 100 100;
 #X restore 857 50 pd LFO;
 #X obj 598 -13 r \$0LFO-CTL;
-#X obj 447 846 BillVerb~;
+#X obj 447 846 billverb~;
 #X obj 472 600 RingMod~;
 #X connect 1 0 0 1;
 #X connect 2 0 0 0;

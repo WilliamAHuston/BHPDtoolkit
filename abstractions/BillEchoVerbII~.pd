@@ -15,7 +15,7 @@ echo_regen_feedback -2 7 0 10 -260097 -1 -1 0 1;
 -2 7 0 10 -204786 -1 -1 0 1;
 #X obj 531 299 hsl 110 15 0 2 0 0 \$0-Echo_Out_Master \$0-Echo_Out_Master_IN
 DelayFinal 0 7 0 10 -261234 -1 -1 0 1;
-#X obj 106 175 BillVerb~;
+#X obj 106 175 billverb~;
 #X obj 108 108 hsl 110 15 0 1 0 0 \$0-dry_send_to_reverb \$0-dry_send_to_reverb-IN
 dry_send_to_reverb 0 6 0 10 -204786 -1 -1 0 1;
 #X obj 669 -56 r \$0FilterBend;
