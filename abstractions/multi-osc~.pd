@@ -1,4 +1,4 @@
-#N canvas 1 88 1185 673 10;
+#N canvas 126 160 969 540 10;
 #X obj 417 234 phasor~;
 #X obj 753 195 osc~;
 #X obj 752 241 *~;
@@ -11,11 +11,11 @@
 #X floatatom 522 110 5 0 0 0 Rate #0-Rate -, f 5;
 #X obj 462 132 pack f f;
 #X obj 479 -48 nbx 5 30 -50 50 0 0 empty \$0-FreqFine FreqFine 0 -8
-0 25 -262144 -1 -1 19.2982 256;
+0 25 -262144 -1 -1 0 256;
 #X obj 461 87 +;
 #X obj 469 59 t b f;
 #X obj 677 -2 nbx 5 30 -50000 50000 0 0 empty \$0-Freq Freq 0 -8 0
-25 -262144 -1 -1 46.2472 256;
+25 -262144 -1 -1 110 256;
 #X floatatom 527 181 5 0 0 0 - - -, f 5;
 #X floatatom 567 179 5 0 0 0 - - -, f 5;
 #X obj 519 155 unpack;
@@ -44,21 +44,21 @@ PWM was suggested by Jeff Sandys and Jonghyun Kim.;
 #X obj 102 102 cnv 15 185 170 empty empty MultiOsc 105 160 1 15 -260097
 -66577 0;
 #X obj 183 205 hsl 60 15 0.01 0.99 0 0 \$0-DutyCtl \$0-Duty-Snap Duty_Cycle
--2 -8 0 10 -262144 -1 -1 1000 1;
+-2 -8 0 10 -262144 -1 -1 2950 1;
 #X obj 108 114 hsl 140 15 1 8372 1 0 \$0-Freq empty freq -2 -8 0 10
--262144 -1 -1 5900 1;
+-262144 -1 -1 7233 1;
 #X obj 112 203 vsl 15 60 0.005 0.5 1 0 \$0-Sin empty Sine 0 -9 0 10
--262144 -1 -1 3900 1;
+-262144 -1 -1 0 1;
 #X obj 156 204 vsl 15 60 0.005 0.5 1 0 \$0-PWM empty PWM 0 -9 0 10
--262144 -1 -1 5300 1;
-#X obj 135 204 vsl 15 60 0.005 0.5 1 0 \$0-Saw empty Saw 0 -9 0 10
--262144 -1 -1 2100 1;
+-262144 -1 -1 0 1;
+#X obj 135 204 vsl 15 60 0.005 0.5 1 0 \$0-Saw \$0-SawIn Saw 0 -9 0
+10 -262144 -1 -1 5012 1;
 #X floatatom 253 204 5 0 0 0 - #0-Duty-Snap -, f 5;
 #X obj 111 172 hsl 128 15 0 3000 0 0 \$0-Rate empty Rate_of_Change
--2 -8 0 10 -262144 -1 -1 9400 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X floatatom 249 171 5 0 0 0 - #0-FreqActual -, f 5;
 #X obj 109 144 hsl 115 15 -50 50 0 0 \$0-FreqFine \$0-FreqFineIn Fine_Tune
--2 -8 0 10 -262144 -1 -1 7900 1;
+-2 -8 0 10 -262144 -1 -1 5700 1;
 #X obj 231 145 bng 15 250 50 0 \$0-FreqFineZeroBang empty Zero 0 -5
 0 10 -262144 -1 -1;
 #X floatatom 256 117 5 0 0 0 - #0-Freq -, f 5;
@@ -149,6 +149,8 @@ PWM was suggested by Jeff Sandys and Jonghyun Kim.;
 #X obj 647 202 r \$0-DutyCtl;
 #X obj 650 246 line~;
 #X msg 647 224 \$1 250;
+#X msg 39 215 0.25;
+#X obj -5 127 loadbang;
 #X connect 0 0 96 0;
 #X connect 0 0 104 0;
 #X connect 1 0 2 0;
@@ -241,4 +243,6 @@ PWM was suggested by Jeff Sandys and Jonghyun Kim.;
 #X connect 124 0 126 0;
 #X connect 125 0 123 1;
 #X connect 126 0 125 0;
+#X connect 127 0 40 0;
+#X connect 128 0 127 0;
 #X coords 0 -1 1 1 190 175 2 100 100;

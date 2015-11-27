@@ -1,4 +1,4 @@
-#N canvas 56 181 910 545 10;
+#N canvas 54 195 910 545 10;
 #X obj 414 20 MetroGlobal;
 #X obj 499 397 output~;
 #X obj -2 60 multi-osc~;
@@ -10,13 +10,20 @@
 #X obj -4 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 447 343 BHStereoEnhance~;
-#X obj -1 247 s~ OscOut;
+#X obj -1 482 s~ OscOut;
 #X obj 225 33 r~ OscOut;
 #X obj 219 496 s~ PanOutL;
 #X obj 372 496 s~ PanOutR;
 #X obj 446 198 r~ PanOutL;
 #X obj 559 198 r~ PanOutR;
-#X connect 2 0 9 0;
+#X obj -1 389 *~;
+#X obj 50 321 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 50 366 line~;
+#X msg 50 342 \$1 100;
+#X obj 50 271 loadbang;
+#X msg 50 296 1, f 1;
+#X connect 2 0 15 0;
 #X connect 3 0 8 0;
 #X connect 3 1 8 1;
 #X connect 4 0 5 0;
@@ -38,3 +45,9 @@
 #X connect 10 0 4 0;
 #X connect 13 0 3 0;
 #X connect 14 0 3 1;
+#X connect 15 0 9 0;
+#X connect 16 0 18 0;
+#X connect 17 0 15 1;
+#X connect 18 0 17 0;
+#X connect 19 0 20 0;
+#X connect 20 0 16 0;
