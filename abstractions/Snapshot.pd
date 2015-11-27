@@ -1,10 +1,10 @@
-#N canvas 0 0 979 546 10;
+#N canvas 1 137 979 546 10;
 #X obj 310 78 Snapshot~;
-#X floatatom 109 109 5 0 0 1 Cur #0Cur -;
+#X floatatom 109 109 5 0 0 1 Cur #0Cur -, f 5;
 #X obj 342 44 r MetroGlobal;
 #X obj 287 25 inlet~;
-#X floatatom 109 130 5 0 0 1 Min #0Min -;
-#X floatatom 109 152 5 0 0 1 Max #0Max -;
+#X floatatom 109 130 5 0 0 1 Min #0Min -, f 5;
+#X floatatom 109 152 5 0 0 1 Max #0Max -, f 5;
 #X obj 230 188 max;
 #X obj 311 105 s \$0Cur;
 #X obj 230 160 r \$0Cur;
@@ -22,7 +22,7 @@
 #X obj 163 125 bng 15 250 50 0 \$0CLRBang empty CLR 0 20 0 10 -262144
 -1 -1;
 #X obj 531 79 r \$0CLRBang;
-#X obj 293 172 r \$0Reset;
+#X obj 297 183 r \$0Reset;
 #X msg 436 31 Assumes a global signal MetroGlobal;
 #X connect 0 0 7 0;
 #X connect 2 0 0 0;

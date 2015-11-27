@@ -1,98 +1,101 @@
-#N canvas 707 97 740 910 10;
+#N canvas 473 74 740 708 10;
 #X obj 348 43 inlet~;
 #X obj 197 489 outlet~;
 #X obj 529 519 outlet~;
 #X obj 106 112 hsl 110 15 0 1 0 0 empty \$0LinearLev empty -2 -8 0
-10 -261234 -1 -1 0 1;
-#X obj 116 35 initbang;
+10 -261234 -1 -1 7175 1;
 #X msg 116 58 0.5;
 #X obj 221 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 201 457 *~;
 #X obj 509 483 *~;
-#X floatatom 43 162 5 0 0 0 - - -;
+#X floatatom 43 162 5 0 0 0 - - -, f 5;
 #X msg 346 17 audio in;
 #X obj 415 42 inlet~;
 #X msg 191 -28 This version is intended to be driven by an audio-rate
 modulator so the HSL is for display only.;
-#X obj 240 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 240 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 53 555 Snapshot;
 #X obj 89 223 hsl 110 8 0 1 0 0 empty \$0SliderR empty -2 -8 0 10 -261234
--1 -1 0 1;
+-1 -1 6372 1;
 #X obj 246 138 s \$0Linear;
 #X obj 255 507 Snapshot~;
-#X obj 471 250 spigot~;
-#X obj 499 228 spigot~;
+#X obj 445 256 spigot~;
+#X obj 510 207 spigot~;
 #X obj 308 269 spigot~;
-#X obj 327 320 spigot~;
+#X obj 517 411 spigot~;
 #X obj 348 440 r MetroGlobal;
 #X obj 392 514 Snapshot~;
-#X obj 362 275 r \$0Linear;
-#X obj 561 192 r \$0Linear;
-#X obj 568 213 == 0;
+#X obj 610 190 r \$0Linear;
+#X obj 617 211 == 0;
 #X obj 236 435 +~;
 #X obj 534 454 +~;
 #X obj 256 531 s \$0SliderL;
-#X obj 371 300 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1.07066;
-#X obj 587 239 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 636 237 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 386 564 hsl 110 8 0 1 0 0 empty empty empty -2 -8 0 10 -261234
--1 -1 0 1;
+-1 -1 6372 1;
 #X obj 224 559 hsl 110 8 0 1 0 0 empty empty empty -2 -8 0 10 -261234
--1 -1 0 1;
-#X obj 514 552 Snapshot;
+-1 -1 8843 1;
+#X obj 602 365 Snapshot;
 #X obj 537 41 inlet;
 #X msg 529 23 linear?;
 #X msg 417 19 pan 0=L 1=R;
-#X floatatom 72 257 5 0 0 0 - - -;
+#X floatatom 72 257 5 0 0 0 - - -, f 5;
 #X obj 447 125 expr~ pow($v1 \, 0.5) \; pow(1-$v1 \, 0.5) \; 1-$v1
 \;;
 #X obj 390 536 s \$0SliderR;
 #X obj 586 92 Snapshot~;
 #X obj 594 63 r MetroGlobal;
 #X obj 587 116 s \$0LinearLev;
-#X connect 0 0 8 0;
+#X obj 114 35 loadbang;
+#X obj 637 286 s \$0LinearNot;
+#X obj 558 185 tgl 15 0 empty \$0LinearNot empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 490 236 tgl 15 0 empty \$0LinearNot empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 349 236 tgl 15 0 empty \$0Linear empty 17 7 0 10 -262144 -1
+-1 1 1;
+#X obj 567 388 tgl 15 0 empty \$0Linear empty 17 7 0 10 -262144 -1
+-1 1 1;
 #X connect 0 0 7 0;
-#X connect 3 0 9 0;
-#X connect 4 0 5 0;
-#X connect 5 0 3 0;
-#X connect 6 0 5 0;
-#X connect 7 0 1 0;
-#X connect 8 0 2 0;
-#X connect 11 0 20 0;
-#X connect 11 0 39 0;
-#X connect 11 0 41 0;
-#X connect 13 0 16 0;
-#X connect 15 0 38 0;
-#X connect 17 0 29 0;
-#X connect 17 0 33 0;
-#X connect 18 0 27 1;
-#X connect 19 0 28 1;
-#X connect 20 0 27 0;
+#X connect 0 0 6 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 10 0 18 0;
+#X connect 10 0 35 0;
+#X connect 10 0 37 0;
+#X connect 12 0 14 0;
+#X connect 13 0 34 0;
+#X connect 15 0 26 0;
+#X connect 15 0 29 0;
+#X connect 16 0 24 1;
+#X connect 17 0 25 1;
+#X connect 18 0 24 0;
+#X connect 19 0 25 0;
+#X connect 20 0 21 0;
+#X connect 20 0 15 0;
 #X connect 21 0 28 0;
+#X connect 21 0 36 0;
 #X connect 22 0 23 0;
-#X connect 22 0 17 0;
-#X connect 23 0 32 0;
-#X connect 23 0 40 0;
-#X connect 24 0 21 1;
-#X connect 24 0 20 1;
-#X connect 24 0 30 0;
-#X connect 25 0 26 0;
-#X connect 26 0 18 1;
-#X connect 26 0 19 1;
-#X connect 26 0 31 0;
-#X connect 27 0 7 1;
-#X connect 27 0 17 0;
-#X connect 27 0 14 0;
-#X connect 28 0 8 1;
-#X connect 28 0 23 0;
-#X connect 28 0 34 0;
-#X connect 35 0 13 0;
-#X connect 39 0 18 0;
-#X connect 39 1 19 0;
-#X connect 39 2 21 0;
-#X connect 41 0 43 0;
-#X connect 42 0 41 0;
+#X connect 23 0 27 0;
+#X connect 23 0 41 0;
+#X connect 24 0 6 1;
+#X connect 24 0 15 0;
+#X connect 25 0 7 1;
+#X connect 25 0 21 0;
+#X connect 31 0 12 0;
+#X connect 35 0 16 0;
+#X connect 35 1 17 0;
+#X connect 35 2 19 0;
+#X connect 37 0 39 0;
+#X connect 38 0 37 0;
+#X connect 40 0 4 0;
+#X connect 42 0 17 1;
+#X connect 43 0 16 1;
+#X connect 44 0 18 1;
+#X connect 45 0 19 1;
 #X coords 0 -1 1 1 160 30 1 100 100;

@@ -1,0 +1,58 @@
+#N canvas 68 198 979 533 10;
+#X obj 504 -103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 120 122 hsl 128 15 0.01 10 1 0 empty empty Phase_Rate 7 7 0
+10 -4034 -1 -1 0 1;
+#X obj 116 143 hsl 60 15 0 0.5 0 0 \$0PhaseAmt empty Phase_Amt 7 7
+0 10 -257985 -1 -1 4600 1;
+#X obj 504 -126 loadbang;
+#X obj 148 369 outlet~;
+#X obj 212 363 outlet~;
+#X obj 59 -77 inlet~;
+#X obj 271 112 vsl 15 90 0 2 0 0 empty empty empty 0 -9 0 10 -204800
+-1 -1 2150 1;
+#X obj 135 329 *~;
+#X obj 216 327 *~;
+#X msg 43 126 0.5;
+#X floatatom 366 292 5 0 0 0 - - -, f 5;
+#X obj 107 160 BillPan2~;
+#X obj 250 196 tgl 15 0 empty empty empty 17 7 0 10 -257985 -258113
+-1 0 1;
+#X obj 670 -88 phasor~ 1;
+#X obj 277 -7 cos~;
+#X obj 277 17 *~ 0.5;
+#X obj 278 38 +~ 0.5;
+#X obj 682 -113 f;
+#X obj 404 193 Snapshot;
+#X obj 479 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 325 -5 r \$0PhaseAmt;
+#X obj 338 16 r \$0PhaseOff;
+#X obj 185 142 hsl 60 15 0 1 0 0 \$0PhaseOff empty PhaseLRoffset -2
+7 0 10 -257985 -1 -1 0 1;
+#X msg 320 110 5;
+#X connect 0 0 10 0;
+#X connect 0 0 24 0;
+#X connect 0 0 20 0;
+#X connect 1 0 18 0;
+#X connect 3 0 0 0;
+#X connect 6 0 12 0;
+#X connect 7 0 8 1;
+#X connect 7 0 9 1;
+#X connect 7 0 11 0;
+#X connect 8 0 4 0;
+#X connect 9 0 5 0;
+#X connect 10 0 2 0;
+#X connect 10 0 23 0;
+#X connect 12 0 8 0;
+#X connect 12 1 9 0;
+#X connect 13 0 12 2;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 12 1;
+#X connect 18 0 14 0;
+#X connect 21 0 16 1;
+#X connect 22 0 17 1;
+#X connect 24 0 7 0;
+#X coords 0 -1 1 1 200 120 1 100 100;

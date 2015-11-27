@@ -1,4 +1,4 @@
-#N canvas 111 39 1800 921 10;
+#N canvas 0 95 1200 673 10;
 #X obj 662 1057 output~;
 #X obj 748 995 hip~ 5;
 #X obj 641 999 hip~ 5;
@@ -8,15 +8,15 @@
 #X obj 114 307 AutoPhase3;
 #X obj 319 -94 r notes;
 #X obj 319 -70 unpack f f f;
-#X floatatom 293 -47 5 0 0 0 - - -;
-#X floatatom 341 -47 5 0 0 0 - - -;
-#X floatatom 395 -47 5 0 0 0 - - -;
+#X floatatom 293 -47 5 0 0 0 - - -, f 5;
+#X floatatom 341 -47 5 0 0 0 - - -, f 5;
+#X floatatom 395 -47 5 0 0 0 - - -, f 5;
 #X obj 74 -6 mtof;
 #X obj 288 -11 mtof;
 #X obj 488 -13 mtof;
 #X obj 1504 -39 Snapshot;
-#X obj 971 553 KeyBender;
-#N canvas 44 46 1582 687 phase 0;
+#X obj 957 548 KeyBender;
+#N canvas 44 50 1582 687 phase 0;
 #X obj 225 328 outlet~;
 #X obj 302 327 outlet~;
 #X obj 383 334 outlet~;
@@ -35,9 +35,9 @@
 -262144 -45076 3900 1;
 #X obj 287 63 * 0.3333;
 #X obj 354 64 * 0.6666;
-#X floatatom 253 98 5 0 0 0 - - -;
-#X floatatom 366 99 5 0 0 0 - - -;
-#X floatatom 302 100 5 0 0 0 - - -;
+#X floatatom 253 98 5 0 0 0 - - -, f 5;
+#X floatatom 366 99 5 0 0 0 - - -, f 5;
+#X floatatom 302 100 5 0 0 0 - - -, f 5;
 #X msg 252 65 0;
 #X obj 107 170 hsl 40 15 0 0.5 0 0 empty empty amt -2 -8 0 10 -260097
 -262144 -45076 2106 1;
@@ -50,10 +50,10 @@
 #X obj 304 299 clip~ 0 1;
 #X obj 387 302 clip~ 0 1;
 #X obj 228 130 sig~;
-#X floatatom 16 228 5 0 0 0 - - -;
-#X floatatom 17 253 5 0 0 0 - - -;
-#X floatatom 15 276 5 0 0 0 - - -;
-#X floatatom 13 298 5 0 0 0 - - -;
+#X floatatom 16 228 5 0 0 0 - - -, f 5;
+#X floatatom 17 253 5 0 0 0 - - -, f 5;
+#X floatatom 15 276 5 0 0 0 - - -, f 5;
+#X floatatom 13 298 5 0 0 0 - - -, f 5;
 #X msg 26 11 0.51;
 #X msg 27 66 0.27;
 #X msg 27 97 0.31;
@@ -150,11 +150,11 @@
 #X obj 92 297 s~ \$0LFO;
 #X obj 112 105 hsl 60 15 0.3 127 1 0 empty empty Rate 10 7 0 10 -262144
 -1 -1 2246 1;
-#X floatatom 146 121 5 0 0 0 - - -;
+#X floatatom 146 121 5 0 0 0 - - -, f 5;
 #X obj 90 215 *~;
 #X obj 112 141 hsl 60 15 0 20 0 0 empty empty Amt 10 7 0 10 -262144
 -1 -1 0 1;
-#X floatatom 146 157 5 0 0 0 - - -;
+#X floatatom 146 157 5 0 0 0 - - -, f 5;
 #X obj 45 36 loadbang;
 #X obj 163 272 Snapshot~;
 #X obj 226 225 r MetroGlobal;
@@ -183,21 +183,21 @@
 #X obj 107 105 tgl 15 0 empty empty Rand_Enable 17 7 0 10 -262144 -1
 -1 0 1;
 #X obj 335 271 random 25;
-#X floatatom 337 310 5 0 0 0 - - -;
+#X floatatom 337 310 5 0 0 0 - - -, f 5;
 #X obj 336 291 - 12;
 #X obj 309 155 metro 100;
 #X obj 380 325 +;
 #X obj 389 240 random 25;
-#X floatatom 426 303 5 0 0 0 - - -;
+#X floatatom 426 303 5 0 0 0 - - -, f 5;
 #X obj 423 277 - 12;
 #X obj 384 347 *;
 #X obj 111 149 hsl 90 15 0 1 0 0 empty empty Random_Range 5 8 0 10
 -262144 -1 -1 2670 1;
 #X obj 111 128 hsl 60 15 2 700 0 0 empty empty Metro_Rate 5 8 0 10
 -262144 -1 -1 3060 1;
-#X floatatom 186 130 5 0 0 0 - - -;
+#X floatatom 186 130 5 0 0 0 - - -, f 5;
 #X obj 407 83 expr 60000/$f1;
-#X floatatom 419 103 5 0 0 0 - - -;
+#X floatatom 419 103 5 0 0 0 - - -, f 5;
 #X obj 112 173 hsl 90 15 -24 24 0 0 empty empty Random_Offset 5 8 0
 10 -262144 -1 -1 4450 1;
 #X msg -36 162 0;
@@ -205,8 +205,8 @@
 #X obj 370 364 +;
 #X obj 162 457 outlet;
 #X obj 235 459 outlet;
-#X floatatom 113 215 5 0 0 0 - - -;
-#X floatatom 233 152 5 0 0 0 - - -;
+#X floatatom 113 215 5 0 0 0 - - -, f 5;
+#X floatatom 233 152 5 0 0 0 - - -, f 5;
 #X msg -22 141 0.3;
 #X msg -6 119 364;
 #X obj 204 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -290,7 +290,7 @@
 #X obj 237 153 f;
 #X obj 370 177 + 1;
 #X obj 161 200 mod 8;
-#X floatatom 131 104 5 0 0 0 - - -;
+#X floatatom 131 104 5 0 0 0 - - -, f 5;
 #X obj 168 266 outlet;
 #X obj 30 60 loadbang;
 #X obj 235 39 inlet;
@@ -360,7 +360,7 @@
 #X obj 26 367 delay 1000;
 #X obj 112 130 hsl 100 15 0 3000 0 0 empty empty Note_Duration 5 6
 0 10 -262144 -1 -1 0 1;
-#X floatatom 111 152 5 0 0 0 - - -;
+#X floatatom 111 152 5 0 0 0 - - -, f 5;
 #X obj 157 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 50 429 spigot;
@@ -373,10 +373,10 @@
 #X obj 202 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
 -1 -1;
 #X obj 116 172 hsl 100 15 0 5 0 0 empty empty Transpose 10 6 0 10 -1
--262144 -262144 0 1;
-#X floatatom 421 437 5 0 0 0 - - -;
+-262144 -262144 3000 1;
+#X floatatom 421 437 5 0 0 0 - - -, f 5;
 #X obj 278 223 int;
-#X floatatom 276 274 5 0 0 0 - - -;
+#X floatatom 276 274 5 0 0 0 - - -, f 5;
 #X obj 403 204 f;
 #X obj 437 203 f;
 #X obj 472 204 f;
@@ -482,12 +482,12 @@
 #X connect 22 0 28 2;
 #X connect 23 0 25 2;
 #X connect 24 0 27 2;
-#X connect 25 0 6 1;
+#X connect 25 0 6 0;
 #X connect 26 0 18 2;
 #X connect 26 1 18 3;
 #X connect 26 2 18 4;
 #X connect 26 3 18 5;
-#X connect 27 0 6 2;
+#X connect 27 0 6 0;
 #X connect 28 0 6 0;
 #X connect 30 0 27 3;
 #X connect 30 0 25 3;
