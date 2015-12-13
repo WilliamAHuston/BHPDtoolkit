@@ -37,7 +37,7 @@
 #X obj 465 92 *~ 0.5;
 #X obj 467 113 +~ 0.5;
 #X obj 682 -113 f;
-#X obj 404 193 Snapshot;
+#X obj 404 193 DVM~;
 #X obj 508 27 *;
 #X obj 540 -2 t b f;
 #X floatatom 546 32 5 0 0 0 - - -, f 5;

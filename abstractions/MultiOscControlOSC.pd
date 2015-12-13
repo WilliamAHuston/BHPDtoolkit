@@ -1,0 +1,238 @@
+#N canvas 77 189 1020 650 10;
+#X obj 103 101 cnv 15 150 130 empty empty MultiOscCtl 70 130 1 15 -260097
+-66577 0;
+#X obj 183 170 hsl 60 15 0.01 0.99 0 0 \$0Duty \$0DutyIn Duty_Cycle
+2 7 0 10 -232576 -1 -1 0 1;
+#X obj 109 118 hsl 140 15 1 8372 1 0 \$0Freq \$0FreqIn freq 5 7 0 10
+-261682 -1 -1 7233 1;
+#X obj 106 170 vsl 25 60 0.005 0.5 1 0 \$0Sin \$0SinIn Sine 0 10 0
+10 -204786 -1 -1 4726 1;
+#X obj 157 169 vsl 25 60 0.005 0.5 1 0 \$0PWM \$0PWMIn PWM 2 35 0 10
+-232576 -1 -1 0 1;
+#X obj 132 169 vsl 25 60 0.005 0.5 1 0 \$0Saw \$0SawIn Saw 0 20 0 10
+-204800 -1 -1 5614 1;
+#X obj 107 151 hsl 128 15 0 3000 0 0 \$0Rate \$0RateIn Rate_of_Change
+5 7 0 10 -261234 -1 -1 0 1;
+#X obj 109 135 hsl 115 15 -50 50 0 0 \$0FreqFine \$0FreqFineIn Fine_Tune
+5 7 0 10 -262130 -1 -1 5700 1;
+#X obj 233 134 bng 15 250 50 0 \$0FreqFineZero \$0FreqFineZeroIn Zero
+0 7 0 10 -262144 -1 -1;
+#X floatatom 214 119 5 0 0 0 - #0Freq -, f 5;
+#X obj 187 212 tgl 15 0 \$0InvertSaw \$0InvertSawIn InvertSaw 1 7 0
+8 -262144 -1 -1 0 1;
+#X obj 187 192 hsl 60 15 0 1 0 0 \$0Noise \$0NoiseIn Noise 7 7 0 10
+-66577 -262144 -262144 0 1;
+#X obj 217 103 bng 15 250 50 0 \$0Init \$0InitIn I 5 7 0 10 -4034 -1
+-1;
+#X obj 303 94 r \$0Freq;
+#X obj 413 91 r \$0FreqFine;
+#X obj 551 92 r \$0Rate;
+#X obj 301 193 r \$0Saw;
+#X obj 514 194 r \$0PWM;
+#X obj 407 194 r \$0Duty;
+#X obj 621 191 r \$0Noise;
+#X obj 732 192 r \$0InvertSaw;
+#X floatatom 303 116 5 0 0 0 - - -, f 5;
+#X floatatom 413 113 5 0 0 0 - - -, f 5;
+#X floatatom 551 114 5 0 0 0 - - -, f 5;
+#X floatatom 655 109 5 0 0 0 - - -, f 5;
+#X floatatom 301 215 5 0 0 0 - - -, f 5;
+#X floatatom 407 216 5 0 0 0 - - -, f 5;
+#X floatatom 514 216 5 0 0 0 - - -, f 5;
+#X floatatom 621 213 5 0 0 0 - - -, f 5;
+#X floatatom 732 213 5 0 0 0 - - -, f 5;
+#X obj 655 87 r \$0Sin;
+#X obj 344 344 packOSC;
+#X msg 303 135 send /Freq \$1;
+#X obj 344 367 outlet;
+#X obj 303 158 s \$0OSC;
+#X obj 345 324 r \$0OSC, f 8;
+#X obj 413 157 s \$0OSC;
+#X obj 551 155 s \$0OSC;
+#X obj 655 150 s \$0OSC;
+#X obj 301 260 s \$0OSC;
+#X obj 407 261 s \$0OSC;
+#X obj 514 261 s \$0OSC;
+#X obj 621 258 s \$0OSC;
+#X obj 732 258 s \$0OSC;
+#X msg 413 134 send /FreqFine \$1;
+#X msg 551 132 send /Rate \$1;
+#X msg 655 125 send /Sin \$1;
+#X msg 407 237 send /Duty \$1;
+#X msg 514 238 send /PWM \$1;
+#X msg 621 235 send /Noise \$1;
+#X msg 732 235 send /InvertSaw \$1;
+#X obj 465 362 unpackOSC;
+#X msg 301 235 send /Saw \$1;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 465 432 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 554 436 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 509 481 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 598 482 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 644 435 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 733 439 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 688 484 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 778 485 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 823 441 pd foo;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 869 489 pd foo;
+#X obj 465 389 routeOSC /Freq /FreqFine /Rate /Sin /Saw /PWM /Duty
+/Noise /InvertSaw;
+#X obj 121 260 r \$0FreqFineZero;
+#X msg 121 283 0;
+#X obj 121 306 s \$0FreqFineIn;
+#X msg 233 19 PANIC;
+#X text 157 36 Make it QUIET;
+#X text 84 34 Make a Sound;
+#X obj 75 356 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 109 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 235 104 bng 15 250 50 0 \$0Panic empty p 5 6 0 10 -258113 -1
+-1;
+#X obj 75 331 r \$0Panic;
+#X obj 209 19 bng 15 250 50 0 \$0Panic empty empty 17 7 0 10 -258113
+-1 -1;
+#X msg 134 15 INIT;
+#X obj 197 354 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 197 330 r \$0Init;
+#X msg 18 15 Bypass;
+#X obj -5 17 tgl 15 0 empty empty B 5 7 0 10 -4160 -262144 -262144
+0 1;
+#X obj 197 375 f \$0, f 5;
+#X obj 75 381 f \$0, f 5;
+#X msg 197 410 \; \$1FreqIn 110 \; \$1FreqFineIn 0 \; \$1RateIn 0 \;
+\$1SinIn 0.2 \; \$1SawIn 0.4 \; \$1DutyIn 0 \; \$1PWMIn 0 \; \$1NoiseIn
+0 \; \$1InvertSawIn 0 \;;
+#X msg 75 412 \; \$1SinIn 0 \; \$1SawIn 0 \; \$1PWMIn 0 \; \$1NoiseIn
+0 \;;
+#X obj 266 331 loadbang;
+#X connect 13 0 21 0;
+#X connect 14 0 22 0;
+#X connect 15 0 23 0;
+#X connect 16 0 25 0;
+#X connect 17 0 27 0;
+#X connect 18 0 26 0;
+#X connect 19 0 28 0;
+#X connect 20 0 29 0;
+#X connect 21 0 32 0;
+#X connect 22 0 44 0;
+#X connect 23 0 45 0;
+#X connect 24 0 46 0;
+#X connect 25 0 52 0;
+#X connect 26 0 47 0;
+#X connect 27 0 48 0;
+#X connect 28 0 49 0;
+#X connect 29 0 50 0;
+#X connect 30 0 24 0;
+#X connect 31 0 33 0;
+#X connect 32 0 34 0;
+#X connect 35 0 31 0;
+#X connect 44 0 36 0;
+#X connect 45 0 37 0;
+#X connect 46 0 38 0;
+#X connect 47 0 40 0;
+#X connect 48 0 41 0;
+#X connect 49 0 42 0;
+#X connect 50 0 43 0;
+#X connect 51 0 63 0;
+#X connect 52 0 39 0;
+#X connect 63 0 53 0;
+#X connect 63 1 55 0;
+#X connect 63 2 54 0;
+#X connect 63 3 56 0;
+#X connect 63 4 57 0;
+#X connect 63 5 59 0;
+#X connect 63 6 58 0;
+#X connect 63 7 60 0;
+#X connect 63 8 61 0;
+#X connect 63 9 62 0;
+#X connect 64 0 65 0;
+#X connect 65 0 66 0;
+#X connect 70 0 81 0;
+#X connect 73 0 70 0;
+#X connect 76 0 80 0;
+#X connect 77 0 76 0;
+#X connect 80 0 82 0;
+#X connect 81 0 83 0;
+#X connect 84 0 76 0;
+#X coords 0 -1 1 1 155 135 1 100 100;

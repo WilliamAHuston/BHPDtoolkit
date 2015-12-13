@@ -52,7 +52,7 @@
 #X obj 269 384 mtof;
 #X obj 194 103 hsl 128 15 -1 1 0 0 empty empty FineTune 6 7 0 10 -262144
 -1 -1 4600 1;
-#X obj 467 -21 initbang;
+#X obj 467 -21 loadbang;
 #X msg 465 10 0;
 #X floatatom 149 73 5 0 0 0 - - -;
 #X obj 341 104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144

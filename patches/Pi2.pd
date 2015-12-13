@@ -240,7 +240,7 @@
 #X obj 723 10 stripnote;
 #X obj 726 76 +;
 #X obj 770 47 t b f;
-#X obj 1560 1 Snapshot;
+#X obj 1560 1 DVM~;
 #X msg 799 85 0;
 #X obj 832 370 ADSR2;
 #N canvas 1 109 1185 687 phase 0;
@@ -285,7 +285,7 @@
 #X msg 27 66 0.27;
 #X msg 27 97 0.31;
 #X obj 14 -27 loadbang;
-#X obj 83 -33 initbang;
+#X obj 83 -33 loadbang;
 #X obj 155 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 24 39 1;

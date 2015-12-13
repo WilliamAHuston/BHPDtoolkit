@@ -37,7 +37,7 @@ modulator so the HSL is for display only.;
 -1 -1 6372 1;
 #X obj 224 559 hsl 110 8 0 1 0 0 empty empty empty -2 -8 0 10 -261234
 -1 -1 8843 1;
-#X obj 602 365 Snapshot;
+#X obj 602 365 DVM~;
 #X obj 537 41 inlet;
 #X msg 529 23 linear?;
 #X msg 417 19 pan 0=L 1=R;

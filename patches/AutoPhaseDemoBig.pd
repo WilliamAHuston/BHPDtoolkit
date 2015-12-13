@@ -2,7 +2,7 @@
 #X obj 253 164 multi-osc~;
 #X obj 445 1328 output~;
 #X obj -446 -19 MetroGlobal;
-#X obj -147 796 Snapshot;
+#X obj -147 796 DVM~;
 #X obj 480 125 hsl 128 15 0 1 0 0 empty empty Duty -2 -8 0 10 -262144
 -1 -1 9900 1;
 #X obj 478 147 sig~;
@@ -100,7 +100,7 @@
 #X obj 106 163 hsl 60 15 0 30 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X floatatom 172 181 5 0 0 0 - - -;
-#X obj 274 197 Snapshot;
+#X obj 274 197 DVM~;
 #X obj 107 181 hsl 60 15 0 5 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 264 143 *~;

@@ -1,4 +1,4 @@
-#N canvas 1 95 1185 673 10;
+#N canvas 671 88 1185 673 10;
 #X obj 393 11 inlet~;
 #X obj 516 244 outlet~;
 #X obj 575 243 outlet~;
@@ -48,16 +48,16 @@
 #X msg 373 462 print \$1;
 #X obj 101 102 cnv 15 120 110 empty empty billverb 5 6 0 14 -261234
 -66577 0;
-#X obj 107 127 hsl 40 15 0 1 0 0 \$0-RoomSize \$0-RoomSizeIn Roomsize
--2 -6 0 10 -204800 -1 -1 2700 1;
+#X obj 107 127 hsl 40 15 0.1 1.08 0 0 \$0-RoomSize \$0-RoomSizeIn Roomsize
+-2 -6 0 10 -204800 -1 -1 3500 1;
 #X obj 107 155 hsl 40 15 0 1 0 0 \$0-Damping \$0-DampingIn Damping
--2 -6 0 10 -261682 -1 -1 0 1;
+-2 -6 0 10 -261682 -1 -1 2100 1;
 #X obj 108 185 hsl 40 15 0 1 0 0 \$0-WetDry \$0-WetDryIn Wet/Dry -2
--6 0 10 -232576 -1 -1 1500 0;
+-6 0 10 -232576 -1 -1 700 0;
 #X obj 184 142 tgl 15 0 \$0-Freeze \$0-FreezeIn Freeze -5 -4 0 8 -4032
 -1 -1 0 1;
 #X obj 157 123 vsl 15 40 0 2 0 0 \$0-Width \$0-WidthiN Width -5 47
-0 10 -191407 -1 -1 2700 1;
+0 10 -191407 -1 -1 2900 1;
 #X obj 194 111 tgl 15 0 \$0-Bypass \$0-BypassIn Bypass -5 -4 0 8 -262144
 -1 -1 0 1;
 #X obj 184 176 bng 15 250 50 0 \$0-Clear \$0-ClearIn Clear -5 -5 0
@@ -76,7 +76,7 @@
 #X floatatom 255 463 5 0 0 0 - - -, f 5;
 #X msg 245 109 0;
 #X obj 207 158 vsl 10 40 0 1 0 0 \$0WetComp empty WetComp -30 47 0
-10 -262144 -1 -1 1170 1;
+10 -262144 -1 -1 100 1;
 #X obj 245 81 loadbang;
 #X obj 635 41 r \$0WetComp;
 #X floatatom 667 70 5 0 0 0 - - -, f 5;
@@ -98,7 +98,6 @@
 #X obj 465 180 freeverb~;
 #X obj 307 17 inlet~;
 #X floatatom 126 224 5 0 0 0 - - -, f 5;
-#X msg 8 96;
 #X msg 19 135 0.076;
 #X connect 0 0 44 0;
 #X connect 3 0 14 0;

@@ -36,7 +36,7 @@
 #X obj 111 222 hsl 128 15 0 1 0 0 empty \$0p3 Phase3 15 8 0 10 -260097
 -1 -1 6350 1;
 #X obj 1047 111 r \$0LoadBang;
-#X obj 432 722 Snapshot;
+#X obj 432 722 DVM~;
 #N canvas 2512 205 450 300 FOO 0;
 #X obj 454 171 inlet~;
 #X obj 572 170 inlet~;

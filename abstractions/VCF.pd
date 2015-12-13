@@ -47,7 +47,7 @@
 #X obj 101 3 bng 15 250 50 0 empty empty Zero -25 2 0 10 -159808 -1
 -1;
 #X msg 139 36 0;
-#X obj 298 29 initbang;
+#X obj 298 29 loadbang;
 #X obj 307 5 loadbang;
 #X connect 0 0 7 0;
 #X connect 1 0 6 3;

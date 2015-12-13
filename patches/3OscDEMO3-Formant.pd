@@ -14,7 +14,7 @@
 #X obj 74 -6 mtof;
 #X obj 288 -11 mtof;
 #X obj 488 -13 mtof;
-#X obj 1083 331 Snapshot;
+#X obj 1083 331 DVM~;
 #X obj 976 504 KeyBender;
 #N canvas 44 46 1582 687 phase 0;
 #X obj 225 328 outlet~;
@@ -58,7 +58,7 @@
 #X msg 27 66 0.27;
 #X msg 27 97 0.31;
 #X obj 14 -27 loadbang;
-#X obj 83 -33 initbang;
+#X obj 83 -33 loadbang;
 #X obj 155 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 24 39 1;
@@ -184,7 +184,7 @@
 #X msg 123 90 1108;
 #X msg 216 89 329;
 #X obj 133 50 inlet;
-#X obj 280 31 initbang;
+#X obj 280 31 loadbang;
 #X obj 162 231 outlet;
 #X obj 175 151 t b f;
 #X obj 220 152 t b f;

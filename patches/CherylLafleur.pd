@@ -732,7 +732,7 @@ the past months at FERC steady stream of visitors at our door;
 #X symbolatom 308 174 15 0 0 0 - - -;
 #X obj 480 286 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 489 246 initbang;
+#X obj 489 246 loadbang;
 #X msg 114 301 symbol controler value;
 #X msg 346 304 symbol MIDI-chan;
 #X msg 221 303 symbol controler-number;

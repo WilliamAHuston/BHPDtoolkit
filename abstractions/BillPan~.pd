@@ -4,7 +4,7 @@
 #X obj 282 376 outlet~;
 #X obj 112 108 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 5298 1;
-#X obj 110 35 initbang;
+#X obj 110 35 loadbang;
 #X msg 110 58 0.5;
 #X obj 245 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;

@@ -23,7 +23,7 @@
 #X obj 277 17 *~ 0.5;
 #X obj 278 38 +~ 0.5;
 #X obj 682 -113 f;
-#X obj 404 193 Snapshot;
+#X obj 404 193 DVM~;
 #X obj 479 -21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 325 -5 r \$0PhaseAmt;

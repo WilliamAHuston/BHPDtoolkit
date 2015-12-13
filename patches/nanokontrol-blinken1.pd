@@ -122,7 +122,7 @@
 #X restore 88 -115 pd BPM;
 #X floatatom 102 -41 5 0 0 0 - - -;
 #X msg -15 50 99999;
-#X obj -25 -69 initbang;
+#X obj -25 -69 loadbang;
 #X obj 445 111 s \$0NumSteps;
 #X obj 604 407 r \$0NumSteps;
 #X obj 309 404 r \$0NumSteps;

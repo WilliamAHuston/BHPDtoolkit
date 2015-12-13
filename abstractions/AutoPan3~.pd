@@ -28,7 +28,7 @@
 #X obj 108 216 BillPan2~;
 #X obj 108 200 BillPan2~;
 #X obj 670 -88 phasor~ 1;
-#X obj 600 237 Snapshot;
+#X obj 600 237 DVM~;
 #X msg 696 14 0.66667;
 #X obj 694 -46 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;

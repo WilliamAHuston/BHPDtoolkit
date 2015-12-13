@@ -65,8 +65,8 @@ WetComp -30 -9 0 10 -262144 -1 -1 0 1;
 #X obj 535 108 r \$0-ModFreq;
 #X obj 648 204 loadbang;
 #X msg 646 234 750;
-#X obj 306 724 Snapshot;
-#X obj 409 722 Snapshot;
+#X obj 306 724 DVM~;
+#X obj 409 722 DVM~;
 #X obj 160 182 hsl 40 10 0 10 0 0 \$0-SawGain empty SawGain -2 -6 0
 10 -262144 -1 -1 0 1;
 #X floatatom 294 238 5 0 0 0 - #0-SawGain -, f 5;
@@ -139,7 +139,7 @@ WetComp -30 -9 0 10 -262144 -1 -1 0 1;
 #X obj 107 462 outlet~;
 #X floatatom 92 60 5 0 0 0 - - -, f 5;
 #X obj 15 284 tabwrite~ saw;
-#X obj 325 414 Snapshot;
+#X obj 325 414 DVM~;
 #X obj 253 -2 inlet;
 #X obj 257 22 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 7800 1;

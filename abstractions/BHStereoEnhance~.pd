@@ -1,4 +1,4 @@
-#N canvas 124 137 1185 621 10;
+#N canvas 122 151 1185 621 10;
 #X obj 103 101 cnv 15 167 45 empty empty empty 20 12 0 14 -4160 -257985
 0;
 #X obj -21 210 +~;
@@ -35,7 +35,7 @@
 #X obj 623 196 line;
 #X msg 623 170 \$1 100;
 #X obj 380 110 hsl 128 15 0 1 0 0 empty empty L-R_Difference 40 7 0
-10 -4034 -1 -1 6350 1;
+10 -4034 -1 -1 6939 1;
 #X floatatom 377 180 5 0 0 0 - - -, f 5;
 #X obj 378 157 line;
 #X msg 378 131 \$1 100;
@@ -45,8 +45,8 @@
 #X obj 171 429 *~;
 #X obj 132 429 *~;
 #X text 140 43 comment;
-#X obj 116 128 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6350 1;
+#X obj 116 128 hsl 128 15 0 1 0 0 empty empty Mono<-_Stereo_->Exp.
+5 7 0 10 -262144 -1 -1 7300 1;
 #X msg 109 49 0.5;
 #X obj 98 25 loadbang;
 #X floatatom 426 92 5 0 0 0 - - -, f 5;
@@ -61,16 +61,16 @@
 #X obj -115 214 *;
 #X obj -124 185 t b f;
 #X obj 625 150 hsl 128 15 0 1 0 0 empty empty L+R_Sum 25 7 0 10 -258113
--1 -262144 6350 1;
+-1 -262144 5761 1;
 #X floatatom 692 170 5 0 0 0 - - -, f 5;
 #X obj 377 63 expr if ($f1<0.5 \, $f1 \, ($f1-0.5)*0.62+0.5);
 #X floatatom 177 156 5 0 0 0 - - -, f 5;
 #X obj 624 118 expr if ($f1<0.5 \, 0.66666-$f1*0.333333 \, 1-(($f1-0.5)*0.62+0.5))
 , f 61;
 #X obj 496 371 hsl 128 15 0 1 0 0 empty empty Gain_Comp 40 7 0 10 -228856
--1 -159808 12700 1;
+-1 -159808 12320 1;
 #X obj 633 394 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 0.970079 256;
 #X obj 622 237 pack \$1 200;
 #X obj 625 277 s~ \$0LRSum;
 #X obj 625 257 line~;

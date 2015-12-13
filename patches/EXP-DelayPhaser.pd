@@ -50,7 +50,7 @@
 #X obj 890 616 r \$0PhaseAmt;
 #X obj 713 608 r \$0PhaseAmt;
 #X floatatom 587 643 5 0 0 0 - - -;
-#X obj 372 770 Snapshot;
+#X obj 372 770 DVM~;
 #X obj 270 460 *~;
 #X obj 426 419 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 1400 1;
@@ -106,7 +106,7 @@
 #X obj 106 163 hsl 60 15 0 30 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X floatatom 172 181 5 0 0 0 - - -;
-#X obj 274 197 Snapshot;
+#X obj 274 197 DVM~;
 #X obj 107 181 hsl 60 15 0 5 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 5900 1;
 #X obj 264 143 *~;

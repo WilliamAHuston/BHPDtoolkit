@@ -23,7 +23,7 @@
 #X msg -71 204 ---;
 #X obj 699 -292 notein;
 #X floatatom 737 -252 5 0 0 0 - - -, f 5;
-#X obj 1061 26 Snapshot;
+#X obj 1061 26 DVM~;
 #N canvas 0 161 1185 687 phase 0;
 #X obj 225 328 outlet~;
 #X obj 302 327 outlet~;

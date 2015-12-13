@@ -16,7 +16,7 @@
 #X obj 130 569 s \$0p1;
 #X obj 359 569 s \$0p3;
 #X obj 245 567 s \$0p2;
-#X obj 138 388 Snapshot;
+#X obj 138 388 DVM~;
 #X obj 302 219 inlet~;
 #X obj 301 243 delwrite~ \$0FOO 5000;
 #X obj 1004 79 line~;
@@ -410,7 +410,7 @@ factor;
 #X obj 269 13 r~ \$0PhaseDispRamp;
 #X obj 416 13 inlet~;
 #X obj 73 31 r~ \$0MasterPhasor;
-#X obj 527 273 Snapshot;
+#X obj 527 273 DVM~;
 #X floatatom 278 378 5 0 0 0 - - -, f 5;
 #X obj 338 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -456,7 +456,7 @@ factor;
 #X obj 269 13 r~ \$0PhaseDispRamp;
 #X obj 416 13 inlet~;
 #X obj 73 31 r~ \$0MasterPhasor;
-#X obj 30 157 Snapshot;
+#X obj 30 157 DVM~;
 #X connect 0 0 2 0;
 #X connect 1 0 10 0;
 #X connect 2 0 5 0;

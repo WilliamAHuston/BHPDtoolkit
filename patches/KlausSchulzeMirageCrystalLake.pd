@@ -8,7 +8,7 @@
 -1 -1 5994 1;
 #X floatatom 239 107 5 0 0 0 - - -;
 #X obj 323 7 MetroGlobal;
-#X obj 436 8 Snapshot;
+#X obj 436 8 DVM~;
 #X obj 178 672 billverb~;
 #X msg 104 64 543;
 #X obj 63 540 AutoPhase3;
