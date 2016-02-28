@@ -1,4 +1,4 @@
-#N canvas 77 189 1020 650 10;
+#N canvas 126 111 1020 650 10;
 #X obj 103 101 cnv 15 150 130 empty empty MultiOscCtl 70 130 1 15 -260097
 -66577 0;
 #X obj 183 170 hsl 60 15 0.01 0.99 0 0 \$0Duty \$0DutyIn Duty_Cycle
@@ -18,9 +18,9 @@
 #X obj 233 134 bng 15 250 50 0 \$0FreqFineZero \$0FreqFineZeroIn Zero
 0 7 0 10 -262144 -1 -1;
 #X floatatom 214 119 5 0 0 0 - #0Freq -, f 5;
-#X obj 187 212 tgl 15 0 \$0InvertSaw \$0InvertSawIn InvertSaw 1 7 0
-8 -262144 -1 -1 0 1;
-#X obj 187 192 hsl 60 15 0 1 0 0 \$0Noise \$0NoiseIn Noise 7 7 0 10
+#X obj 233 213 tgl 15 0 \$0InvertSaw \$0InvertSawIn InvertSaw -30 -3
+0 8 -262144 -1 -1 0 1;
+#X obj 187 189 hsl 60 15 0 1 0 0 \$0Noise \$0NoiseIn Noise 7 7 0 10
 -66577 -262144 -262144 0 1;
 #X obj 217 103 bng 15 250 50 0 \$0Init \$0InitIn I 5 7 0 10 -4034 -1
 -1;
@@ -35,13 +35,13 @@
 #X floatatom 303 116 5 0 0 0 - - -, f 5;
 #X floatatom 413 113 5 0 0 0 - - -, f 5;
 #X floatatom 551 114 5 0 0 0 - - -, f 5;
-#X floatatom 655 109 5 0 0 0 - - -, f 5;
+#X floatatom 653 110 5 0 0 0 - - -, f 5;
 #X floatatom 301 215 5 0 0 0 - - -, f 5;
 #X floatatom 407 216 5 0 0 0 - - -, f 5;
 #X floatatom 514 216 5 0 0 0 - - -, f 5;
 #X floatatom 621 213 5 0 0 0 - - -, f 5;
 #X floatatom 732 213 5 0 0 0 - - -, f 5;
-#X obj 655 87 r \$0Sin;
+#X obj 654 89 r \$0Sin;
 #X obj 344 344 packOSC;
 #X msg 303 135 send /Freq \$1;
 #X obj 344 367 outlet;
@@ -49,7 +49,7 @@
 #X obj 345 324 r \$0OSC, f 8;
 #X obj 413 157 s \$0OSC;
 #X obj 551 155 s \$0OSC;
-#X obj 655 150 s \$0OSC;
+#X obj 653 155 s \$0OSC;
 #X obj 301 260 s \$0OSC;
 #X obj 407 261 s \$0OSC;
 #X obj 514 261 s \$0OSC;
@@ -57,7 +57,7 @@
 #X obj 732 258 s \$0OSC;
 #X msg 413 134 send /FreqFine \$1;
 #X msg 551 132 send /Rate \$1;
-#X msg 655 125 send /Sin \$1;
+#X msg 653 134 send /Sin \$1;
 #X msg 407 237 send /Duty \$1;
 #X msg 514 238 send /PWM \$1;
 #X msg 621 235 send /Noise \$1;
@@ -153,9 +153,7 @@
 #X connect 0 0 1 0;
 #X connect 0 0 2 0;
 #X coords 0 -1 1 1 80 30 1 100 100;
-#X restore 869 489 pd foo;
-#X obj 465 389 routeOSC /Freq /FreqFine /Rate /Sin /Saw /PWM /Duty
-/Noise /InvertSaw;
+#X restore 868 485 pd foo;
 #X obj 121 260 r \$0FreqFineZero;
 #X msg 121 283 0;
 #X obj 121 306 s \$0FreqFineIn;
@@ -186,6 +184,27 @@
 #X msg 75 412 \; \$1SinIn 0 \; \$1SawIn 0 \; \$1PWMIn 0 \; \$1NoiseIn
 0 \;;
 #X obj 266 331 loadbang;
+#X obj 185 210 tgl 15 0 \$0Sub empty Sub 0 7 0 8 -13381 -262144 -257985
+0 1;
+#X floatatom 751 116 5 0 0 0 - - -, f 5;
+#X obj 752 158 s \$0OSC;
+#X obj 752 96 r \$0Sub;
+#X msg 752 134 send /Sub \$1;
+#X obj 465 389 routeOSC /Freq /FreqFine /Rate /Sin /Saw /PWM /Duty
+/Noise /InvertSaw /Sub;
+#N canvas 1 81 450 300 foo 0;
+#X obj 106 75 inlet;
+#X obj 120 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 140 113 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X coords 0 -1 1 1 80 30 1 100 100;
+#X restore 912 443 pd foo;
+#X obj 136 365 bng 15 250 50 0 \$0Init \$0InitIn I 5 7 0 10 -4034 -1
+-1;
+#X obj 154 366 bng 15 250 50 0 \$0Panic empty p 5 6 0 10 -258113 -1
+-1;
 #X connect 13 0 21 0;
 #X connect 14 0 22 0;
 #X connect 15 0 23 0;
@@ -205,6 +224,7 @@
 #X connect 29 0 50 0;
 #X connect 30 0 24 0;
 #X connect 31 0 33 0;
+#X connect 31 0 51 0;
 #X connect 32 0 34 0;
 #X connect 35 0 31 0;
 #X connect 44 0 36 0;
@@ -214,25 +234,29 @@
 #X connect 48 0 41 0;
 #X connect 49 0 42 0;
 #X connect 50 0 43 0;
-#X connect 51 0 63 0;
+#X connect 51 0 89 0;
 #X connect 52 0 39 0;
-#X connect 63 0 53 0;
-#X connect 63 1 55 0;
-#X connect 63 2 54 0;
-#X connect 63 3 56 0;
-#X connect 63 4 57 0;
-#X connect 63 5 59 0;
-#X connect 63 6 58 0;
-#X connect 63 7 60 0;
-#X connect 63 8 61 0;
-#X connect 63 9 62 0;
+#X connect 63 0 64 0;
 #X connect 64 0 65 0;
-#X connect 65 0 66 0;
-#X connect 70 0 81 0;
-#X connect 73 0 70 0;
-#X connect 76 0 80 0;
-#X connect 77 0 76 0;
+#X connect 69 0 80 0;
+#X connect 72 0 69 0;
+#X connect 75 0 79 0;
+#X connect 76 0 75 0;
+#X connect 79 0 81 0;
 #X connect 80 0 82 0;
-#X connect 81 0 83 0;
-#X connect 84 0 76 0;
+#X connect 83 0 75 0;
+#X connect 85 0 88 0;
+#X connect 87 0 85 0;
+#X connect 88 0 86 0;
+#X connect 89 0 53 0;
+#X connect 89 1 55 0;
+#X connect 89 2 54 0;
+#X connect 89 3 56 0;
+#X connect 89 4 57 0;
+#X connect 89 5 59 0;
+#X connect 89 6 58 0;
+#X connect 89 7 60 0;
+#X connect 89 8 61 0;
+#X connect 89 9 62 0;
+#X connect 89 10 90 0;
 #X coords 0 -1 1 1 155 135 1 100 100;

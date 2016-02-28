@@ -1,0 +1,161 @@
+#N canvas 0 67 1200 701 10;
+#X obj -64 72 unpack f f;
+#X floatatom -26 101 5 0 0 0 - - -, f 5;
+#X floatatom -64 102 5 0 0 0 - - -, f 5;
+#X obj -54 32 inlet;
+#X obj -64 280 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -87 281 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -113 280 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -37 281 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -190 392 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -198 607 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -323 393 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -111 679 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 285 524 outlet~;
+#N canvas 142 132 901 598 1voice 0;
+#X obj 240 39 unpack f f;
+#X obj 400 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 366 313 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 241 21 inlet;
+#X msg 334 42 MIDI note;
+#X msg 130 147 Velocity;
+#X obj 213 567 outlet~;
+#X floatatom 308 71 5 0 0 0 - - -, f 5;
+#X floatatom 238 69 5 0 0 0 - - -, f 5;
+#X obj 454 43 inlet;
+#X msg 456 12 osc control;
+#X obj 574 42 inlet;
+#X msg 577 11 ADSR control;
+#X obj 315 330 ADSROSC;
+#X obj 508 303 MultiOscOSC~;
+#X msg 653 267 OSC;
+#X msg 515 265 LFO~;
+#X msg 566 265 PW~;
+#X msg 586 244 noise level~;
+#X obj 456 71 print ---;
+#X msg 249 -3 velocity \, pitch;
+#X obj 239 94 route 0;
+#X obj 228 127 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 289 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 336 151 f;
+#X obj 361 217 print;
+#X msg 343 176 send /Freq \$1;
+#X obj 408 210 packOSC;
+#X obj 316 103 mtof;
+#X floatatom 350 124 5 0 0 0 - - -, f 5;
+#X connect 0 0 8 0;
+#X connect 0 1 7 0;
+#X connect 1 0 13 3;
+#X connect 2 0 13 2;
+#X connect 3 0 0 0;
+#X connect 7 0 28 0;
+#X connect 8 0 21 0;
+#X connect 9 0 14 3;
+#X connect 11 0 13 1;
+#X connect 13 0 6 0;
+#X connect 14 0 13 0;
+#X connect 21 0 22 0;
+#X connect 21 1 23 0;
+#X connect 22 0 1 0;
+#X connect 23 0 2 0;
+#X connect 23 0 24 0;
+#X connect 24 0 26 0;
+#X connect 26 0 25 0;
+#X connect 26 0 27 0;
+#X connect 27 0 14 3;
+#X connect 28 0 24 1;
+#X connect 28 0 29 0;
+#X restore -227 459 pd 1voice;
+#X obj 101 120 MultiOscControlOSC;
+#X obj -230 294 delay 200;
+#X obj -225 353 print ---;
+#X obj -214 319 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -253 250 print makenote;
+#X obj -214 177 shell;
+#X obj 258 121 ADSR-ControlOSC;
+#X obj -79 207 pack f f f;
+#X obj 255 277 s \$0ADSROSC;
+#X obj 98 292 s \$0OscOSC;
+#X obj -72 383 r \$0OscOSC;
+#X obj -38 409 r \$0ADSROSC;
+#X obj -105 433 1VoiceOSC~;
+#X obj 86 386 r \$0OscOSC;
+#X obj 120 412 r \$0ADSROSC;
+#X obj 53 436 1VoiceOSC~;
+#X obj 221 389 r \$0OscOSC;
+#X obj 255 415 r \$0ADSROSC;
+#X obj 188 439 1VoiceOSC~;
+#X obj 379 392 r \$0OscOSC;
+#X obj 413 418 r \$0ADSROSC;
+#X obj 346 442 1VoiceOSC~;
+#X obj -105 259 route 1 2 3 4 5 6;
+#X obj 3 282 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -18 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -81 125 poly 6 1;
+#X obj 506 391 r \$0OscOSC;
+#X obj 540 417 r \$0ADSROSC;
+#X obj 473 441 1VoiceOSC~;
+#X obj 664 394 r \$0OscOSC;
+#X obj 698 420 r \$0ADSROSC;
+#X obj 631 444 1VoiceOSC~;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 1 0 39 1;
+#X connect 2 0 39 0;
+#X connect 3 0 0 0;
+#X connect 14 0 23 0;
+#X connect 15 0 17 0;
+#X connect 17 0 16 0;
+#X connect 20 0 22 0;
+#X connect 21 0 15 0;
+#X connect 21 0 18 0;
+#X connect 21 0 36 0;
+#X connect 24 0 26 1;
+#X connect 25 0 26 2;
+#X connect 26 0 12 0;
+#X connect 27 0 29 1;
+#X connect 28 0 29 2;
+#X connect 29 0 12 0;
+#X connect 30 0 32 1;
+#X connect 31 0 32 2;
+#X connect 32 0 12 0;
+#X connect 33 0 35 1;
+#X connect 34 0 35 2;
+#X connect 35 0 12 0;
+#X connect 36 0 6 0;
+#X connect 36 0 26 0;
+#X connect 36 1 5 0;
+#X connect 36 1 29 0;
+#X connect 36 2 4 0;
+#X connect 36 2 32 0;
+#X connect 36 3 7 0;
+#X connect 36 3 35 0;
+#X connect 36 4 38 0;
+#X connect 36 4 42 0;
+#X connect 36 5 37 0;
+#X connect 36 5 45 0;
+#X connect 39 0 21 0;
+#X connect 39 1 21 2;
+#X connect 39 2 21 1;
+#X connect 40 0 42 1;
+#X connect 41 0 42 2;
+#X connect 42 0 12 0;
+#X connect 43 0 45 1;
+#X connect 44 0 45 2;
+#X connect 45 0 12 0;
+#X coords 0 -1 1 1 289 159 1 100 100;

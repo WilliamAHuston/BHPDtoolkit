@@ -1,0 +1,37 @@
+#N canvas 0 67 1200 701 10;
+#X obj -9 -22 looperV3.0~;
+#X obj 418 16 AutoPhase12~;
+#X obj 412 256 AutoPan12~;
+#X obj 57 401 s~ \$0loop;
+#X obj 415 -4 r~ \$0loop;
+#X obj 419 479 billverb~;
+#X obj 939 714 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 805 562 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 440 618 output~;
+#X obj 631 530 MetroGlobal;
+#X obj 807 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 932 -128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 623 43 looperV3.0~;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 1 2 2 2;
+#X connect 1 3 2 3;
+#X connect 1 4 2 4;
+#X connect 1 5 2 5;
+#X connect 1 6 2 6;
+#X connect 1 7 2 7;
+#X connect 1 8 2 8;
+#X connect 1 9 2 9;
+#X connect 1 10 2 10;
+#X connect 1 11 2 11;
+#X connect 2 0 5 0;
+#X connect 2 1 5 1;
+#X connect 4 0 1 0;
+#X connect 5 0 8 0;
+#X connect 5 1 8 1;
+#X connect 12 0 3 0;

@@ -1,13 +1,13 @@
-#N canvas 1956 98 612 508 10;
-#X obj 99 248 nbx 5 20 -1e+037 1e+037 0 0 \$0BPM \$0BPMIn BPM 100 10
-0 20 -257985 -1 -1 59.7774 256;
-#X obj 241 266 nbx 5 20 -1e+037 1e+037 0 0 \$0MetroMs \$0MetroMsIn
-ms 50 10 0 20 -204800 -1 -1 1003.72 256;
-#X floatatom 244 315 5 0 0 0 - - -;
-#X obj 243 292 expr 60000/$f1;
-#X msg 244 339 set \$1;
-#X obj 243 363 s \$0BPMIn;
-#X floatatom 100 296 5 0 0 0 - - -;
+#N canvas 769 112 612 508 10;
+#X obj 99 248 nbx 5 20 -1e+37 1e+37 0 0 \$0BPM \$0BPMIn BPM 100 10
+0 20 -257985 -1 -1 46.875 256;
+#X obj 267 236 nbx 5 20 -1e+37 1e+37 0 0 \$0MetroMs \$0MetroMsIn ms
+50 10 0 20 -204800 -1 -1 1280 256;
+#X floatatom 270 285 5 0 0 0 - - -, f 5;
+#X obj 269 262 expr 60000/$f1;
+#X msg 270 309 set \$1;
+#X obj 269 333 s \$0BPMIn;
+#X floatatom 100 296 5 0 0 0 - - -, f 5;
 #X msg 100 316 set \$1;
 #X obj 100 339 s \$0MetroMsIn;
 #X obj 100 274 expr ($f1)/6*100;

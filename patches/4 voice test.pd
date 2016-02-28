@@ -1,0 +1,14 @@
+#N canvas 351 190 656 433 10;
+#X obj 266 28 notein;
+#X obj 324 141 4VoiceOSC~;
+#X obj 247 68 pack f f;
+#X obj 289 347 output~;
+#X obj 203 260 pvu~;
+#X obj 205 285 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X connect 0 0 2 0;
+#X connect 0 1 2 1;
+#X connect 1 0 3 0;
+#X connect 1 0 3 1;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;

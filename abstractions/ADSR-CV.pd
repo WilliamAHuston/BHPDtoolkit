@@ -1,12 +1,12 @@
-#N canvas 216 163 903 607 10;
-#X obj 23 37 vsl 15 128 3 500 1 0 \$0At \$0At At 0 -9 0 10 -261234
--1 -1 1400 1;
-#X obj 68 37 vsl 15 128 30 8000 1 0 \$0Sf \$0Sf Sf 0 -9 0 10 -257985
--1 -1 3400 1;
-#X obj 53 37 vsl 15 128 5 1500 1 0 \$0Dt empty Dt 0 -9 0 10 -203904
--1 -1 6600 1;
-#X obj 83 37 vsl 15 128 0 1000 0 0 \$0Rt \$0Rt Rt 0 -9 0 10 -204786
--1 -1 1200 1;
+#N canvas 212 225 903 607 10;
+#X obj 23 37 vsl 15 128 3 1500 1 0 \$0At \$0At At 0 -9 0 10 -261234
+-1 -1 0 1;
+#X obj 68 37 vsl 15 128 0.001 2 1 0 \$0Sf \$0Sf Sl 0 -9 0 10 -257985
+-1 -1 0 1;
+#X obj 53 37 vsl 15 128 5 2500 1 0 \$0Dt empty Dt 0 -9 0 10 -203904
+-1 -1 0 1;
+#X obj 83 37 vsl 15 128 20 2000 1 0 \$0Rt \$0Rt Rt 0 -9 0 10 -204786
+-1 -1 0 1;
 #X obj 333 -44 inlet;
 #X msg 329 -69 Note On;
 #X msg 383 -70 Note Off;
@@ -24,12 +24,12 @@
 #X obj 545 433 r MetroGlobal;
 #X obj 555 503 outlet;
 #X obj 84 3 bng 15 250 50 0 empty empty I 4 6 0 10 -4034 -1 -1;
-#X obj 37 37 vsl 15 128 30 8000 1 0 \$0Mxf \$0Mxf Mxf 0 -9 0 10 -159808
--1 -1 4800 1;
-#X obj 8 37 vsl 15 128 30 8000 1 0 \$0If \$0If If 0 -9 0 10 -258113
--1 -1 1200 1;
-#X obj 98 37 vsl 15 128 30 8000 1 0 \$0Rf \$0Rf Rf 0 -9 0 10 -4034
--1 -1 5600 1;
+#X obj 37 37 vsl 15 128 0.001 2 1 0 \$0Mxf \$0Mxf Mxl 0 -9 0 10 -159808
+-1 -1 0 1;
+#X obj 8 37 vsl 15 128 0.001 2 1 0 \$0If \$0If Il 0 -9 0 10 -258113
+-1 -1 0 1;
+#X obj 98 37 vsl 15 128 0.001 2 1 0 \$0Rf \$0Rf Rf 0 -9 0 10 -4034
+-1 -1 0 1;
 #X obj 101 3 bng 15 250 50 0 empty empty P 4 6 0 10 -258113 -1 -1;
 #X obj -75 -29 s \$0At;
 #X obj -24 -27 s \$0Dt;
@@ -78,6 +78,10 @@
 #X obj 648 358 pack f f f;
 #X msg 652 393 \$2 \$3;
 #X obj 392 409 line~;
+#X obj 101 260 pack \$0;
+#X obj 102 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 108 297 \; \$1At 0;
 #X connect 4 0 13 0;
 #X connect 7 0 14 0;
 #X connect 8 0 23 0;
@@ -126,4 +130,6 @@
 #X connect 65 0 66 0;
 #X connect 66 0 15 0;
 #X connect 66 0 12 0;
+#X connect 67 0 69 0;
+#X connect 68 0 67 0;
 #X coords 0 1 1 40 120 200 1 0 0;

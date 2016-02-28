@@ -1,0 +1,57 @@
+#N canvas 27 193 956 453 10;
+#X obj 240 39 unpack f f;
+#X obj 400 300 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 366 313 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 241 21 inlet;
+#X msg 334 42 MIDI note;
+#X msg 130 147 Velocity;
+#X obj 213 567 outlet~;
+#X floatatom 308 71 5 0 0 0 - - -, f 5;
+#X floatatom 238 69 5 0 0 0 - - -, f 5;
+#X obj 454 43 inlet;
+#X msg 456 12 osc control;
+#X obj 574 42 inlet;
+#X msg 577 11 ADSR control;
+#X obj 315 330 ADSROSC;
+#X obj 508 303 MultiOscOSC~;
+#X msg 653 267 OSC;
+#X msg 515 265 LFO~;
+#X msg 566 265 PW~;
+#X msg 586 244 noise level~;
+#X obj 456 71 print ---;
+#X msg 249 -3 velocity \, pitch;
+#X obj 239 94 route 0;
+#X obj 228 127 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 289 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 336 151 f;
+#X obj 361 217 print;
+#X msg 343 176 send /Freq \$1;
+#X obj 408 210 packOSC;
+#X obj 316 103 mtof;
+#X floatatom 350 124 5 0 0 0 - - -, f 5;
+#X connect 0 0 8 0;
+#X connect 0 1 7 0;
+#X connect 1 0 13 3;
+#X connect 2 0 13 2;
+#X connect 3 0 0 0;
+#X connect 7 0 28 0;
+#X connect 8 0 21 0;
+#X connect 9 0 14 3;
+#X connect 11 0 13 1;
+#X connect 13 0 6 0;
+#X connect 14 0 13 0;
+#X connect 21 0 22 0;
+#X connect 21 1 23 0;
+#X connect 22 0 1 0;
+#X connect 23 0 2 0;
+#X connect 23 0 24 0;
+#X connect 24 0 26 0;
+#X connect 26 0 25 0;
+#X connect 26 0 27 0;
+#X connect 27 0 14 3;
+#X connect 28 0 24 1;
+#X connect 28 0 29 0;

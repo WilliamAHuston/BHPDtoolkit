@@ -1,4 +1,4 @@
-#N canvas 122 188 969 540 10;
+#N canvas 81 108 1185 640 10;
 #X obj 417 234 phasor~;
 #X obj 753 195 osc~;
 #X obj 752 241 *~;
@@ -8,14 +8,10 @@
 #X floatatom 961 165 5 0 0 0 - #0-Sin -, f 5;
 #X floatatom 470 325 5 0 0 0 - #0-Saw -, f 5;
 #X floatatom 625 362 5 0 0 0 - #0-PWM -, f 5;
-#X floatatom 522 110 5 0 0 0 Rate #0-Rate -, f 5;
+#X floatatom 522 110 5 0 0 0 Rate - -, f 5;
 #X obj 462 132 pack f f;
-#X obj 479 -48 nbx 5 30 -50 50 0 0 empty \$0-FreqFine FreqFine 0 -8
-0 25 -262144 -1 -1 0 256;
 #X obj 461 87 +;
 #X obj 469 59 t b f;
-#X obj 677 -2 nbx 5 30 -50000 50000 0 0 empty \$0-Freq Freq 0 -8 0
-25 -262144 -1 -1 110 256;
 #X floatatom 527 181 5 0 0 0 - - -, f 5;
 #X floatatom 567 179 5 0 0 0 - - -, f 5;
 #X obj 519 155 unpack;
@@ -31,39 +27,33 @@ Use first outlet for audio signal~. Use second outlet for control rate
 rate only.;
 #X obj 559 546 comment 0 10 helvetica ? 0 0 0 0 the method for generating
 PWM was suggested by Jeff Sandys and Jonghyun Kim.;
-#X obj 407 -3 r \$0-Freq;
-#X obj 316 126 s \$0-FreqFineIn;
 #X obj 277 67 r \$0-FreqFineZeroBang;
-#X obj 846 152 r \$0-Sin;
-#X obj 518 203 r \$0-Saw;
-#X obj 562 321 r \$0-PWM;
-#X obj 412 197 s \$0-FreqActual;
 #X obj 753 266 s~ \$0SinAudioOut;
 #X obj 349 524 s~ \$0SawAudioOut;
 #X obj 522 394 s~ \$0PWMAudioOut;
-#X obj 101 111 cnv 15 150 120 empty empty MultiOsc 90 115 1 15 -260097
+#X obj 102 114 cnv 15 150 118 empty empty MultiOsc 85 115 1 15 -260097
 -66577 0;
-#X obj 185 165 hsl 60 15 0.01 0.99 0 0 \$0-DutyCtl \$0-Duty-Snap Duty_Cycle
+#X obj 183 170 hsl 60 15 0.01 0.99 0 0 \$0-DutyCtl \$0-Duty-Snap Duty_Cycle
 2 7 0 10 -232576 -1 -1 2950 1;
-#X obj 109 120 hsl 140 15 1 8372 1 0 \$0-Freq empty freq 5 7 0 10 -261682
--1 -1 7233 1;
-#X obj 106 170 vsl 25 60 0.005 0.5 1 0 \$0-Sin empty Sine 0 10 0 10
--204786 -1 -1 5900 1;
-#X obj 157 169 vsl 25 60 0.005 0.5 1 0 \$0-PWM empty PWM 2 35 0 10
--232576 -1 -1 0 1;
-#X obj 132 169 vsl 25 60 0.005 0.5 1 0 \$0-Saw \$0-SawIn Saw 0 20 0
-10 -204800 -1 -1 5012 1;
-#X obj 107 151 hsl 128 15 0 3000 0 0 \$0-Rate empty Rate_of_Change
+#X obj 109 118 hsl 140 15 1 8372 1 0 \$0Freq \$0Freq freq 5 7 0 10
+-261682 -1 -1 7233 1;
+#X obj 106 169 vsl 25 60 0.005 0.5 1 0 \$0Sin \$0Sin Sin 0 10 0 10
+-204786 -1 -1 4726 1;
+#X obj 157 169 vsl 25 60 0.005 0.5 1 0 \$0PWM \$0PWM PWM 2 35 0 10
+-232576 -1 -1 4726 1;
+#X obj 132 169 vsl 25 60 0.005 0.5 1 0 \$0Saw \$0Saw Saw 0 20 0 10
+-204800 -1 -1 4726 1;
+#X obj 107 151 hsl 128 15 0 3000 0 0 \$0Rate \$0Rate Rate_of_Change
 5 7 0 10 -261234 -1 -1 0 1;
-#X obj 109 135 hsl 115 15 -50 50 0 0 \$0-FreqFine \$0-FreqFineIn Fine_Tune
+#X obj 109 135 hsl 115 15 -50 50 0 0 \$0FreqFine \$0FreqFine Fine_Tune
 5 7 0 10 -262130 -1 -1 5700 1;
 #X obj 233 134 bng 15 250 50 0 \$0-FreqFineZeroBang empty Zero 0 7
 0 10 -262144 -1 -1;
-#X floatatom 216 124 5 0 0 0 - #0-Freq -, f 5;
+#X floatatom 269 133 5 0 0 0 - #0Freq -, f 5;
 #X obj 523 321 *~ 2;
 #X obj 523 342 -~ 1;
 #X obj 417 350 *~ -1;
-#X obj 184 199 tgl 15 0 \$0-InvertSaw empty InvertSaw 1 7 0 8 -262144
+#X obj 232 211 tgl 15 0 \$0InvSaw \$0InvSaw InvertSaw -28 -3 0 8 -262144
 -1 -1 0 1;
 #X obj 359 353 tgl 15 0 empty \$0-InvertSaw InvertSaw -10 -5 0 8 -262144
 -1 -1 0 1;
@@ -71,8 +61,6 @@ PWM was suggested by Jeff Sandys and Jonghyun Kim.;
 #X obj 387 452 *~;
 #X obj 417 412 expr 1 - $f1;
 #X floatatom 436 441 5 0 0 0 - - -, f 5;
-#X obj -17 -62 inlet;
-#X obj 41 -60 inlet;
 #X msg 340 289 0;
 #X floatatom 351 393 5 0 0 0 - - -, f 5;
 #X obj 508 421 r~ \$0SinAudioOut;
@@ -82,64 +70,38 @@ PWM was suggested by Jeff Sandys and Jonghyun Kim.;
 -262144 -1 -1 0 1;
 #X floatatom 610 506 5 0 0 0 - - -, f 5;
 #X msg 696 460 250;
-#X msg 707 119 8372 hz = Midi #120 \, the highest note my Korg MicroKey
+#X msg 730 52 8372 hz = Midi #120 \, the highest note my Korg MicroKey
 37 will transmit;
 #X msg 217 75 0.5;
 #X msg 236 30 110;
-#X obj 31 311 loadbang;
+#X obj 35 310 loadbang;
 #X obj 683 315 DVM~;
 #X obj 522 270 line 0 0;
 #X obj 841 223 line 0 0;
 #X obj 411 163 line 0 0;
-#X obj 489 12 r \$0-FreqActual;
-#X obj 175 -56 inlet;
-#X msg 182 -79 bend;
-#X msg 136 -81 LFO;
-#X msg 48 -82 Rate;
-#X msg -28 -87 Freq;
-#X obj 175 -30 f;
-#X msg 231 -103 1;
-#X obj 593 1 t b f;
-#X floatatom -12 -30 5 0 0 0 - - -, f 5;
-#X floatatom 173 -6 5 0 0 0 - - -, f 5;
-#X floatatom 620 33 5 0 0 0 - - -, f 5;
-#X floatatom 623 71 5 0 0 0 - - -, f 5;
-#X obj 185 182 hsl 60 15 0 1 0 0 \$0-Noise \$0-NoiseIn Noise 7 7 0
-10 -66577 -262144 -262144 3900 1;
+#X obj 187 189 hsl 60 15 0.001 1 1 0 \$0Noise \$0Noise Noise 7 7 0
+10 -66577 -262144 -262144 4525 1;
 #X obj 199 560 noise~;
 #X obj 238 584 *~;
-#X obj 256 560 hsl 60 15 0 1 0 0 empty \$0-Noise Noise 7 -8 0 10 -262144
--1 -1 3900 1;
-#X obj 229 -56 inlet;
-#X msg 280 -95 noise;
-#X obj 232 -29 s \$0-NoiseIn;
 #X obj 517 536 hip~ 5;
 #X obj 420 281 *~ 4;
 #X obj 416 302 -~ 2;
 #X msg 522 247 \$1 20;
 #X msg 845 200 \$1 20;
 #X msg 35 172 0;
-#X obj 128 -58 inlet;
-#X obj 86 -59 inlet~;
+#X obj -65 8 inlet~;
 #X floatatom 331 204 5 0 0 0 - - -, f 5;
 #X obj 523 296 expr~ $v1 > $v2;
 #X obj 847 174 - 0.005;
 #X obj 564 345 - 0.005;
 #X obj 514 226 - 0.005;
-#X obj 123 -28 s \$0LFO;
-#X obj 645 95 r \$0LFO;
-#X obj 597 102 +~;
-#X obj 592 36 *;
-#X msg 93 -82 PW;
 #X obj 514 555 lop~ 10000;
-#X obj 34 354 s \$0Init;
 #X obj 35 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 224 -79 r \$0Init;
 #X obj 311 262 r \$0Init;
 #X obj 335 20 r \$0Init;
 #X obj 707 436 r \$0Init;
-#X obj 92 54 s~ \$0-DutyIn;
+#X obj -65 35 s~ \$0-DutyIn;
 #X obj 608 175 r~ \$0-DutyIn;
 #X obj 626 272 +~;
 #X obj 647 202 r \$0-DutyCtl;
@@ -147,107 +109,226 @@ PWM was suggested by Jeff Sandys and Jonghyun Kim.;
 #X msg 647 224 \$1 250;
 #X msg 39 215 0.25;
 #X obj -5 127 r \$0Init;
-#X obj 220 103 bng 15 250 50 0 \$0Panic \$0Panic P 5 7 0 10 -258113
--1 -1;
-#X obj 238 103 bng 15 250 50 0 \$0Init \$0Init I 5 7 0 10 -4034 -1
+#X obj 35 15 inlet~;
+#X obj 35 37 s~ \$0NoiseLFO;
+#X obj 260 545 r~ \$0NoiseLFO;
+#X obj 347 613 DVM~;
+#X obj 217 448 sig~;
+#X obj 218 423 r \$0Noise;
+#X obj 714 157 *~ 0.5;
+#X obj 186 207 tgl 15 0 \$0Sub \$0Sub Sub 0 6 0 8 -4034 -1 -1 0 1;
+#X msg 755 132 1;
+#X msg 790 131 0.5;
+#X obj 758 95 r \$0Sub;
+#X obj 758 114 sel 0 1;
+#X floatatom 717 112 5 0 0 0 - - -, f 5;
+#X obj 790 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
 -1;
-#X obj 916 -252 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 767 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj -629 -243 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 917 -104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1304 719 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X connect 0 0 93 0;
-#X connect 0 0 101 0;
+#X obj 1192 591 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 137 5 inlet;
+#X obj 316 126 s \$0FreqFine;
+#X obj 408 30 r \$0Freq;
+#X obj 472 -28 r \$0FreqFine;
+#X obj 518 203 r \$0Saw;
+#X obj 513 83 r \$0Rate;
+#X obj 846 152 r \$0Sin;
+#X msg -144 -64 LFO/Bend Freq Multiplier to get +12 semitones \, send
+2 to get -12 semitones \, send 0.5;
+#X obj -149 9 inlet~;
+#X obj -148 36 s~ \$0LFO;
+#X obj 626 27 r~ \$0LFO;
+#X obj 411 197 s \$0FreqRamp;
+#X obj 594 3 r \$0FreqRamp;
+#X obj 619 64 *~;
+#N canvas 1 123 450 300 OSC 0;
+#X obj -223 77 unpackOSC;
+#X obj -223 103 routeOSC /Freq /FreqFine /Rate /Sin /Saw /PWM /Duty
+/Noise /InvertSaw /Sub;
+#X obj -223 162 s \$0Freq;
+#X floatatom -223 141 5 0 0 0 - - -, f 5;
+#X floatatom -194 190 5 0 0 0 - - -, f 5;
+#X obj -194 212 s \$0FreqFine;
+#X floatatom -143 144 5 0 0 0 - - -, f 5;
+#X obj -143 166 s \$0Rate;
+#X floatatom -103 190 5 0 0 0 - - -, f 5;
+#X obj -103 208 s \$0Sin;
+#X floatatom -62 155 5 0 0 0 - - -, f 5;
+#X obj -64 176 s \$0Saw;
+#X floatatom -6 191 5 0 0 0 - - -, f 5;
+#X obj -6 213 s \$0PWM;
+#X floatatom 18 144 5 0 0 0 - - -, f 5;
+#X floatatom 68 206 5 0 0 0 - - -, f 5;
+#X obj 21 168 s \$0Duty;
+#X floatatom 99 140 5 0 0 0 - - -, f 5;
+#X obj 73 234 s \$0Noise;
+#X floatatom 138 155 5 0 0 0 - - -, f 5;
+#X floatatom 181 146 5 0 0 0 - - -, f 5;
+#X obj 137 206 s \$0InvSaw;
+#X obj 160 181 s \$0Sub;
+#X obj -189 42 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 4 0;
+#X connect 1 2 6 0;
+#X connect 1 3 8 0;
+#X connect 1 4 10 0;
+#X connect 1 5 12 0;
+#X connect 1 6 14 0;
+#X connect 1 7 15 0;
+#X connect 1 8 17 0;
+#X connect 1 9 19 0;
+#X connect 1 10 20 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 14 0 16 0;
+#X connect 15 0 18 0;
+#X connect 17 0 21 0;
+#X connect 19 0 22 0;
+#X connect 23 0 0 0;
+#X restore 144 42 pd OSC;
+#X obj 900 290 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X obj 900 265 r \$0Panic;
+#X obj 1022 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 1015 265 r \$0Init;
+#X obj 1022 309 f \$0, f 5;
+#X obj 900 315 f \$0, f 5;
+#X obj 1091 265 loadbang;
+#X obj 219 101 bng 15 250 50 0 \$0Init \$0InitIn I 5 7 0 10 -4034 -1
+-1;
+#X obj 237 102 bng 15 250 50 0 \$0Panic empty p 5 6 0 10 -258113 -1
+-1;
+#X obj 37 356 s \$0Init;
+#X msg 900 346 \; \$1Sin 0 \; \$1Saw 0 \; \$1PWM 0 \; \$1Noise 0 \;
+;
+#X msg 1022 344 \; \$1Freq 110 \; \$1FreqFine 0 \; \$1Rate 0 \; \$1Sin
+0.2 \; \$1Saw 0.2 \; \$1Duty 0 \; \$1PWM 0.2 \; \$1Noise 0.2 \; \$1InvertSaw
+0 \;;
+#X msg -150 -12 LFO~;
+#X msg -64 -13 PW~;
+#X msg 35 -10 noise level~;
+#X obj 708 25 sig~;
+#X msg 715 3 1;
+#X obj 251 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 774 1 r \$0Init;
+#X obj 562 321 r \$0PWM;
+#X msg 132 -18 OSC (packed);
+#X connect 0 0 66 0;
+#X connect 0 0 73 0;
 #X connect 1 0 2 0;
-#X connect 2 0 32 0;
-#X connect 3 0 47 0;
-#X connect 3 0 51 0;
-#X connect 4 0 34 0;
+#X connect 2 0 24 0;
+#X connect 3 0 39 0;
+#X connect 3 0 43 0;
+#X connect 4 0 26 0;
 #X connect 9 0 10 1;
-#X connect 10 0 17 0;
-#X connect 10 0 71 0;
-#X connect 11 0 13 0;
-#X connect 12 0 10 0;
-#X connect 13 0 12 0;
-#X connect 13 1 12 1;
-#X connect 17 0 15 0;
-#X connect 17 1 16 0;
-#X connect 18 0 26 0;
-#X connect 25 0 12 0;
-#X connect 27 0 18 0;
-#X connect 28 0 102 0;
-#X connect 29 0 104 0;
-#X connect 30 0 103 0;
-#X connect 36 0 100 0;
-#X connect 45 0 46 0;
-#X connect 46 0 4 0;
-#X connect 47 0 50 0;
-#X connect 49 0 52 0;
-#X connect 49 0 57 0;
-#X connect 50 0 33 0;
-#X connect 51 0 33 0;
-#X connect 52 0 51 1;
-#X connect 52 0 53 0;
-#X connect 54 0 81 0;
-#X connect 55 0 41 0;
-#X connect 56 0 49 0;
-#X connect 57 0 50 1;
-#X connect 58 0 92 0;
-#X connect 59 0 92 0;
-#X connect 60 0 92 0;
-#X connect 61 0 62 0;
-#X connect 63 0 61 0;
-#X connect 65 0 36 0;
-#X connect 66 0 37 0;
-#X connect 67 0 112 0;
-#X connect 69 0 3 1;
-#X connect 69 0 101 0;
-#X connect 70 0 2 1;
-#X connect 71 0 31 0;
-#X connect 72 0 108 0;
-#X connect 73 0 78 0;
-#X connect 78 0 80 0;
-#X connect 78 0 82 0;
-#X connect 79 0 78 0;
-#X connect 80 0 108 0;
-#X connect 80 1 83 0;
-#X connect 80 1 108 1;
-#X connect 81 0 37 0;
-#X connect 86 0 87 0;
-#X connect 87 0 92 0;
-#X connect 88 0 87 1;
-#X connect 89 0 91 0;
-#X connect 92 0 110 0;
-#X connect 93 0 94 0;
-#X connect 94 0 3 0;
-#X connect 95 0 69 0;
-#X connect 96 0 70 0;
-#X connect 97 0 41 0;
-#X connect 98 0 105 0;
-#X connect 99 0 117 0;
-#X connect 101 0 45 0;
-#X connect 102 0 96 0;
-#X connect 103 0 4 1;
-#X connect 104 0 95 0;
-#X connect 106 0 107 1;
-#X connect 107 0 0 0;
-#X connect 107 0 1 0;
-#X connect 108 0 84 0;
-#X connect 108 0 107 0;
-#X connect 110 0 5 0;
-#X connect 112 0 111 0;
-#X connect 113 0 79 0;
-#X connect 114 0 56 0;
-#X connect 115 0 66 0;
-#X connect 115 0 65 0;
-#X connect 115 0 18 0;
-#X connect 116 0 63 0;
-#X connect 118 0 119 0;
-#X connect 119 0 101 1;
-#X connect 119 0 68 0;
-#X connect 120 0 122 0;
-#X connect 121 0 119 1;
-#X connect 122 0 121 0;
-#X connect 123 0 40 0;
+#X connect 10 0 15 0;
+#X connect 10 0 61 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 12 1 11 1;
+#X connect 15 0 13 0;
+#X connect 15 1 14 0;
+#X connect 16 0 109 0;
+#X connect 23 0 16 0;
+#X connect 28 0 72 0;
+#X connect 37 0 38 0;
+#X connect 38 0 4 0;
+#X connect 39 0 42 0;
+#X connect 41 0 44 0;
+#X connect 41 0 47 0;
+#X connect 42 0 25 0;
+#X connect 43 0 25 0;
+#X connect 44 0 43 1;
+#X connect 44 0 45 0;
+#X connect 46 0 41 0;
+#X connect 47 0 42 1;
+#X connect 48 0 65 0;
+#X connect 49 0 65 0;
+#X connect 50 0 65 0;
+#X connect 51 0 52 0;
+#X connect 53 0 51 0;
+#X connect 55 0 28 0;
+#X connect 56 0 29 0;
+#X connect 57 0 78 0;
+#X connect 59 0 3 1;
+#X connect 59 0 73 0;
+#X connect 60 0 2 1;
+#X connect 61 0 119 0;
+#X connect 63 0 64 0;
+#X connect 64 0 65 0;
+#X connect 65 0 77 0;
+#X connect 66 0 67 0;
+#X connect 67 0 3 0;
+#X connect 68 0 59 0;
+#X connect 69 0 60 0;
+#X connect 70 0 33 0;
+#X connect 71 0 82 0;
+#X connect 73 0 37 0;
+#X connect 74 0 69 0;
+#X connect 75 0 4 1;
+#X connect 76 0 68 0;
+#X connect 77 0 5 0;
+#X connect 78 0 132 0;
+#X connect 79 0 46 0;
+#X connect 80 0 56 0;
+#X connect 80 0 55 0;
+#X connect 80 0 16 0;
+#X connect 81 0 53 0;
+#X connect 83 0 84 0;
+#X connect 84 0 73 1;
+#X connect 84 0 58 0;
+#X connect 85 0 87 0;
+#X connect 86 0 84 1;
+#X connect 87 0 86 0;
+#X connect 88 0 32 0;
+#X connect 89 0 88 0;
+#X connect 89 0 70 0;
+#X connect 90 0 91 0;
+#X connect 92 0 64 1;
+#X connect 94 0 64 1;
+#X connect 95 0 94 0;
+#X connect 96 0 1 0;
+#X connect 98 0 96 1;
+#X connect 98 0 104 0;
+#X connect 99 0 96 1;
+#X connect 99 0 103 0;
+#X connect 100 0 101 0;
+#X connect 100 0 102 0;
+#X connect 101 0 98 0;
+#X connect 101 1 99 0;
+#X connect 108 0 122 0;
+#X connect 110 0 11 0;
+#X connect 111 0 12 0;
+#X connect 112 0 76 0;
+#X connect 113 0 9 0;
+#X connect 114 0 74 0;
+#X connect 116 0 117 0;
+#X connect 118 0 121 1;
+#X connect 120 0 121 0;
+#X connect 121 0 96 0;
+#X connect 121 0 0 0;
+#X connect 123 0 128 0;
 #X connect 124 0 123 0;
-#X connect 124 0 97 0;
-#X coords 0 -1 1 1 155 135 2 100 100;
+#X connect 125 0 127 0;
+#X connect 126 0 125 0;
+#X connect 127 0 134 0;
+#X connect 128 0 133 0;
+#X connect 129 0 125 0;
+#X connect 138 0 121 1;
+#X connect 139 0 138 0;
+#X connect 141 0 139 0;
+#X connect 142 0 75 0;
+#X coords 0 -1 1 1 162 139 2 100 100;

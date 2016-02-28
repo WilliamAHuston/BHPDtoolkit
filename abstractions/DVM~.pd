@@ -1,10 +1,10 @@
-#N canvas 1 165 979 546 10;
+#N canvas 1 179 979 546 10;
 #X obj 310 78 Snapshot~;
-#X floatatom 109 109 5 0 0 1 Cur #0Cur -, f 5;
+#X floatatom 103 116 5 0 0 1 Cur #0Cur -, f 5;
 #X obj 342 44 r MetroGlobal;
 #X obj 287 25 inlet~;
-#X floatatom 109 130 5 0 0 1 Min #0Min -, f 5;
-#X floatatom 109 152 5 0 0 1 Max #0Max -, f 5;
+#X floatatom 103 132 5 0 0 1 Min #0Min -, f 5;
+#X floatatom 103 163 5 0 0 1 Delta #0Delta -, f 5;
 #X obj 230 188 max;
 #X obj 311 105 s \$0Cur;
 #X obj 230 160 r \$0Cur;
@@ -19,13 +19,19 @@
 #X msg 531 106 0;
 #X obj 531 136 s \$0Reset;
 #X obj 462 177 r \$0Reset;
-#X obj 163 125 bng 15 250 50 0 \$0CLRBang empty CLR 0 20 0 10 -262144
+#X obj 169 118 bng 15 250 50 0 \$0CLRBang empty CLR 0 20 0 10 -262144
 -1 -1;
 #X obj 531 79 r \$0CLRBang;
 #X obj 298 144 r \$0Reset;
 #X msg 436 31 Assumes a global signal MetroGlobal;
 #X msg 317 166 -99999;
 #X msg 535 202 999999;
+#X obj 308 316 -;
+#X obj 308 291 t b f;
+#X floatatom 308 362 5 0 0 0 - - -, f 5;
+#X obj 308 339 abs;
+#X obj 308 382 s \$0Delta;
+#X floatatom 103 147 5 0 0 1 Max #0Max -, f 5;
 #X connect 0 0 7 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -33,10 +39,12 @@
 #X connect 6 0 11 0;
 #X connect 8 0 6 0;
 #X connect 9 0 6 1;
+#X connect 9 0 26 0;
 #X connect 10 0 9 0;
 #X connect 10 1 9 1;
 #X connect 12 0 16 0;
 #X connect 13 0 16 1;
+#X connect 13 0 27 0;
 #X connect 14 0 13 0;
 #X connect 14 1 13 1;
 #X connect 16 0 14 0;
@@ -47,4 +55,9 @@
 #X connect 22 0 24 0;
 #X connect 24 0 10 0;
 #X connect 25 0 14 0;
+#X connect 26 0 29 0;
+#X connect 27 0 26 0;
+#X connect 27 1 26 1;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
 #X coords 0 -1 1 1 85 80 1 100 100;

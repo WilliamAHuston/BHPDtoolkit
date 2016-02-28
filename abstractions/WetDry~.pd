@@ -1,4 +1,4 @@
-#N canvas 2392 508 450 300 10;
+#N canvas 200 407 450 300 10;
 #X obj -174 85 inlet~;
 #X obj -124 81 inlet~;
 #X obj -68 81 inlet~;
@@ -6,17 +6,17 @@
 #X obj 38 81 inlet;
 #X obj -146 224 outlet~;
 #X obj -92 224 outlet~;
-#X obj 109 115 hsl 60 15 0 1 0 0 empty empty Dry__Wet -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 107 124 hsl 60 15 0 1 0 0 empty empty Dry__Wet 5 7 0 10 -204800
+-1 -1 700 1;
 #X obj -88 169 *~;
 #X obj -50 173 *~;
 #X obj -179 165 *~;
 #X obj -141 169 *~;
-#X floatatom 106 139 5 0 0 1 Wet - -;
+#X floatatom 105 142 5 0 0 1 Wet - -, f 5;
 #X obj 86 230 -;
 #X obj 81 182 t b f;
 #X msg 54 207 1;
-#X floatatom 88 259 5 0 0 0 - - -;
+#X floatatom 88 259 5 0 0 0 - - -, f 5;
 #X connect 0 0 10 0;
 #X connect 1 0 11 0;
 #X connect 2 0 8 0;
